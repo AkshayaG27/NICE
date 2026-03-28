@@ -11,6 +11,9 @@ class StandardNormal:
     """
     def log_prob(self, z):
         return -0.5 * z.pow(2).sum(dim=1)
+    
+    def sample(self, n_samples, dim):
+        return torch.randn(n_samples, dim)
 
 
 class StandardLogistic:
@@ -21,7 +24,12 @@ class StandardLogistic:
     """
     def log_prob(self, z):
         return -(F.softplus(z) + F.softplus(-z)).sum(dim=1)
-
+    
+    def sample(self, n_samples, dim):
+        # Logistic samples via inverse CDF trick:
+        # if u ~ Uniform(0,1), then log(u/(1-u)) ~ Logistic
+        u = torch.rand(n_samples, dim).clamp(1e-6, 1 - 1e-6)
+        return torch.log(u) - torch.log(1 - u)
 
 def nll_loss(model, x, prior):
     """

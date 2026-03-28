@@ -76,3 +76,33 @@ def get_dataloader(dataset_name, batch_size=200):
         )
 
     return DataLoader(ds, batch_size=batch_size, shuffle=True, num_workers=2)
+
+def get_dataloader_test(dataset_name, batch_size=200):
+    """Same as get_dataloader but returns the test split."""
+    if dataset_name == 'mnist':
+        transform = transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Lambda(lambda x: x.view(-1))
+        ])
+        ds = datasets.MNIST(
+            './data', train=False, download=True, transform=transform
+        )
+    elif dataset_name == 'cifar10':
+        transform = transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Normalize((0.5,)*3, (0.5,)*3),
+            transforms.Lambda(lambda x: x.view(-1))
+        ])
+        ds = datasets.CIFAR10(
+            './data', train=False, download=True, transform=transform
+        )
+    elif dataset_name == 'svhn':
+        transform = transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Normalize((0.5,)*3, (0.5,)*3),
+            transforms.Lambda(lambda x: x.view(-1))
+        ])
+        ds = datasets.SVHN(
+            './data', split='test', download=True, transform=transform
+        )
+    return DataLoader(ds, batch_size=batch_size, shuffle=False, num_workers=2)
