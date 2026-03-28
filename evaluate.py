@@ -60,6 +60,7 @@ def generate_samples(model, prior, dataset_name, n_samples=100):
 
         # Step 2: decode z → x
         x = model.decode(z)
+    x = x.cpu()
 
     # Step 3: reshape flat vectors back to images for display
     if dataset_name == 'mnist':
