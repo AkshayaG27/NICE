@@ -8,6 +8,7 @@ from models import NICE
 from loss   import StandardNormal, StandardLogistic, nll_loss
 from utils  import get_dataloader, load_checkpoint
 
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def compute_test_loglikelihood(model, prior, dataset_name, batch_size=200):
     """
@@ -25,7 +26,7 @@ def compute_test_loglikelihood(model, prior, dataset_name, batch_size=200):
 
     with torch.no_grad():
         for x, _ in loader:
-            x = x.view(x.size(0), -1)
+            x = x.view(x.size(0), -1).to(device)
 
             # No dequantization at test time — we evaluate on clean data
             z      = model.encode(x)
@@ -55,7 +56,7 @@ def generate_samples(model, prior, dataset_name, n_samples=100):
 
     with torch.no_grad():
         # Step 1: sample from prior
-        z = prior.sample(n_samples, nvis)
+        z = prior.sample(n_samples, nvis).to(device)
 
         # Step 2: decode z → x
         x = model.decode(z)
