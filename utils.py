@@ -1,0 +1,78 @@
+# utils.py
+
+import torch
+from torch.utils.data import DataLoader
+from torchvision import datasets, transforms
+
+
+def dequantize(x, n_values=256):
+    """
+    Adds tiny uniform noise to discrete pixel values.
+    Prevents the model from collapsing probability onto a grid.
+    """
+    return x + torch.rand_like(x) / n_values
+
+
+def save_checkpoint(model, optimizer, epoch, path):
+    torch.save({
+        'epoch': epoch,
+        'model': model.state_dict(),
+        'optim': optimizer.state_dict(),
+    }, path)
+    print(f"  Checkpoint saved → {path}")
+
+
+def load_checkpoint(path, model, optimizer):
+    ckpt = torch.load(path)
+    model.load_state_dict(ckpt['model'])
+    optimizer.load_state_dict(ckpt['optim'])
+    print(f"  Resumed from epoch {ckpt['epoch']}")
+    return ckpt['epoch']
+
+
+def get_dataloader(dataset_name, batch_size=200):
+    if dataset_name == 'mnist':
+        transform = transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Lambda(lambda x: x.view(-1))        # 1×28×28 → 784
+        ])
+        ds = datasets.MNIST(
+            './data', train=True, download=True, transform=transform
+        )
+
+    elif dataset_name == 'cifar10':
+        transform = transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Normalize((0.5,)*3, (0.5,)*3),      # scale to [-1, 1]
+            transforms.Lambda(lambda x: x.view(-1))        # 3×32×32 → 3072
+        ])
+        ds = datasets.CIFAR10(
+            './data', train=True, download=True, transform=transform
+        )
+
+    elif dataset_name == 'svhn':
+        transform = transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Normalize((0.5,)*3, (0.5,)*3),
+            transforms.Lambda(lambda x: x.view(-1))        # 3×32×32 → 3072
+        ])
+        # SVHN uses split='train' not train=True
+        ds = datasets.SVHN(
+            './data', split='train', download=True, transform=transform
+        )
+
+    elif dataset_name == 'tfd':
+        # TFD requires a manual download from:
+        # http://www.cs.toronto.edu/~ranzato/publications/TFD/TFD.zip
+        # Place TFD_48x48.mat in ./data/tfd/ after downloading
+        raise NotImplementedError(
+            "TFD requires manual download. See comment above."
+        )
+
+    else:
+        raise ValueError(
+            f"Unknown dataset '{dataset_name}'. "
+            f"Choose from: mnist, cifar10, svhn, tfd"
+        )
+
+    return DataLoader(ds, batch_size=batch_size, shuffle=True, num_workers=2)
