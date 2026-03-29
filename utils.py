@@ -28,11 +28,12 @@ def save_checkpoint(model, optimizer, epoch, path):
     print(f"  Checkpoint saved → {path}")
 
 
-def load_checkpoint(path, model, optimizer):
-    ckpt = torch.load(path)
+def load_checkpoint(path, model, optimizer=None):
+    ckpt = torch.load(path, map_location = 'cpu')
     model.load_state_dict(ckpt['model'])
-    optimizer.load_state_dict(ckpt['optim'])
-    print(f"  Resumed from epoch {ckpt['epoch']}")
+    if optimizer is not None:                        # <- to handle the case of MNIST where i forgot to calculate the validation loss paprallely
+        optimizer.load_state_dict(ckpt['optim'])
+    print(f"  Loaded checkpoint from epoch {ckpt['epoch']}")
     return ckpt['epoch']
 
 def seed_worker(worker_id):
