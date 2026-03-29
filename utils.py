@@ -29,8 +29,14 @@ def load_checkpoint(path, model, optimizer):
     print(f"  Resumed from epoch {ckpt['epoch']}")
     return ckpt['epoch']
 
+def seed_worker(worker_id):
+    worker_seed = torch.initial_seed() % 2**32
+    np.random.seed(worker_seed)
+    random.seed(worker_seed)
 
 def get_dataloader(dataset_name, batch_size=200):
+    g = torch.Generator()
+    g.manual_seed(42)
     if dataset_name == 'mnist':
         transform = transforms.Compose([
             transforms.ToTensor(),
@@ -75,7 +81,14 @@ def get_dataloader(dataset_name, batch_size=200):
             f"Choose from: mnist, cifar10, svhn, tfd"
         )
 
-    return DataLoader(ds, batch_size=batch_size, shuffle=True, num_workers=2)
+    return DataLoader(
+        ds, 
+        batch_size=batch_size, 
+        shuffle=True, 
+        num_workers=2, 
+        worker_init_fn = seed_worker, 
+        generator = g
+    )
 
 def get_dataloader_test(dataset_name, batch_size=200):
     """Same as get_dataloader but returns the test split."""
