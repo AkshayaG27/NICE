@@ -3,8 +3,14 @@
 import torch
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
+import platform
 
+# At the top of utils.py, outside any function
+NUM_WORKERS = 0 if platform.system() == 'Windows' else 2
 
+def flatten(x):
+    return x.view(-1)
+    
 def dequantize(x, n_values=256):
     """
     Adds tiny uniform noise to discrete pixel values.
@@ -40,7 +46,7 @@ def get_dataloader(dataset_name, batch_size=200):
     if dataset_name == 'mnist':
         transform = transforms.Compose([
             transforms.ToTensor(),
-            transforms.Lambda(lambda x: x.view(-1))        # 1×28×28 → 784
+            transforms.Lambda(flatten)        # 1×28×28 → 784
         ])
         ds = datasets.MNIST(
             './data', train=True, download=True, transform=transform
@@ -50,7 +56,7 @@ def get_dataloader(dataset_name, batch_size=200):
         transform = transforms.Compose([
             transforms.ToTensor(),
             transforms.Normalize((0.5,)*3, (0.5,)*3),      # scale to [-1, 1]
-            transforms.Lambda(lambda x: x.view(-1))        # 3×32×32 → 3072
+            transforms.Lambda(flatten)        # 3×32×32 → 3072
         ])
         ds = datasets.CIFAR10(
             './data', train=True, download=True, transform=transform
@@ -60,7 +66,7 @@ def get_dataloader(dataset_name, batch_size=200):
         transform = transforms.Compose([
             transforms.ToTensor(),
             transforms.Normalize((0.5,)*3, (0.5,)*3),
-            transforms.Lambda(lambda x: x.view(-1))        # 3×32×32 → 3072
+            transforms.Lambda(flatten)        # 3×32×32 → 3072
         ])
         # SVHN uses split='train' not train=True
         ds = datasets.SVHN(
@@ -85,17 +91,19 @@ def get_dataloader(dataset_name, batch_size=200):
         ds, 
         batch_size=batch_size, 
         shuffle=True, 
-        num_workers=2, 
+        num_workers=NUM_WORKERS, 
         worker_init_fn = seed_worker, 
         generator = g
     )
 
 def get_dataloader_test(dataset_name, batch_size=200):
     """Same as get_dataloader but returns the test split."""
+    g = torch.Generator()
+    g.manual_seed(42)
     if dataset_name == 'mnist':
         transform = transforms.Compose([
             transforms.ToTensor(),
-            transforms.Lambda(lambda x: x.view(-1))
+            transforms.Lambda(flatten)
         ])
         ds = datasets.MNIST(
             './data', train=False, download=True, transform=transform
@@ -104,7 +112,7 @@ def get_dataloader_test(dataset_name, batch_size=200):
         transform = transforms.Compose([
             transforms.ToTensor(),
             transforms.Normalize((0.5,)*3, (0.5,)*3),
-            transforms.Lambda(lambda x: x.view(-1))
+            transforms.Lambda(flatten)
         ])
         ds = datasets.CIFAR10(
             './data', train=False, download=True, transform=transform
@@ -113,9 +121,59 @@ def get_dataloader_test(dataset_name, batch_size=200):
         transform = transforms.Compose([
             transforms.ToTensor(),
             transforms.Normalize((0.5,)*3, (0.5,)*3),
-            transforms.Lambda(lambda x: x.view(-1))
+            transforms.Lambda(flatten)
         ])
         ds = datasets.SVHN(
             './data', split='test', download=True, transform=transform
         )
-    return DataLoader(ds, batch_size=batch_size, shuffle=False, num_workers=2)
+    return DataLoader(
+        ds, 
+        batch_size=batch_size, 
+        shuffle=False, 
+        num_workers=NUM_WORKERS,
+        worker_init_fn=seed_worker, 
+        generator = g
+    )
+
+def get_dataloader_valid(dataset_name, batch_size=200):
+    g = torch.Generator()
+    g.manual_seed(42)
+
+    if dataset_name == 'mnist':
+        transform = transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Lambda(flatten)
+        ])
+        ds = datasets.MNIST(
+            './data', train=True, download=True, transform=transform
+        )
+        valid_ds = torch.utils.data.Subset(ds, range(50000, 60000))
+
+    elif dataset_name == 'cifar10':
+        transform = transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Normalize((0.5,)*3, (0.5,)*3),
+            transforms.Lambda(flatten)
+        ])
+        ds = datasets.CIFAR10(
+            './data', train=True, download=True, transform=transform
+        )
+        valid_ds = torch.utils.data.Subset(ds, range(40000, 50000))
+
+    elif dataset_name == 'svhn':
+        transform = transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Normalize((0.5,)*3, (0.5,)*3),
+            transforms.Lambda(flatten)
+        ])
+        valid_ds = datasets.SVHN(
+            './data', split='extra', download=True, transform=transform
+        )
+
+    return DataLoader(
+        valid_ds,
+        batch_size=batch_size,
+        shuffle=False,
+        num_workers=NUM_WORKERS,        
+        generator=g
+    )
