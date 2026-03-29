@@ -31,12 +31,20 @@ class StandardLogistic:
         u = torch.rand(n_samples, dim).clamp(1e-6, 1 - 1e-6)
         return torch.log(u) - torch.log(1 - u)
 
-def nll_loss(model, x, prior):
-    """
-    Negative log-likelihood = -mean( log p(z) + log|det J| )
-    This is the single training objective for all datasets.
-    """
+def nll_loss(model, x, prior, base_reg=0.01):
     z      = model.encode(x)
     log_pz = prior.log_prob(z)
     ldj    = model.log_det_jacobian()
-    return -(log_pz + ldj).mean()
+
+    log_scale     = model.scaling_layer.log_scale
+    current_scale = log_scale.abs().mean().item()
+    adaptive_reg  = base_reg * current_scale
+    scale_penalty = log_scale.pow(2).mean()
+
+    return -(log_pz + ldj).mean() + adaptive_reg * scale_penalty
+# ```
+
+# Think of it as two layers of protection:
+# ```
+# Clamp      = hard wall    → scales physically cannot exceed exp(3)=20
+# Adaptive   = soft spring  → gets stiffer as scales drift away from 0
