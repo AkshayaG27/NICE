@@ -31,13 +31,13 @@ class DiagonalScalingLayer(nn.Module):
         self.log_scale = nn.Parameter(torch.zeros(dim))
 
     def forward(self, x):
-        return x * self.log_scale.exp()
+        return x * self.log_scale.clamp(-3, 3).exp()  #added clamping as part of handling highly drifting values of the loss
 
     def inverse(self, y):
-        return y * (-self.log_scale).exp()
+        return y * (-self.log_scale.clamp(-3,3)).exp()
 
     def log_det_jacobian(self):
-        return self.log_scale.sum()
+        return self.log_scale.clamp(-3,3).sum()
 
 
 class NICE(nn.Module):
