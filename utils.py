@@ -4,6 +4,8 @@ import torch
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 import platform
+import numpy as np
+import random
 
 # At the top of utils.py, outside any function
 NUM_WORKERS = 0 if platform.system() == 'Windows' else 2
