@@ -116,7 +116,7 @@ if __name__ == '__main__':
         lr=LR, 
         betas=(BETA1, BETA2), 
         eps=EPS,
-        weight_decay = 1.0
+        weight_decay = 1e-4 #change 1 to 1e-4
     )
     #optimizer = torch.optim.RMSprop(model.parameters(), lr=LR, momentum=0.9)  #<- updated 0.0 to 0.9
     scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=1/1.0005)
