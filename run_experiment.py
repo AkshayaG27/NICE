@@ -1,45 +1,50 @@
-# import torch
-# from models    import NICE
-# from loss      import StandardNormal, StandardLogistic
-# from utils     import load_checkpoint
-# from evaluate  import compute_test_loglikelihood, generate_samples
-
-# DATASET    = 'mnist'
-# CHECKPOINT = './checkpoints/ckpt_mnist_1500.pt'
-# PRIOR      = StandardLogistic() if DATASET in ('cifar10', 'svhn') else StandardNormal()
-
-# # Load the trained model
-# model = NICE.from_preset(DATASET)
-# load_checkpoint(CHECKPOINT, model, optimizer=None)
-# model.eval()
-
-# # 1. Report log-likelihood (paper comparison)
-# compute_test_loglikelihood(model, PRIOR, DATASET)
-
-# # 2. Generate and save sample images
-# generate_samples(model, PRIOR, DATASET, n_samples=100)
-
-# run_experiment.py
-
 import torch
 import os
 import random
 import numpy as np
+import sys
 
-from models    import NICE
-from loss      import StandardNormal, StandardLogistic
-from utils     import load_checkpoint
-from evaluate  import compute_test_loglikelihood, generate_samples
+# ─────────────────────────────────────────────
+# Environment Detection & Path Setup
+# ─────────────────────────────────────────────
+def detect_environment():
+    if 'COLAB_GPU' in os.environ:
+        return 'colab'
+    elif 'KAGGLE_KERNEL_RUN_TYPE' in os.environ:
+        return 'kaggle'
+    return 'pc'
 
+ENV = detect_environment()
+print(f"Running on: {ENV.upper()}")
+
+# Set base directory for checkpoints and data
+# Kaggle requires output to be in /kaggle/working/
+BASE_DIR = "." 
+if ENV == 'kaggle':
+    BASE_DIR = "/kaggle/working"
 
 # ─────────────────────────────────────────────
 # Config
 # ─────────────────────────────────────────────
 DATASET    = 'mnist'
-CHECKPOINT = './checkpoints/ckpt_mnist_1500.pt'
+# Use os.path.join for cross-platform compatibility (Windows vs Linux)
+CHECKPOINT = os.path.join(BASE_DIR, 'checkpoints', 'ckpt_mnist_1500.pt')
 N_SAMPLES  = 100
 SEED       = 42
 
+# ─────────────────────────────────────────────
+# Imports (After path setup if necessary)
+# ─────────────────────────────────────────────
+try:
+    from models import NICE
+    from loss import StandardNormal, StandardLogistic
+    from utils import load_checkpoint
+    from evaluate import compute_test_loglikelihood, generate_samples
+except ImportError:
+    print("Error: Ensure 'models', 'loss', 'utils', and 'evaluate' are in the current directory.")
+    # In Colab/Kaggle, you might need to clone the repo first:
+    # !git clone <repo_url>
+    sys.exit(1)
 
 # ─────────────────────────────────────────────
 # Reproducibility
@@ -47,69 +52,75 @@ SEED       = 42
 torch.manual_seed(SEED)
 np.random.seed(SEED)
 random.seed(SEED)
-
+if torch.cuda.is_available():
+    torch.cuda.manual_seed_all(SEED)
 
 # ─────────────────────────────────────────────
-# Device
+# Device & Directory Safety
 # ─────────────────────────────────────────────
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Using device: {device}")
 
-
-# ─────────────────────────────────────────────
-# Safety checks
-# ─────────────────────────────────────────────
-if not os.path.exists(CHECKPOINT):
-    raise FileNotFoundError(f"Checkpoint not found: {CHECKPOINT}")
-
+# Create directories if they don't exist (Critical for Colab/Kaggle)
+os.makedirs(os.path.dirname(CHECKPOINT), exist_ok=True)
+os.makedirs(os.path.join(BASE_DIR, 'samples'), exist_ok=True)
 
 # ─────────────────────────────────────────────
 # Model + Prior
 # ─────────────────────────────────────────────
+# Ensure model is on the correct device immediately
 model = NICE.from_preset(DATASET).to(device)
 
-if DATASET in ('cifar10', 'svhn'):
+if DATASET in ('cifar10', 'svhn', 'mnist'):
     prior = StandardLogistic()
 else:
     prior = StandardNormal()
 
-
 # ─────────────────────────────────────────────
 # Load checkpoint
 # ─────────────────────────────────────────────
-load_checkpoint(CHECKPOINT, model, optimizer=None)
-model.eval()
+if not os.path.exists(CHECKPOINT):
+    print(f"⚠️ Checkpoint NOT found at {CHECKPOINT}")
+    print("Please upload your checkpoint or check the path.")
+else:
+    # Pass device to load_checkpoint if your util supports it, 
+    # otherwise model.to(device) handled it.
+    load_checkpoint(CHECKPOINT, model, optimizer=None)
+    model.eval()
 
+    # ─────────────────────────────────────────────
+    # Run evaluation
+    # ─────────────────────────────────────────────
+    print("\nEvaluating model...")
+    # Wrap in try-except in case of memory issues on smaller instances
+    try:
+        avg_ll, bpd = compute_test_loglikelihood(
+            model,
+            prior,
+            DATASET
+        )
+        
+        print("\nGenerating samples...")
+        generate_samples(
+            model,
+            prior,
+            DATASET,
+            n_samples=N_SAMPLES
+        )
 
-# ─────────────────────────────────────────────
-# Run evaluation
-# ─────────────────────────────────────────────
-print("\nEvaluating model...")
+        # ─────────────────────────────────────────────
+        # Summary
+        # ─────────────────────────────────────────────
+        print("\n" + "="*30)
+        print("FINAL SUMMARY")
+        print("="*30)
+        print(f"Dataset:        {DATASET}")
+        print(f"Log-likelihood: {avg_ll:.2f} nats")
+        print(f"BPD:            {bpd:.4f}")
+        print(f"Samples saved to: {os.path.join(BASE_DIR, 'samples')}")
 
-avg_ll, bpd = compute_test_loglikelihood(
-    model,
-    prior,
-    DATASET
-)
-
-
-# ─────────────────────────────────────────────
-# Generate samples
-# ─────────────────────────────────────────────
-print("\nGenerating samples...")
-
-generate_samples(
-    model,
-    prior,
-    DATASET,
-    n_samples=N_SAMPLES
-)
-
-
-# ─────────────────────────────────────────────
-# Summary
-# ─────────────────────────────────────────────
-print("\nFinal Summary")
-print(f"Dataset: {DATASET}")
-print(f"Log-likelihood: {avg_ll:.2f} nats")
-print(f"BPD: {bpd:.4f}")
+    except RuntimeError as e:
+        if "out of memory" in str(e):
+            print("Error: Out of VRAM. Try reducing batch size in evaluate.py")
+        else:
+            raise e
