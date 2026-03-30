@@ -21,7 +21,7 @@ def get_checkpoint_dir():
     import os
 
     if os.path.exists('/content/drive/MyDrive'):
-        checkpoint_dir = '/content/drive/MyDrive/NICE_checkpoints'
+        checkpoint_dir = f'/content/drive/MyDrive/NICE_checkpoints'
     else:
         checkpoint_dir = './checkpoints'
 
@@ -66,7 +66,9 @@ def save_checkpoint(model, optimizer, epoch, best_val_loss, path):
     }, path)
 
 def load_checkpoint(path, model, optimizer=None):
-    checkpoint = torch.load(path)
+    device = next(model.parameters()).device   # 🔥 key fix
+
+    checkpoint = torch.load(path, map_location=device)
 
     model.load_state_dict(checkpoint['model_state'])
 
@@ -76,7 +78,7 @@ def load_checkpoint(path, model, optimizer=None):
     epoch = checkpoint['epoch']
     best_val_loss = checkpoint.get('best_val_loss', float('inf'))
 
-    print(f"🔁 Resumed from epoch {epoch}")
+    print(f"Resumed from epoch {epoch}")
 
     return epoch, best_val_loss
 if __name__ == '__main__':
@@ -195,3 +197,5 @@ if __name__ == '__main__':
         if (epoch + 1) % 5 == 0:
             path = os.path.join(CHECKPOINT_DIR, f'ckpt_{DATASET}_{epoch+1}.pt')
             save_checkpoint(model, optimizer, epoch + 1, best_val_loss, path)
+        final_path = os.path.join(CHECKPOINT_DIR, f'final_{DATASET}.pt')
+        save_checkpoint(model, optimizer, EPOCHS, best_val_loss, final_path)
