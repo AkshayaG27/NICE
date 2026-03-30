@@ -70,7 +70,7 @@ def load_checkpoint(path, model, optimizer=None):
 
     checkpoint = torch.load(path, map_location=device)
 
-    model.load_state_dict(checkpoint['model_state'])
+    model.load_state_dict(checkpoint['state_dict'])
 
     if optimizer is not None:
         optimizer.load_state_dict(checkpoint['optimizer_state'])
