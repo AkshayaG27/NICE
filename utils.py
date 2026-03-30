@@ -190,6 +190,7 @@ import platform
 import numpy as np
 import random
 
+from train import save_checkpoint(), load_checkpoint()
 # ─────────────────────────────────────────────
 # Global reproducibility
 # ─────────────────────────────────────────────
@@ -218,24 +219,24 @@ def dequantize(x, n_values=256):
 # ─────────────────────────────────────────────
 # Checkpointing
 # ─────────────────────────────────────────────
-def save_checkpoint(model, optimizer, epoch, path):
-    torch.save({
-        'epoch': epoch,
-        'model': model.state_dict(),
-        'optim': optimizer.state_dict(),
-    }, path)
-    print(f"  Checkpoint saved → {path}")
+# def save_checkpoint(model, optimizer, epoch, path):
+#     torch.save({
+#         'epoch': epoch,
+#         'model': model.state_dict(),
+#         'optim': optimizer.state_dict(),
+#     }, path)
+#     print(f"  Checkpoint saved → {path}")
 
 
-def load_checkpoint(path, model, optimizer=None):
-    ckpt = torch.load(path, map_location='cpu')
-    model.load_state_dict(ckpt['model'])
+# def load_checkpoint(path, model, optimizer=None):
+#     ckpt = torch.load(path, map_location='cpu')
+#     model.load_state_dict(ckpt['model'])
 
-    if optimizer is not None:
-        optimizer.load_state_dict(ckpt['optim'])
+#     if optimizer is not None:
+#         optimizer.load_state_dict(ckpt['optim'])
 
-    print(f"  Loaded checkpoint from epoch {ckpt['epoch']}")
-    return ckpt['epoch']
+#     print(f"  Loaded checkpoint from epoch {ckpt['epoch']}")
+#     return ckpt['epoch']
 
 
 # ─────────────────────────────────────────────
