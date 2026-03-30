@@ -304,8 +304,8 @@ def generate_samples(model, prior, dataset_name, n_samples=100):
     elif dataset_name == 'tfd':
         x = x.view(n_samples, 1, 48, 48)
 
-    #x = x.clamp(0, 1)
-    x = (x - x.min())/(x.max() - x.min())
+    x = x.clamp(0, 1)
+    #x = (x - x.min())/(x.max() - x.min())
     x[x < 0.10] = 0
 
     # output directory (adaptive)
