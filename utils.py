@@ -190,7 +190,7 @@ import platform
 import numpy as np
 import random
 
-from train import save_checkpoint(), load_checkpoint()
+from train import save_checkpoint, load_checkpoint
 # ─────────────────────────────────────────────
 # Global reproducibility
 # ─────────────────────────────────────────────
