@@ -15,7 +15,27 @@ def bits_per_dim(loss, dim):
     """
     return loss / (dim * math.log(2))
 
+import os
 
+def get_checkpoint_dir():
+    # Detect if running in Google Colab
+    try:
+        import google.colab  # only exists in Colab
+        IN_COLAB = True
+    except ImportError:
+        IN_COLAB = False
+
+    if IN_COLAB:
+        from google.colab import drive
+        drive.mount('/content/drive', force_remount=False)
+
+        checkpoint_dir = '/content/drive/AIML_Project/NICE_checkpoints'
+    else:
+        checkpoint_dir = './checkpoints'
+
+    os.makedirs(checkpoint_dir, exist_ok=True)
+    return checkpoint_dir
+  
 if __name__ == '__main__':
 
     # ── Config ────────────────────────────────────────────────────────
@@ -23,7 +43,7 @@ if __name__ == '__main__':
     EPOCHS         = 1500
     LR             = 2e-4
     BATCH_SIZE     = 200
-    CHECKPOINT_DIR = './checkpoints'
+    CHECKPOINT_DIR = get_checkpoint_dir()
     RESUME_FROM    = None
     CLIP_GRAD      = 5.0   # NEW
 
