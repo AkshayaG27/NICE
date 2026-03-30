@@ -18,18 +18,23 @@ def bits_per_dim(loss, dim):
 import os
 
 def get_checkpoint_dir():
-    # Detect if running in Google Colab
-    try:
-        import google.colab  # only exists in Colab
-        IN_COLAB = True
-    except ImportError:
-        IN_COLAB = False
+    import os
 
-    if IN_COLAB:
+    def in_colab_notebook():
+        try:
+            import google.colab
+            from IPython import get_ipython
+            return get_ipython() is not None
+        except ImportError:
+            return False
+
+    if in_colab_notebook():
         from google.colab import drive
-        drive.mount('/content/drive', force_remount=False)
 
-        checkpoint_dir = '/content/drive/MyDrive/AIML_Project/NICE_checkpoints'
+        if not os.path.exists('/content/drive/MyDrive'):
+            drive.mount('/content/drive')
+
+        checkpoint_dir = '/content/drive/MyDrive/NICE_checkpoints'
     else:
         checkpoint_dir = './checkpoints'
 
