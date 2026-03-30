@@ -20,20 +20,7 @@ import os
 def get_checkpoint_dir():
     import os
 
-    def in_colab_notebook():
-        try:
-            import google.colab
-            from IPython import get_ipython
-            return get_ipython() is not None
-        except ImportError:
-            return False
-
-    if in_colab_notebook():
-        from google.colab import drive
-
-        if not os.path.exists('/content/drive/MyDrive'):
-            drive.mount('/content/drive')
-
+    if os.path.exists('/content/drive/MyDrive'):
         checkpoint_dir = '/content/drive/MyDrive/NICE_checkpoints'
     else:
         checkpoint_dir = './checkpoints'
