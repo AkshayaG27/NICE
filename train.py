@@ -60,7 +60,7 @@ def get_resume_checkpoint(checkpoint_dir, dataset="mnist", prefer="latest"):
 def save_checkpoint(model, optimizer, epoch, best_val_loss, path):
     torch.save({
         'epoch': epoch,
-        'model_state': model.state_dict(),
+        'state_dict': model.state_dict(),
         'optimizer_state': optimizer.state_dict(),
         'best_val_loss': best_val_loss,
     }, path)
