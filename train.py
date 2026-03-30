@@ -94,7 +94,7 @@ if __name__ == '__main__':
     RESUME_FROM    = get_resume_checkpoint(CHECKPOINT_DIR, DATASET, "latest")
     CLIP_GRAD      = 5.0   # NEW
 
-    PRIOR  = StandardLogistic() if DATASET in ('cifar10', 'svhn') else StandardNormal()
+    PRIOR  = StandardLogistic() if DATASET in ('cifar10', 'svhn','mnist') else StandardNormal()
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     os.makedirs(CHECKPOINT_DIR, exist_ok=True)
