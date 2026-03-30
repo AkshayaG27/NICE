@@ -108,7 +108,7 @@ if __name__ == '__main__':
     # Paper Hyperparameters
     LR = 1e-3
     BETA1 = 0.9
-    BETA2 = 0.01  # This is the "specific" paper value
+    BETA2 = 0.9  # This is the "specific" paper value -> changed to 0.9 because the epochs' loss was stalling wround the same loss of ~1.8bpd
     EPS = 1e-4    # Paper value
     
     optimizer = torch.optim.Adam(
