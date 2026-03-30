@@ -69,13 +69,23 @@ class StandardLogistic:
         u = torch.rand(n_samples, dim).clamp(1e-6, 1 - 1e-6)
         return torch.log(u) - torch.log(1 - u)
 
-
 def nll_loss(model, x, prior):
-    z = model(x)
-
-    log_pz = prior.log_prob(z)
-    log_det = model.log_det_jacobian()
-
+    z = model(x) # [batch_size, 784]
+    
+    log_pz = prior.log_prob(z) # [batch_size]
+    
+    # Ensure log_det is broadcasted to the batch size
+    # If model.log_det_jacobian() returns a scalar:
+    log_det = model.log_det_jacobian() 
+    
+    # The loss for the batch
     return -(log_pz + log_det).mean()
+# def nll_loss(model, x, prior):
+#     z = model(x)
+
+#     log_pz = prior.log_prob(z)
+#     log_det = model.log_det_jacobian()
+
+#     return -(log_pz + log_det).mean()
 # # Clamp      = hard wall    → scales physically cannot exceed exp(3)=20
 # # Adaptive   = soft spring  → gets stiffer as scales drift away from 0
