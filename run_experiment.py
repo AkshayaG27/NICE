@@ -20,15 +20,25 @@ print(f"Running on: {ENV.upper()}")
 # Set base directory for checkpoints and data
 # Kaggle requires output to be in /kaggle/working/
 BASE_DIR = "." 
-if ENV == 'kaggle':
-    BASE_DIR = "/kaggle/working"
+def get_checkpoint_dir():
+    import os
+
+    if os.path.exists('/content/drive/MyDrive'):
+        checkpoint_dir = f'/content/drive/MyDrive/NICE_checkpoints'
+    elif os.path.exists('/kaggle/working'):
+        checkpoint_dir = f'/kaggle/working/NICE_checkpoints'
+    else:
+        checkpoint_dir = './checkpoints'
+
+    os.makedirs(checkpoint_dir, exist_ok=True)
+    return checkpoint_dir
 
 # ─────────────────────────────────────────────
 # Config
 # ─────────────────────────────────────────────
 DATASET    = 'mnist'
 # Use os.path.join for cross-platform compatibility (Windows vs Linux)
-CHECKPOINT = os.path.join(BASE_DIR, 'checkpoints', 'ckpt_mnist_1500.pt')
+CHECKPOINT = os.path.join(get_checkpoint_dir(),'ckpt_mnist_1500.pt')
 N_SAMPLES  = 100
 SEED       = 42
 
