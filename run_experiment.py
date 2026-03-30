@@ -170,7 +170,7 @@ try:
     from loss import StandardNormal, StandardLogistic
     from evaluate import compute_test_loglikelihood, generate_samples
     # Import all your robust checkpoint functions from utils!
-    from utils import load_checkpoint, get_checkpoint_dir, get_resume_checkpoint
+    from train import load_checkpoint, get_checkpoint_dir, get_resume_checkpoint
 except ImportError as e:
     print(f"Import Error: {e}")
     print("Error: Ensure 'models', 'loss', 'utils', and 'evaluate' are in the current directory.")
