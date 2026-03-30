@@ -199,5 +199,5 @@ if __name__ == '__main__':
         if (epoch + 1) % 5 == 0:
             path = os.path.join(CHECKPOINT_DIR, f'ckpt_{DATASET}_{epoch+1}.pt')
             save_checkpoint(model, optimizer, epoch + 1, best_val_loss, path)
-        final_path = os.path.join(CHECKPOINT_DIR, f'final_{DATASET}.pt')
-        save_checkpoint(model, optimizer, EPOCHS, best_val_loss, final_path)
+    final_path = os.path.join(CHECKPOINT_DIR, f'final_{DATASET}.pt')
+    save_checkpoint(model, optimizer, EPOCHS, best_val_loss, final_path)
