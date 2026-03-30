@@ -180,12 +180,12 @@ except ImportError as e:
 # Config
 # ─────────────────────────────────────────────
 DATASET    = 'mnist'
-N_SAMPLES  = 100
+N_SAMPLES  = 400
 SEED       = 42
 
 # Automatically find the right directory and the latest checkpoint
 CHECKPOINT_DIR = get_checkpoint_dir()
-CHECKPOINT     = get_resume_checkpoint(CHECKPOINT_DIR, dataset=DATASET, prefer="latest")
+CHECKPOINT     = get_resume_checkpoint(CHECKPOINT_DIR, dataset=DATASET, prefer="best")
 
 # 💡 NOTE: If you strictly want to run epoch 1500 regardless of later epochs, 
 # comment out the line above and uncomment the line below:
