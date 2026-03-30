@@ -309,6 +309,8 @@ def generate_samples(model, prior, dataset_name, n_samples=100):
     # output directory (adaptive)
     if os.path.exists('/kaggle/working'):
         out_dir = '/kaggle/working/outputs'
+    elif os.path.exists('/content/drive'):
+        out_dir = f'/content/drive/MyDrive/NICE_Outputs'
     else:
         out_dir = './outputs'
 
