@@ -29,7 +29,7 @@ def get_checkpoint_dir():
         from google.colab import drive
         drive.mount('/content/drive', force_remount=False)
 
-        checkpoint_dir = '/content/drive/AIML_Project/NICE_checkpoints'
+        checkpoint_dir = '/content/drive/MyDrive/AIML_Project/NICE_checkpoints'
     else:
         checkpoint_dir = './checkpoints'
 
