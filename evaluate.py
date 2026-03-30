@@ -292,7 +292,7 @@ def generate_samples(model, prior, dataset_name, n_samples=100):
 
     with torch.no_grad():
         z = prior.sample(n_samples, nvis).to(device)
-        x = model.inverse(z)
+        x = model.decode(z)
 
     x = x.cpu()
 
@@ -331,7 +331,7 @@ if __name__ == "__main__":
     DATASET = 'mnist'
 
     # Prior
-    PRIOR = StandardLogistic() if DATASET in ('cifar10', 'svhn') else StandardNormal()
+    PRIOR = StandardLogistic() if DATASET in ('cifar10', 'svhn','mnist') else StandardNormal()
 
     # Load model
     model = load_model(DATASET)
