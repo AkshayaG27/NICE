@@ -292,7 +292,7 @@ def generate_samples(model, prior, dataset_name, n_samples=100):
 
     with torch.no_grad():
         z = prior.sample(n_samples, nvis).to(device)
-        x = model.decode(z)
+        x = model.inverse(z)
 
     x = x.cpu()
 
