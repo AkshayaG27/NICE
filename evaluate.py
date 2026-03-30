@@ -306,7 +306,7 @@ def generate_samples(model, prior, dataset_name, n_samples=100):
 
     #x = x.clamp(0, 1)
     x = (x - x.min())/(x.max() - x.min())
-    x[x < 0.30] = 0
+    x[x < 0.10] = 0
 
     # output directory (adaptive)
     if os.path.exists('/kaggle/working'):
