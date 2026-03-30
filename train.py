@@ -105,8 +105,20 @@ if __name__ == '__main__':
     model        = NICE.from_preset(DATASET).to(device)
     loader       = get_dataloader(DATASET, batch_size=BATCH_SIZE)
     valid_loader = get_dataloader_valid(DATASET, batch_size=BATCH_SIZE)
-
-    optimizer = torch.optim.RMSprop(model.parameters(), lr=LR, momentum=0.9)  #<- updated 0.0 to 0.9
+    # Paper Hyperparameters
+    LR = 1e-3
+    BETA1 = 0.9
+    BETA2 = 0.01  # This is the "specific" paper value
+    EPS = 1e-4    # Paper value
+    
+    optimizer = torch.optim.Adam(
+        model.parameters(), 
+        lr=LR, 
+        betas=(BETA1, BETA2), 
+        eps=EPS,
+        weight_decay = 1.0
+    )
+    #optimizer = torch.optim.RMSprop(model.parameters(), lr=LR, momentum=0.9)  #<- updated 0.0 to 0.9
     scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=1/1.0005)
 
     start_epoch   = 0
