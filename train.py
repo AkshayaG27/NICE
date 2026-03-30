@@ -27,7 +27,58 @@ def get_checkpoint_dir():
 
     os.makedirs(checkpoint_dir, exist_ok=True)
     return checkpoint_dir
+import os
+import re
+
+def get_resume_checkpoint(checkpoint_dir, dataset="mnist", prefer="latest"):
+    if not os.path.exists(checkpoint_dir):
+        return None
+
+    files = os.listdir(checkpoint_dir)
+
+    if prefer == "best":
+        best_path = os.path.join(checkpoint_dir, f"best_{dataset}.pt")
+        return best_path if os.path.exists(best_path) else None
+
+    pattern = re.compile(rf"ckpt_{dataset}_(\d+)\.pt")
+    checkpoints = []
+
+    for f in files:
+        match = pattern.match(f)
+        if match:
+            epoch = int(match.group(1))
+            checkpoints.append((epoch, f))
+
+    if not checkpoints:
+        return None
+
+    checkpoints.sort(key=lambda x: x[0])
+    latest_file = checkpoints[-1][1]
+
+    return os.path.join(checkpoint_dir, latest_file)
   
+ def save_checkpoint(model, optimizer, epoch, best_val_loss, path):
+    torch.save({
+        'epoch': epoch,
+        'model_state': model.state_dict(),
+        'optimizer_state': optimizer.state_dict(),
+        'best_val_loss': best_val_loss,
+    }, path)
+
+def load_checkpoint(path, model, optimizer=None):
+    checkpoint = torch.load(path)
+
+    model.load_state_dict(checkpoint['model_state'])
+
+    if optimizer is not None:
+        optimizer.load_state_dict(checkpoint['optimizer_state'])
+
+    epoch = checkpoint['epoch']
+    best_val_loss = checkpoint.get('best_val_loss', float('inf'))
+
+    print(f"🔁 Resumed from epoch {epoch}")
+
+    return epoch, best_val_loss
 if __name__ == '__main__':
 
     # ── Config ────────────────────────────────────────────────────────
@@ -36,7 +87,7 @@ if __name__ == '__main__':
     LR             = 2e-4
     BATCH_SIZE     = 200
     CHECKPOINT_DIR = get_checkpoint_dir()
-    RESUME_FROM    = None
+    RESUME_FROM    = get_resume_checkpoint(CHECKPOINT_DIR, DATASET, "latest")
     CLIP_GRAD      = 5.0   # NEW
 
     PRIOR  = StandardLogistic() if DATASET in ('cifar10', 'svhn') else StandardNormal()
@@ -58,8 +109,14 @@ if __name__ == '__main__':
     best_val_loss = float('inf')
 
     if RESUME_FROM:
-        start_epoch = load_checkpoint(RESUME_FROM, model, optimizer)
-
+      start_epoch, best_val_loss = load_checkpoint(
+          RESUME_FROM, model, optimizer
+      )
+      start_epoch += 1
+      print(f"Continuing from epoch {start_epoch}")
+    else:
+      print("No checkpoint found. Training from scratch.")
+    print(f"Using checkpoint: {RESUME_FROM}")
     nvis = model.nvis
 
     print(f"Parameters : {sum(p.numel() for p in model.parameters()):,}")
@@ -130,11 +187,11 @@ if __name__ == '__main__':
         if avg_val_loss < best_val_loss:
             best_val_loss = avg_val_loss
             best_path = os.path.join(CHECKPOINT_DIR, f'best_{DATASET}.pt')
-            save_checkpoint(model, optimizer, epoch + 1, best_path)
+            save_checkpoint(model, optimizer, epoch + 1, best_val_loss, best_path)
             print(f"  New best model at epoch {epoch+1} "
                   f"(val: {best_val_loss:.4f})")
 
         # ── REGULAR CHECKPOINT ───────────────────────────────────────
         if (epoch + 1) % 5 == 0:
             path = os.path.join(CHECKPOINT_DIR, f'ckpt_{DATASET}_{epoch+1}.pt')
-            save_checkpoint(model, optimizer, epoch + 1, path)
+            save_checkpoint(model, optimizer, epoch + 1, best_val_loss, path)
