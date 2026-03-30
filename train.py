@@ -39,7 +39,7 @@ if __name__ == '__main__':
     loader       = get_dataloader(DATASET, batch_size=BATCH_SIZE)
     valid_loader = get_dataloader_valid(DATASET, batch_size=BATCH_SIZE)
 
-    optimizer = torch.optim.RMSprop(model.parameters(), lr=LR, momentum=0.0)
+    optimizer = torch.optim.RMSprop(model.parameters(), lr=LR, momentum=0.9)  #<- updated 0.0 to 0.9
     scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=1/1.0005)
 
     start_epoch   = 0
@@ -79,11 +79,11 @@ if __name__ == '__main__':
         avg_train_loss = epoch_loss / len(loader)
         train_bpd = bits_per_dim(avg_train_loss, nvis)
 
-        # Momentum warmup
-        if epoch == 5:
-            for param_group in optimizer.param_groups:
-                param_group['momentum'] = 0.5
-            print("  Momentum set to 0.5")
+        # # Momentum warmup
+        # if epoch == 5:
+        #     for param_group in optimizer.param_groups:
+        #         param_group['momentum'] = 0.5
+        #     print("  Momentum set to 0.5")              #<- removed this as its not sompatible with pytorch unlike pylearn2
 
         # ── VALIDATION ────────────────────────────────────────────────
         model.eval()
