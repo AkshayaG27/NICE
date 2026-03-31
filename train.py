@@ -130,7 +130,6 @@ if __name__ == '__main__':
       start_epoch, best_val_loss = load_checkpoint(
           RESUME_FROM, model, optimizer
       )
-      start_epoch += 1
       print(f"Continuing from epoch {start_epoch}")
     else:
       print("No checkpoint found. Training from scratch.")
