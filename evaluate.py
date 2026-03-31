@@ -217,7 +217,7 @@ def get_checkpoint_dir():
 
 
 def get_best_checkpoint(checkpoint_dir, dataset):
-    path = os.path.join(checkpoint_dir, f'best_{dataset}.pt')
+    path = os.path.join(checkpoint_dir, f'ckpt_mnist_1500.pt')
     return path if os.path.exists(path) else None
 
 
