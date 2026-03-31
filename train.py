@@ -7,7 +7,7 @@ from models import NICE
 from loss   import StandardNormal, StandardLogistic, nll_loss
 from utils  import (dequantize, save_checkpoint, load_checkpoint,
                     get_dataloader, get_dataloader_valid)
-
+torch.set_flush_denormal(True)
 
 def bits_per_dim(loss, dim):
     """
@@ -200,21 +200,46 @@ if __name__ == '__main__':
               f"z_mean: {z_mean:.3f} | z_std: {z_std:.3f} | "
               f"lr: {scheduler.get_last_lr()[0]:.6f}")
 
+        # # ── SAVE BEST ────────────────────────────────────────────────
+        # if avg_val_loss < best_val_loss:
+        #     best_val_loss = avg_val_loss
+        #     if CHECKPOINT_DIR == '/kaggle/input/datasets/agsmiling/forcontinuingtrainingofnice':
+        #       best_path = os.path.join('/kaggle/working/NICE_checkpoints', f'best_{DATASET}.pt')
+        #     best_path = os.path.join(CHECKPOINT_DIR, f'best_{DATASET}.pt')
+        #     save_checkpoint(model, optimizer, epoch + 1, best_val_loss, best_path)
+        #     print(f"  New best model at epoch {epoch+1} "
+        #           f"(val: {best_val_loss:.4f})")
+
+        # # ── REGULAR CHECKPOINT ───────────────────────────────────────
+        # if (epoch + 1) % 5 == 0:
+        #     path = os.path.join(CHECKPOINT_DIR, f'ckpt_{DATASET}_{epoch+1}.pt')
+        #     if CHECKPOINT_DIR == '/kaggle/input/datasets/agsmiling/forcontinuingtrainingofnice':
+        #       path = os.path.join('/kaggle/working/NICE_checkpoints', f'best_{DATASET}.pt')
+        #     save_checkpoint(model, optimizer, epoch + 1, best_val_loss, path)
         # ── SAVE BEST ────────────────────────────────────────────────
         if avg_val_loss < best_val_loss:
             best_val_loss = avg_val_loss
-            if CHECKPOINT_DIR == '/kaggle/input/datasets/agsmiling/forcontinuingtrainingofnice':
-              best_path = os.path.join('/kaggle/working/NICE_checkpoints', f'best_{DATASET}.pt')
-            best_path = os.path.join(CHECKPOINT_DIR, f'best_{DATASET}.pt')
+            
+            # Simplified logic: If input is read-only, force save to working
+            if "/kaggle/input/" in CHECKPOINT_DIR:
+                save_dir = '/kaggle/working/NICE_checkpoints'
+            else:
+                save_dir = CHECKPOINT_DIR
+            
+            os.makedirs(save_dir, exist_ok=True)
+            best_path = os.path.join(save_dir, f'best_{DATASET}.pt')
             save_checkpoint(model, optimizer, epoch + 1, best_val_loss, best_path)
-            print(f"  New best model at epoch {epoch+1} "
-                  f"(val: {best_val_loss:.4f})")
+            print(f"  New best model at epoch {epoch+1} (val: {best_val_loss:.4f})")
 
         # ── REGULAR CHECKPOINT ───────────────────────────────────────
         if (epoch + 1) % 5 == 0:
-            path = os.path.join(CHECKPOINT_DIR, f'ckpt_{DATASET}_{epoch+1}.pt')
-            if CHECKPOINT_DIR == '/kaggle/input/datasets/agsmiling/forcontinuingtrainingofnice':
-              path = os.path.join('/kaggle/working/NICE_checkpoints', f'best_{DATASET}.pt')
+            if "/kaggle/input/" in CHECKPOINT_DIR:
+                save_dir = '/kaggle/working/NICE_checkpoints'
+            else:
+                save_dir = CHECKPOINT_DIR
+                
+            os.makedirs(save_dir, exist_ok=True)
+            path = os.path.join(save_dir, f'ckpt_{DATASET}_{epoch+1}.pt')
             save_checkpoint(model, optimizer, epoch + 1, best_val_loss, path)
     if CHECKPOINT_DIR == '/kaggle/input/datasets/agsmiling/forcontinuingtrainingofnice':
               final_path = os.path.join('/kaggle/working/NICE_checkpoints', f'final_{DATASET}.pt')
