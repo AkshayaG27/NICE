@@ -206,7 +206,7 @@ class NICE(nn.Module):
             )
 
             self.layers.append(ShiftCouplingLayer(nvis, which_half, net))
-            self.layers.append(PermutationLayer(nvis))  # NEW
+            # self.layers.append(PermutationLayer(nvis))  # NEW
 
         self.scaling_layer = DiagonalScalingLayer(nvis)
 
