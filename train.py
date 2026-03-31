@@ -108,18 +108,17 @@ if __name__ == '__main__':
     loader       = get_dataloader(DATASET, batch_size=BATCH_SIZE)
     valid_loader = get_dataloader_valid(DATASET, batch_size=BATCH_SIZE)
     # Paper Hyperparameters
-    LR = 1e-3
+    LR = 2e-4  #changed from 1e-3 to this because i didnt get good results with this LR
     BETA1 = 0.9
-    BETA2 = 0.9  # This is the "specific" paper value -> changed to 0.9 because the epochs' loss was stalling wround the same loss of ~1.8bpd
-    EPS = 1e-4    # Paper value
+    BETA2 = 0.999  # This is the "specific" paper value -> changed to 0.9 because the epochs' loss was stalling wround the same loss of ~1.8bpd -> changed to 0.999 as this was used in most repos
+    EPS = 1e-8    # Paper value of 1e-4 changed to 1e-8, again because this is used in most of the cases
     
     optimizer = torch.optim.Adam(
         model.parameters(), 
         lr=LR, 
         betas=(BETA1, BETA2), 
-        eps=EPS,
-        weight_decay = 1e-4 #change 1 to 1e-4
-    )
+        eps=EPS
+    )   #weight_decay = 1e-4 #change 1 to 1e-4 -> removed because that was never included in the paper, i had got confused it for weight decay while it was for scaling layer
     #optimizer = torch.optim.RMSprop(model.parameters(), lr=LR, momentum=0.9)  #<- updated 0.0 to 0.9
     scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=1/1.0005)
 
