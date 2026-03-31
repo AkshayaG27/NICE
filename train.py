@@ -22,6 +22,8 @@ def get_checkpoint_dir():
 
     if os.path.exists('/content/drive/MyDrive'):
         checkpoint_dir = f'/content/drive/MyDrive/NICE_checkpoints'
+    elif os.path.exists('/kaggle/input/datasets/agsmiling/forcontinuingtrainingofnice'):
+        checkpoint_dir = '/kaggle/input/datasets/agsmiling/forcontinuingtrainingofnice'
     elif os.path.exists('/kaggle/working'):
         checkpoint_dir = f'/kaggle/working/NICE_checkpoints'
     else:
