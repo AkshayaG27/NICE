@@ -84,7 +84,7 @@ def nll_loss(model, x, prior):
     z = model(x)
 
     log_pz = prior.log_prob(z)
-    log_det = model.log_det_jacobian()
+    log_det = model.log_det_jacobian().expand_as(log_pz) # more safer
 
     return -(log_pz + log_det).mean()
 # # Clamp      = hard wall    → scales physically cannot exceed exp(3)=20
