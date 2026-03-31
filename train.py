@@ -110,8 +110,8 @@ if __name__ == '__main__':
     # Paper Hyperparameters
     LR = 1e-3  
     BETA1 = 0.9
-    BETA2 = 0.01  # This is the "specific" paper value 
-    EPS = 1e-8    # Paper value of 1e-4 changed to 1e-8, again because this is used in most of the cases
+    BETA2 = 0.01  # in paper 0.01 -> 0.999 because 0.01 lead to unstable epochs
+    EPS = 1e-4    # Paper value of 1e-4
     # scale_params = []
     # other_params = []
     
