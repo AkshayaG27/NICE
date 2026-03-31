@@ -126,35 +126,48 @@ class DiagonalScalingLayer(nn.Module):
     def __init__(self, dim):
         super().__init__()
         self.log_scale = nn.Parameter(torch.zeros(dim))
-
-    def forward(self, x):
-        return x * torch.exp(self.log_scale)
-
+        
+    def forward(self, x):                               #better presentation
+        log_s = self.log_scale.clamp(-3, 3)
+        return x * torch.exp(log_s)
+            
     def inverse(self, y):
-        return y * torch.exp(-self.log_scale)
-
+        log_s = self.log_scale.clamp(-3, 3)
+        return y * torch.exp(-log_s)   
+    
     def log_det_jacobian(self):
-        return torch.sum(self.log_scale)
+        return torch.sum(self.log_scale.clamp(-3, 3))
+    # def forward(self, x):
+    #     scale = torch.exp(self.log_scale.clamp(-3, 3))  #added the clamping
+    #     return x * scale
+        
+    # def inverse(self, y):
+    #     scale = torch.exp(self.log_scale.clamp(-3, 3))
+    #     return y / scale
+
+    # def log_det_jacobian(self):
+    #     return torch.sum(self.log_scale.clamp(-3,3))
+    
 
 
-class PermutationLayer(nn.Module):
-    """
-    Fixed random permutation for better mixing between coupling layers.
-    """
+# class PermutationLayer(nn.Module):
+#     """
+#     Fixed random permutation for better mixing between coupling layers.
+#     """
 
-    def __init__(self, dim):
-        super().__init__()
-        perm = torch.randperm(dim)
-        inv_perm = torch.argsort(perm)
+#     def __init__(self, dim):
+#         super().__init__()
+#         perm = torch.randperm(dim)
+#         inv_perm = torch.argsort(perm)
 
-        self.register_buffer("perm", perm)
-        self.register_buffer("inv_perm", inv_perm)
+#         self.register_buffer("perm", perm)
+#         self.register_buffer("inv_perm", inv_perm)
 
-    def forward(self, x):
-        return x[:, self.perm]
+#     def forward(self, x):
+#         return x[:, self.perm]
 
-    def inverse(self, y):
-        return y[:, self.inv_perm]
+#     def inverse(self, y):
+#         return y[:, self.inv_perm]
 
 
 class NICE(nn.Module):
