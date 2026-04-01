@@ -110,7 +110,7 @@ if __name__ == '__main__':
     # Paper Hyperparameters
     LR = 1e-3  
     BETA1 = 0.9
-    BETA2 = 0.01  # in paper 0.01 -> 0.999 because 0.01 lead to unstable epochs
+    BETA2 = 0.999  # in paper 0.01 -> 0.999 because 0.01 lead to unstable epochs
     EPS = 1e-4    # Paper value of 1e-4
     # scale_params = []
     # other_params = []
