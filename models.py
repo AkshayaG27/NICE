@@ -136,7 +136,8 @@ class DiagonalScalingLayer(nn.Module):
         return y * torch.exp(-log_s)   
     
     def log_det_jacobian(self):
-        return torch.sum(self.log_scale).clamp(-3,3)               #removed clamp as it would then be constrained NICE implementation
+        log_s = self.log_scale.clamp(-3,3)
+        return torch.sum(log_s)              #removed clamp as it would then be constrained NICE implementation
     # def forward(self, x):
     #     scale = torch.exp(self.log_scale.clamp(-3, 3))  #added the clamping
     #     return x * scale
@@ -201,7 +202,7 @@ class NICE(nn.Module):
             net = make_coupling_net(
                 in_dim,
                 nhid,
-                5,
+                2,
                 out_dim
             )
 
