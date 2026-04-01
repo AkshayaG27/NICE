@@ -128,15 +128,15 @@ class DiagonalScalingLayer(nn.Module):
         self.log_scale = nn.Parameter(torch.zeros(dim))
         
     def forward(self, x):                               #better presentation
-        log_s = self.log_scale
+        log_s = self.log_scale.clamp(-3,3)
         return x * torch.exp(log_s)
             
     def inverse(self, y):
-        log_s = self.log_scale
+        log_s = self.log_scale.clamp(-3,3)
         return y * torch.exp(-log_s)   
     
     def log_det_jacobian(self):
-        return torch.sum(self.log_scale)               #removed clamp as it would then be constrained NICE implementation
+        return torch.sum(self.log_scale).clamp(-3,3)               #removed clamp as it would then be constrained NICE implementation
     # def forward(self, x):
     #     scale = torch.exp(self.log_scale.clamp(-3, 3))  #added the clamping
     #     return x * scale
@@ -189,11 +189,11 @@ class NICE(nn.Module):
         self.layers = nn.ModuleList()
 
         # Optional: define hidden depth schedule
-        if n_coupling == 8:
-            hidden_schedule = [1, 1, 3, 3, 2, 2, 1, 1]
-        else:
-            hidden_schedule = [1] * n_coupling
-
+        # if n_coupling == 8:
+        #     hidden_schedule = [1, 1, 3, 3, 2, 2, 1, 1]
+        # else:
+        #     hidden_schedule = [1] * n_coupling
+        
         for i in range(n_coupling):
             which_half = 'even' if i % 2 == 0 else 'odd'
             in_dim, out_dim = (half, rest) if which_half == 'even' else (rest, half)
@@ -201,7 +201,7 @@ class NICE(nn.Module):
             net = make_coupling_net(
                 in_dim,
                 nhid,
-                hidden_schedule[i],
+                5,
                 out_dim
             )
 
