@@ -291,7 +291,7 @@ def generate_samples(model, prior, dataset_name, n_samples=100):
     nvis = NICE.PRESETS[dataset_name]['nvis']
 
     with torch.no_grad():
-        z = (prior.sample(n_samples, nvis)).to(device)    #added 0.7 to reduce temperature -> 
+        z = (prior.sample(n_samples, nvis)*0.7).to(device)    #added 0.7 to reduce temperature 
         x = model.decode(z)
         
     x = x.cpu()
