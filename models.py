@@ -202,7 +202,7 @@ class NICE(nn.Module):
             net = make_coupling_net(
                 in_dim,
                 nhid,
-                2,
+                5,          #2 -> 5
                 out_dim
             )
 
