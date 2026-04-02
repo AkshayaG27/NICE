@@ -83,30 +83,24 @@ def plot_loss(train_losses, val_losses):
 
 def show_real_vs_generated(model, prior, data_loader, device, n=64):
     model.eval()
+    dataset_name = 'mnist'
     nvis = NICE.PRESETS[dataset_name]['nvis']
+
     # ---- Get REAL images ----
     x_real, _ = next(iter(data_loader))
     x_real = x_real[:n].to(device)
 
     # ---- Generate FAKE images ----
     with torch.no_grad():
-        z = prior.sample((n, nvis)).to(device)  #z = (prior.sample(n_samples, nvis)*0.7).to(device)
+        z = prior.sample(n, nvis).to(device)  # Pass dim explicitly
         x_fake = model.decode(z)
-        #x_fake = torch.sigmoid(x_fake)  # if needed
-    x = x.cpu()
-
+    x_fake = x_fake.cpu()
     # ---- Make grids ----
-    real_grid = vutils.make_grid(
-        x_real.view(-1, 1, 28, 28), nrow=8, normalize=True
-    )
-
-    fake_grid = vutils.make_grid(
-        x_fake.view(-1, 1, 28, 28), nrow=8, normalize=True
-    )
-
+    real_grid = vutils.make_grid(x_real.view(-1, 1, 28, 28), nrow=8, normalize=True)
+    fake_grid = vutils.make_grid(x_fake.view(-1, 1, 28, 28), nrow=8, normalize=True)
+   
     # ---- Plot ----
     plt.figure(figsize=(8, 8))
-
     plt.subplot(2, 1, 1)
     plt.imshow(real_grid.permute(1, 2, 0).cpu())
     plt.axis('off')
