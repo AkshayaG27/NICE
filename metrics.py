@@ -233,7 +233,7 @@ if __name__ == "__main__":
 
     train_losses, val_losses = parse_losses_from_log(log_file)
     
-    plot_loss(train_losses, val_losses)
+    plot_training_results(train_losses, val_losses)
     # ── Visualizations ───────────────────────
     print("\n🔍 Showing real vs generated samples...")
     show_real_vs_generated(model, prior, test_loader, device)
