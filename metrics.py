@@ -231,7 +231,7 @@ import numpy as np
 def plot_latent_distribution(model, data_loader, device):
     model.eval()
     zs = []
-
+    x = np.linspace(-5, 5, 1000)
     with torch.no_grad():
         for x, _ in data_loader:
             x = x.to(device)
@@ -240,13 +240,22 @@ def plot_latent_distribution(model, data_loader, device):
 
     zs = np.concatenate(zs, axis=0)
 
-    plt.figure()
-    plt.hist(zs.flatten(), bins=100, density=True)
-    plt.title("Latent Distribution")
-    plt.xlabel("z values")
-    plt.ylabel("Density")
-    plt.savefig('latent_distribution.png', dpi=300, bbox_inches='tight')
+    # 🔥 Bigger and clearer plot
+    plt.figure(figsize=(10, 6))   # (width, height) in inches
 
+    plt.hist(zs.flatten(), bins=100, density=True)
+
+    plt.title("Latent Distribution", fontsize=16)
+    plt.xlabel("z values", fontsize=14)
+    plt.ylabel("Density", fontsize=14)
+
+    plt.xticks(fontsize=12)
+    plt.yticks(fontsize=12)
+
+    plt.tight_layout()  # avoids clipping
+
+    plt.savefig('latent_distribution.png', dpi=300)
+    plt.close()
 def interpolate(model, data_loader, device, steps=10):
     model.eval()
     x, _ = next(iter(data_loader))
