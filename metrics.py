@@ -83,7 +83,7 @@ def plot_loss(train_losses, val_losses):
 
 def show_real_vs_generated(model, prior, data_loader, device, n=64):
     model.eval()
-
+    nvis = NICE.PRESETS[dataset_name]['nvis']
     # ---- Get REAL images ----
     x_real, _ = next(iter(data_loader))
     x_real = x_real[:n].to(device)
