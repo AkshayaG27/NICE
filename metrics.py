@@ -79,7 +79,7 @@ def plot_loss(train_losses, val_losses):
     plt.title("Training Curve")
     plt.legend()
     plt.grid()
-    plt.show()
+    plt.savefig('training_curve.png')
 
 def show_real_vs_generated(model, prior, data_loader, device, n=64):
     model.eval()
@@ -112,7 +112,7 @@ def show_real_vs_generated(model, prior, data_loader, device, n=64):
     plt.title("Generated Samples")
 
     plt.tight_layout()
-    plt.show()
+    plt.savefig(real_vs_sampled.png)
 
 def show_reconstructions(model, data_loader, device):
     model.eval()
@@ -133,7 +133,7 @@ def show_reconstructions(model, data_loader, device):
     plt.imshow(grid.permute(1,2,0))
     plt.axis('off')
     plt.title("Top: Original | Bottom: Reconstruction")
-    plt.show()
+    plt.savefig(reconstructed.png)
 
 import numpy as np
 
@@ -154,7 +154,7 @@ def plot_latent_distribution(model, data_loader, device):
     plt.title("Latent Distribution")
     plt.xlabel("z values")
     plt.ylabel("Density")
-    plt.show()
+    plt.savefig(latent_distribution.png)
 
 def interpolate(model, data_loader, device, steps=10):
     model.eval()
@@ -178,7 +178,7 @@ def interpolate(model, data_loader, device, steps=10):
     plt.imshow(grid.permute(1,2,0))
     plt.axis('off')
     plt.title("Latent Interpolation")
-    plt.show()
+    plt.savefig(latent_interpolate.png)
 
 if __name__ == "__main__":
     # ── Config ───────────────────────────────
