@@ -61,8 +61,11 @@ def parse_losses_from_log(file_path):
         for line in f:
             if "train:" in line and "val:" in line:
                 # Extract train loss
-                train_match = re.search(r"train:\s*(-?\d+\.\d+)", line)
-                val_match   = re.search(r"val:\s*(-?\d+\.\d+)", line)
+                # train_match = re.search(r"train:\s*(-?\d+\.\d+)", line)
+                # val_match   = re.search(r"val:\s*(-?\d+\.\d+)", line)
+                # Updated regex to be more flexible with spacing and number formats
+                train_match = re.search(r"train:\s*([-+]?\d*\.?\d+)", line)
+                val_match   = re.search(r"val:\s*([-+]?\d*\.?\d+)", line)
 
                 if train_match and val_match:
                     train_losses.append(float(train_match.group(1)))
