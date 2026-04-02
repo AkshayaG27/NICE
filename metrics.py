@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 import torchvision.utils as vutils
-
+from models import NICE
+from loss   import StandardNormal, StandardLogistic
+from utils  import get_dataloader_test, dequantize
 def plot_loss(train_losses, val_losses):
     plt.figure()
     plt.plot(train_losses, label="Train")
