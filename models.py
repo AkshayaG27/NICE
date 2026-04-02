@@ -128,16 +128,16 @@ class DiagonalScalingLayer(nn.Module):
         self.log_scale = nn.Parameter(torch.zeros(dim))
         
     def forward(self, x):                               #better presentation
-        log_s = self.log_scale.clamp(-3,3)
+        log_s = self.log_scale
         return x * torch.exp(log_s)
             
     def inverse(self, y):
-        log_s = self.log_scale.clamp(-3,3)
+        log_s = self.log_scale
         return y * torch.exp(-log_s)   
     
     def log_det_jacobian(self):
-        log_s = self.log_scale.clamp(-3,3)
-        return torch.sum(log_s)              #removed clamp as it would then be constrained NICE implementation
+        log_s = self.log_scale
+        return torch.sum(log_s)              #removed clamp as it would then be constrained NICE implementation and lead to collapsing of latent
     # def forward(self, x):
     #     scale = torch.exp(self.log_scale.clamp(-3, 3))  #added the clamping
     #     return x * scale
