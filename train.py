@@ -129,8 +129,7 @@ if __name__ == '__main__':
         lr=LR, 
         betas=(BETA1, BETA2), 
         eps=EPS,
-       weight_decay= 1e-4  #change 1 to 1e-4 
-    ) 
+    )                       #removed weight decay
     #optimizer = torch.optim.RMSprop(model.parameters(), lr=LR, momentum=0.9)  #<- updated 0.0 to 0.9
     scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=1/1.0005)
 
@@ -252,7 +251,18 @@ if __name__ == '__main__':
             os.makedirs(save_dir, exist_ok=True)
             path = os.path.join(save_dir, f'ckpt_{DATASET}_{epoch+1}.pt')
             save_checkpoint(model, optimizer, epoch + 1, best_val_loss, path)
-    if CHECKPOINT_DIR == '/kaggle/input/datasets/agsmiling/forcontinuingtrainingofnice':
-              final_path = os.path.join('/kaggle/working/NICE_checkpoints', f'final_{DATASET}.pt')
-    final_path = os.path.join(CHECKPOINT_DIR, f'final_{DATASET}.pt')
+    # if CHECKPOINT_DIR == '/kaggle/input/datasets/agsmiling/forcontinuingtrainingofnice':
+    #           final_path = os.path.join('/kaggle/working/NICE_checkpoints', f'final_{DATASET}.pt')
+    # final_path = os.path.join(CHECKPOINT_DIR, f'final_{DATASET}.pt')
+    # save_checkpoint(model, optimizer, EPOCHS, best_val_loss, final_path)
+    # Ensure we save to /working/ if we started from /input/
+    if "/kaggle/input/" in CHECKPOINT_DIR:
+        final_save_dir = '/kaggle/working/NICE_checkpoints'
+    else:
+        final_save_dir = CHECKPOINT_DIR
+        
+    os.makedirs(final_save_dir, exist_ok=True)
+    final_path = os.path.join(final_save_dir, f'final_{DATASET}.pt')
+    
     save_checkpoint(model, optimizer, EPOCHS, best_val_loss, final_path)
+    print(f"Training complete. Final model saved to: {final_path}")
