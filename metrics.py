@@ -1,10 +1,77 @@
 import matplotlib.pyplot as plt
 import torchvision.utils as vutils
+import torch
+import os
 from models import NICE
 from loss   import StandardNormal, StandardLogistic
 from utils  import get_dataloader_test, dequantize
+
+
+# ─────────────────────────────────────────────
+# Device
+# ─────────────────────────────────────────────
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+
+# ─────────────────────────────────────────────
+# Checkpoint directory (auto-detect)
+# ─────────────────────────────────────────────
+def get_checkpoint_dir():
+    if os.path.exists('/content/drive/MyDrive'):
+        return '/content/drive/MyDrive/NICE_checkpoints'
+    elif os.path.exists('/kaggle/working'):
+        return '/kaggle/working/NICE_checkpoints'
+    else:
+        return './checkpoints'
+
+
+def get_best_checkpoint(checkpoint_dir, dataset):
+    path = os.path.join(checkpoint_dir, f'best_{dataset}.pt')
+    return path if os.path.exists(path) else None
+
+
+# ─────────────────────────────────────────────
+# Load model
+# ─────────────────────────────────────────────
+def load_model(dataset):
+    checkpoint_dir = get_checkpoint_dir()
+    ckpt_path = get_best_checkpoint(checkpoint_dir, dataset)
+
+    if ckpt_path is None:
+        raise FileNotFoundError("❌ No best checkpoint found!")
+
+    print(f"Loading checkpoint: {ckpt_path}")
+
+    model = NICE.from_preset(dataset).to(device)
+
+    checkpoint = torch.load(ckpt_path, map_location=device)
+    model.load_state_dict(checkpoint['state_dict'])
+
+    print(f"Loaded model from epoch {checkpoint.get('epoch', 'N/A')}")
+    print(f"Best val loss: {checkpoint.get('best_val_loss', float('inf')):.4f}")
+
+    return model
+import re
+
+def parse_losses_from_log(file_path):
+    train_losses = []
+    val_losses = []
+
+    with open(file_path, "r") as f:
+        for line in f:
+            if "train:" in line and "val:" in line:
+                # Extract train loss
+                train_match = re.search(r"train:\s*(-?\d+\.\d+)", line)
+                val_match   = re.search(r"val:\s*(-?\d+\.\d+)", line)
+
+                if train_match and val_match:
+                    train_losses.append(float(train_match.group(1)))
+                    val_losses.append(float(val_match.group(1)))
+
+    return train_losses, val_losses
 def plot_loss(train_losses, val_losses):
     plt.figure()
+    plt.rcParams['figure.dpi'] = 120
     plt.plot(train_losses, label="Train")
     plt.plot(val_losses, label="Validation")
     plt.xlabel("Epoch")
@@ -118,4 +185,35 @@ def interpolate(model, data_loader, device, steps=10):
     plt.title("Latent Interpolation")
     plt.show()
 
-if __name == 
+if __name == "__main__":
+    if __name__ == "__main__":
+
+    # ── Config ───────────────────────────────
+    DATASET = "mnist"
+
+    # ── Load model ───────────────────────────
+    model = load_model(DATASET)
+    model.eval()
+
+    # ── Prior (IMPORTANT) ────────────────────
+    prior = StandardLogistic() if DATASET in ("mnist", "cifar10", "svhn") else StandardNormal()
+
+    # ── Data loader ──────────────────────────
+    test_loader = get_dataloader_test(DATASET, batch_size=256)
+    log_file = "train.log"  # or your notepad filename
+
+    train_losses, val_losses = parse_losses_from_log(log_file)
+    
+    plot_loss(train_losses, val_losses)
+    # ── Visualizations ───────────────────────
+    print("\n🔍 Showing real vs generated samples...")
+    show_real_vs_generated(model, prior, test_loader, device)
+
+    print("\n🔁 Showing reconstructions...")
+    show_reconstructions(model, test_loader, device)
+
+    print("\n📊 Plotting latent distribution...")
+    plot_latent_distribution(model, test_loader, device)
+
+    print("\n🔀 Showing interpolation...")
+    interpolate(model, test_loader, device)
