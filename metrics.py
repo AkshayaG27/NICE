@@ -186,8 +186,6 @@ def interpolate(model, data_loader, device, steps=10):
     plt.show()
 
 if __name == "__main__":
-    if __name__ == "__main__":
-
     # ── Config ───────────────────────────────
     DATASET = "mnist"
 
