@@ -121,7 +121,7 @@ def show_reconstructions(model, data_loader, device):
 
     with torch.no_grad():
         z = model(x)
-        x_recon = model.inverse(z)
+        x_recon = model.decode(z)
 
     x = x.cpu()
     x_recon = x_recon.cpu()
