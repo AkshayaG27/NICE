@@ -168,7 +168,7 @@ def interpolate(model, data_loader, device, steps=10):
     interpolations = []
     for alpha in torch.linspace(0,1,steps):
         z = (1-alpha)*z1 + alpha*z2
-        x_interp = model.inverse(z)
+        x_interp = model.decode(z)
         interpolations.append(x_interp.cpu())
 
     interpolations = torch.cat(interpolations)
