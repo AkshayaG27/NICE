@@ -90,7 +90,6 @@ if __name__ == '__main__':
     # ── Config ────────────────────────────────────────────────────────
     DATASET        = 'mnist'
     EPOCHS         = 1500
-    LR             = 2e-4
     BATCH_SIZE     = 200
     CHECKPOINT_DIR = get_checkpoint_dir()
     RESUME_FROM    = get_resume_checkpoint(CHECKPOINT_DIR, DATASET, "latest")
@@ -108,7 +107,7 @@ if __name__ == '__main__':
     loader       = get_dataloader(DATASET, batch_size=BATCH_SIZE)
     valid_loader = get_dataloader_valid(DATASET, batch_size=BATCH_SIZE)
     # Paper Hyperparameters
-    LR = 1e-3  
+    LR = 1e-4  #changed from 1e-3 to 1e-4 to expect smoother training
     BETA1 = 0.9
     BETA2 = 0.999  # in paper 0.01 -> 0.999 because 0.01 lead to unstable epochs
     EPS = 1e-4    # Paper value of 1e-4
