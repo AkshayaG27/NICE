@@ -90,9 +90,9 @@ def show_real_vs_generated(model, prior, data_loader, device, n=64):
 
     # ---- Generate FAKE images ----
     with torch.no_grad():
-        z = prior.sample((n,)).to(device)
-        x_fake = model.inverse(z)
-        x_fake = torch.sigmoid(x_fake)  # if needed
+        z = prior.sample((n, nvis)).to(device)  #z = (prior.sample(n_samples, nvis)*0.7).to(device)
+        x_fake = model.decode(z)
+        #x_fake = torch.sigmoid(x_fake)  # if needed
 
     # ---- Make grids ----
     real_grid = vutils.make_grid(
