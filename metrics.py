@@ -69,17 +69,51 @@ def parse_losses_from_log(file_path):
                     val_losses.append(float(val_match.group(1)))
 
     return train_losses, val_losses
-def plot_loss(train_losses, val_losses):
-    plt.figure()
-    plt.rcParams['figure.dpi'] = 120
-    plt.plot(train_losses, label="Train")
-    plt.plot(val_losses, label="Validation")
-    plt.xlabel("Epoch")
-    plt.ylabel("Loss (log-likelihood)")
-    plt.title("Training Curve")
-    plt.legend()
-    plt.grid()
-    plt.savefig('training_curve.png', dpi=300, bbox_inches='tight')
+# def plot_loss(train_losses, val_losses):
+#     plt.figure()
+#     plt.rcParams['figure.dpi'] = 120
+#     plt.plot(train_losses, label="Train")
+#     plt.plot(val_losses, label="Validation")
+#     plt.xlabel("Epoch")
+#     plt.ylabel("Loss (log-likelihood)")
+#     plt.title("Training Curve")
+#     plt.legend()
+#     plt.grid()
+#     plt.savefig('training_curve.png', dpi=300, bbox_inches='tight')
+import matplotlib.pyplot as plt
+
+def plot_training_results(train_losses, val_losses):
+    """
+    Plots the training and validation log-likelihood over epochs.
+    
+    Args:
+        train_losses (list): List of training loss values per epoch.
+        val_losses (list): List of validation loss values per epoch.
+    """
+    epochs = range(len(train_losses))
+    
+    plt.figure(figsize=(10, 6), dpi=150)
+    
+    # Plotting both curves
+    plt.plot(epochs, train_losses, label='Train', color='#1f77b4', linewidth=2)
+    plt.plot(epochs, val_losses, label='Validation', color='#ff7f0e', linewidth=2)
+    
+    # Formatting to match your uploaded style
+    plt.title('Training Curve', fontsize=14)
+    plt.xlabel('Epoch', fontsize=12)
+    plt.ylabel('Loss (log-likelihood)', fontsize=12)
+    plt.grid(True, which='both', linestyle='-', alpha=0.8)
+    plt.legend(loc='center right', fontsize=12)
+    
+    # Tight layout helps with saving the image clearly
+    plt.tight_layout()
+    plt.savefig('training_curve.png')
+    plt.show()
+
+# Example usage with your final data points:
+# train_hist = [-1090.18, ..., -1936.42]
+# val_hist = [-1078.67, ..., -1888.94]
+# plot_training_results(train_hist, val_hist)
 
 def show_real_vs_generated(model, prior, data_loader, device, n=64):
     model.eval()
