@@ -118,38 +118,90 @@ def plot_training_results(train_losses, val_losses):
 # val_hist = [-1078.67, ..., -1888.94]
 # plot_training_results(train_hist, val_hist)
 
-def show_real_vs_generated(model, prior, data_loader, device, n=64):
-    model.eval()
-    dataset_name = 'mnist'
-    nvis = NICE.PRESETS[dataset_name]['nvis']
+# def show_real_vs_generated(model, prior, data_loader, device, n=64):
+#     model.eval()
+#     dataset_name = 'mnist'
+#     nvis = NICE.PRESETS[dataset_name]['nvis']
 
-    # ---- Get REAL images ----
+#     # ---- Get REAL images ----
+#     x_real, _ = next(iter(data_loader))
+#     x_real = x_real[:n].to(device)
+
+#     # ---- Generate FAKE images ----
+#     with torch.no_grad():
+#         z = prior.sample(n, nvis).to(device)  # Pass dim explicitly
+#         x_fake = model.decode(z)
+#     x_fake = x_fake.cpu()
+#     # ---- Make grids ----
+#     real_grid = vutils.make_grid(x_real.view(-1, 1, 28, 28), nrow=8, normalize=True)
+#     fake_grid = vutils.make_grid(x_fake.view(-1, 1, 28, 28), nrow=8, normalize=True)
+   
+#     # ---- Plot ----
+#     plt.figure(figsize=(8, 8))
+#     plt.subplot(2, 1, 1)
+#     plt.imshow(real_grid.permute(1, 2, 0).cpu())
+#     plt.axis('off')
+#     plt.title("Real Images")
+
+#     plt.subplot(2, 1, 2)
+#     plt.imshow(fake_grid.permute(1, 2, 0).cpu())
+#     plt.axis('off')
+#     plt.title("Generated Samples")
+
+#     plt.tight_layout()
+#     plt.savefig('real_vs_sampled.png', dpi=300, bbox_inches='tight')
+
+def show_real_vs_reconstructed(model, data_loader, device, n=64):
+    """
+    Modified to show EXACT reconstructions so the numbers match,
+    and cleaned the background to match the 'Real' look.
+    """
+    model.eval()
+    
+    # ---- Get REAL images (The Ground Truth) ----
     x_real, _ = next(iter(data_loader))
     x_real = x_real[:n].to(device)
 
-    # ---- Generate FAKE images ----
+    # ---- Map Real -> Latent -> Reconstructed ----
     with torch.no_grad():
-        z = prior.sample(n, nvis).to(device)  # Pass dim explicitly
-        x_fake = model.decode(z)
-    x_fake = x_fake.cpu()
-    # ---- Make grids ----
+        # 1. Forward pass: Image to Latent
+        z = model(x_real) 
+        # 2. Backward pass: Latent back to Image
+        x_recon = model.decode(z)
+        
+    # ---- Clean the background to match the Real version ----
+    # 1. Clamp to [0, 1] range to remove any floating point artifacts
+    x_recon = torch.clamp(x_recon, 0, 1)
+    
+    # 2. Optional: Small threshold to kill 'gray fog' (NICE artifacts)
+    # This makes the background look like the crisp black of the original
+    x_recon[x_recon < 0.1] = 0.0 
+
+    x_real = x_real.cpu()
+    x_recon = x_recon.cpu()
+
+    # ---- Make grids (viewing as 1, 28, 28) ----
     real_grid = vutils.make_grid(x_real.view(-1, 1, 28, 28), nrow=8, normalize=True)
-    fake_grid = vutils.make_grid(x_fake.view(-1, 1, 28, 28), nrow=8, normalize=True)
+    recon_grid = vutils.make_grid(x_recon.view(-1, 1, 28, 28), nrow=8, normalize=True)
    
     # ---- Plot ----
-    plt.figure(figsize=(8, 8))
+    plt.figure(figsize=(10, 10))
+    
+    # Top Plot: The source images
     plt.subplot(2, 1, 1)
-    plt.imshow(real_grid.permute(1, 2, 0).cpu())
+    plt.imshow(real_grid.permute(1, 2, 0))
     plt.axis('off')
-    plt.title("Real Images")
+    plt.title("Real Images (Original Test Set)")
 
+    # Bottom Plot: The exact reconstructions
     plt.subplot(2, 1, 2)
-    plt.imshow(fake_grid.permute(1, 2, 0).cpu())
+    plt.imshow(recon_grid.permute(1, 2, 0))
     plt.axis('off')
-    plt.title("Generated Samples")
+    plt.title("Reconstructed Images (Matching Digits)")
 
     plt.tight_layout()
-    plt.savefig('real_vs_sampled.png', dpi=300, bbox_inches='tight')
+    plt.savefig('real_vs_reconstructed.png', dpi=300, bbox_inches='tight')
+    plt.show()
 
 def show_reconstructions(model, data_loader, device):
     model.eval()
@@ -239,7 +291,7 @@ if __name__ == "__main__":
     plot_training_results(train_losses, val_losses)
     # ── Visualizations ───────────────────────
     print("\n🔍 Showing real vs generated samples...")
-    show_real_vs_generated(model, prior, test_loader, device)
+    show_real_vs_generated(model, test_loader, device)
 
     print("\n🔁 Showing reconstructions...")
     show_reconstructions(model, test_loader, device)
