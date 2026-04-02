@@ -89,7 +89,7 @@ if __name__ == '__main__':
 
     # ── Config ────────────────────────────────────────────────────────
     DATASET        = 'mnist'
-    EPOCHS         = 300
+    EPOCHS         = 500
     BATCH_SIZE     = 200
     CHECKPOINT_DIR = get_checkpoint_dir()
     RESUME_FROM    = get_resume_checkpoint(CHECKPOINT_DIR, DATASET, "latest")
