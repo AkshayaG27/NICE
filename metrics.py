@@ -291,7 +291,7 @@ if __name__ == "__main__":
     plot_training_results(train_losses, val_losses)
     # ── Visualizations ───────────────────────
     print("\n🔍 Showing real vs generated samples...")
-    show_real_vs_generated(model, test_loader, device)
+    show_real_vs_reconstructed(model, test_loader, device)
 
     print("\n🔁 Showing reconstructions...")
     show_reconstructions(model, test_loader, device)
