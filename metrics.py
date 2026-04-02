@@ -123,8 +123,10 @@ def show_reconstructions(model, data_loader, device):
         z = model(x)
         x_recon = model.decode(z)
 
-    x = x.cpu()
-    x_recon = x_recon.cpu()
+    # x = x.cpu()
+    # x_recon = x_recon.cpu()
+    x = x.cpu().view(-1, 1, 28, 28)               # <-- Add .view()
+    x_recon = x_recon.cpu().view(-1, 1, 28, 28)   # <-- Add .view()
 
     comparison = torch.cat([x, x_recon])
     grid = vutils.make_grid(comparison, nrow=8, normalize=True)
@@ -169,7 +171,7 @@ def interpolate(model, data_loader, device, steps=10):
     for alpha in torch.linspace(0,1,steps):
         z = (1-alpha)*z1 + alpha*z2
         x_interp = model.decode(z)
-        interpolations.append(x_interp.cpu())
+        interpolations.append(x_interp.cpu().view(-1, 1, 28, 28))
 
     interpolations = torch.cat(interpolations)
     grid = vutils.make_grid(interpolations, nrow=steps, normalize=True)
