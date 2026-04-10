@@ -89,13 +89,13 @@ if __name__ == '__main__':
 
     # ── Config ────────────────────────────────────────────────────────
     DATASET        = 'mnist'
-    EPOCHS         = 500
+    EPOCHS         = 1000
     BATCH_SIZE     = 200
     CHECKPOINT_DIR = get_checkpoint_dir()
     RESUME_FROM    = get_resume_checkpoint(CHECKPOINT_DIR, DATASET, "latest")
     CLIP_GRAD      = 5.0   # NEW
 
-    PRIOR  = StandardLogistic() if DATASET in ('cifar10', 'svhn','mnist') else StandardNormal()
+    PRIOR  = StandardNormal()
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     os.makedirs(CHECKPOINT_DIR, exist_ok=True)
