@@ -289,11 +289,11 @@ if __name__ == "__main__":
     model.eval()
 
     # ── Prior (IMPORTANT) ────────────────────
-    prior = StandardLogistic() if DATASET in ("mnist", "cifar10", "svhn") else StandardNormal()
+    prior = StandardLogistic() if DATASET in ("cifar10", "svhn") else StandardNormal()
 
     # ── Data loader ──────────────────────────
     test_loader = get_dataloader_test(DATASET, batch_size=256)
-    log_file = "train.log"  # or your notepad filename
+    log_file = "train_gaussian_uncstrnd.log"  # or your notepad filename
 
     train_losses, val_losses = parse_losses_from_log(log_file)
     

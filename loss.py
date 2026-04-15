@@ -81,11 +81,18 @@ class StandardLogistic:
 #     # The loss for the batch
 #     return -(log_pz + log_det).mean()
 def nll_loss(model, x, prior):
-    z = model(x)
+    z = model(x)                              # (B, D)
 
-    log_pz = prior.log_prob(z)
-    log_det = model.log_det_jacobian().expand_as(log_pz) # more safer
+    log_pz = prior.log_prob(z)     # (B,)
+    log_det = model.log_det_jacobian()         # scalar
 
     return -(log_pz + log_det).mean()
+# def nll_loss(model, x, prior):
+#     z = model(x)
+
+#     log_pz = prior.log_prob(z)
+#     log_det = model.log_det_jacobian().expand_as(log_pz) # more safer
+
+#     return -(log_pz + log_det).mean()
 # # Clamp      = hard wall    → scales physically cannot exceed exp(3)=20
 # # Adaptive   = soft spring  → gets stiffer as scales drift away from 0

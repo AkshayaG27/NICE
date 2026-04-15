@@ -196,6 +196,7 @@ import torchvision
 from models import NICE
 from loss   import StandardNormal, StandardLogistic
 from utils  import get_dataloader_test, dequantize
+from distribution_analysis import forward_with_intermediates, forward_with_intermediates_nice
 
 
 # ─────────────────────────────────────────────
@@ -217,7 +218,7 @@ def get_checkpoint_dir():
 
 
 def get_best_checkpoint(checkpoint_dir, dataset):
-    path = os.path.join(checkpoint_dir, f'best_{dataset}.pt')
+    path = os.path.join(checkpoint_dir, f'ckpt_mnist_300.pt')
     return path if os.path.exists(path) else None
 
 
@@ -325,6 +326,50 @@ def generate_samples(model, prior, dataset_name, n_samples=100):
     print(f"Saved samples → {path}")
 
     return x
+def extract_intermediate_latents(model, dataset_name, batch_size=200, max_batches=None):
+    """
+    Extracts layer-wise latent representations z^(l) across dataset.
+
+    Returns:
+        all_zs: list of tensors
+            all_zs[i] → shape [N, dim] for layer i
+    """
+    model.eval()
+
+    loader = get_dataloader_test(dataset_name, batch_size)
+
+    all_zs = []
+
+    with torch.no_grad():
+        for b, (x, _) in enumerate(loader):
+
+            # optional limit (for speed)
+            if max_batches is not None and b >= max_batches:
+                break
+
+            # preprocess
+            x = x.view(x.size(0), -1)
+            x = dequantize(x).to(device)
+
+            # 🔥 THIS IS THE KEY CHANGE
+            z = model(x)
+            zs = forward_with_intermediates(model, x, "nice")
+            # initialize container
+            if len(all_zs) == 0:
+                all_zs = [[] for _ in range(len(zs))]
+
+            # store per-layer outputs
+            for i, layer_z in enumerate(zs):
+                all_zs[i].append(layer_z.cpu())
+
+    # concatenate across batches
+    all_zs = [torch.cat(z_list, dim=0) for z_list in all_zs]
+
+    print("\n✅ Extracted intermediate representations:")
+    for i, z in enumerate(all_zs):
+        print(f"Layer {i}: {z.shape}")
+
+    return all_zs
 
 
 # ─────────────────────────────────────────────
@@ -335,7 +380,7 @@ if __name__ == "__main__":
     DATASET = 'mnist'
 
     # Prior
-    PRIOR = StandardLogistic() if DATASET in ('cifar10', 'svhn','mnist') else StandardNormal()
+    PRIOR = StandardLogistic() if DATASET in ('cifar10', 'svhn') else StandardNormal()
 
     # Load model
     model = load_model(DATASET)
@@ -345,3 +390,44 @@ if __name__ == "__main__":
 
     # Generate samples
     generate_samples(model, PRIOR, DATASET)
+    
+    # Intermediate Extraction 
+    # all_zs = extract_intermediate_latents(
+    #     model,
+    #     DATASET,
+    #     batch_size=200,
+    #     max_batches=10   # keep small first!
+    # )
+
+    # save_path = f"intermediate_latents_{DATASET}.pt"
+    # torch.save(all_zs, save_path)
+    # print(f"Saved intermediate latents → {save_path}")
+    # print("Saved intermediate latents → intermediate_latents.pt")
+
+    # import matplotlib.pyplot as plt
+
+    # z_final = all_zs[-1]
+
+    # # sample from logistic prior
+    # # logistic_samples = torch.distributions.Logistic(0, 1).sample(z_final.shape)   logistic isnt defined in torch.distributions
+    # if isinstance(PRIOR, StandardLogistic):
+    #     u = torch.rand_like(z_final)
+    #     prior_samples = torch.log(u) - torch.log(1 - u)
+    # else:
+    #     prior_samples = torch.randn_like(z_final)
+    # # plt.hist(z_final.flatten().numpy(), bins=100, density=True, alpha=0.5, label="Model")
+    # # plt.hist(logistic_samples.flatten().numpy(), bins=100, density=True, alpha=0.5, label="Logistic Prior")
+    # # plt.xlim(-10, 10)
+    # # plt.legend()
+    # # plt.title("Final latent vs Logistic prior")
+    # # plt.savefig("Final_Latent_vs_Logistic_Prior.png")
+    # import seaborn as sns
+
+    # sns.kdeplot(z_final.flatten().numpy(), label="Model")
+    # sns.kdeplot(prior_samples.flatten().numpy(), label=f"{PRIOR} Prior")
+
+    # plt.xlim(-10, 10)
+    # plt.legend()
+    # plt.title(f"Final latent vs {PRIOR} prior")
+    # plt.savefig(f"Final_Latent_vs_{PRIOR}_Prior.png")
+    # plt.show()

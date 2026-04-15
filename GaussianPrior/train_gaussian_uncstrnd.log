@@ -1,0 +1,831 @@
+nohup: ignoring input
+Dataset : mnist
+Device  : cuda
+No checkpoint found. Training from scratch.
+Using checkpoint: None
+Parameters : 19,158,352
+Initial LR : 0.000100
+Epoch    1/1000 | train: 736.3354 (1.3550 bpd) | val: 721.7130 (1.3281 bpd) | z_mean: -0.001 | z_std: 0.235 | lr: 0.000100
+  New best model at epoch 1 (val: 721.7130)
+Epoch    2/1000 | train: 709.5514 (1.3057 bpd) | val: 697.9155 (1.2843 bpd) | z_mean: -0.000 | z_std: 0.202 | lr: 0.000100
+  New best model at epoch 2 (val: 697.9155)
+Epoch    3/1000 | train: 687.8382 (1.2657 bpd) | val: 678.0590 (1.2477 bpd) | z_mean: -0.002 | z_std: 0.181 | lr: 0.000100
+  New best model at epoch 3 (val: 678.0590)
+Epoch    4/1000 | train: 669.2318 (1.2315 bpd) | val: 660.5371 (1.2155 bpd) | z_mean: -0.001 | z_std: 0.172 | lr: 0.000100
+  New best model at epoch 4 (val: 660.5371)
+Epoch    5/1000 | train: 652.3820 (1.2005 bpd) | val: 644.1912 (1.1854 bpd) | z_mean: -0.000 | z_std: 0.167 | lr: 0.000100
+  New best model at epoch 5 (val: 644.1912)
+Epoch    6/1000 | train: 636.4702 (1.1712 bpd) | val: 628.4533 (1.1565 bpd) | z_mean: 0.000 | z_std: 0.165 | lr: 0.000100
+  New best model at epoch 6 (val: 628.4533)
+Epoch    7/1000 | train: 620.7853 (1.1424 bpd) | val: 612.9284 (1.1279 bpd) | z_mean: -0.001 | z_std: 0.161 | lr: 0.000100
+  New best model at epoch 7 (val: 612.9284)
+Epoch    8/1000 | train: 605.1076 (1.1135 bpd) | val: 597.3663 (1.0993 bpd) | z_mean: 0.001 | z_std: 0.163 | lr: 0.000100
+  New best model at epoch 8 (val: 597.3663)
+Epoch    9/1000 | train: 589.9559 (1.0856 bpd) | val: 581.7840 (1.0706 bpd) | z_mean: 0.002 | z_std: 0.161 | lr: 0.000100
+  New best model at epoch 9 (val: 581.7840)
+Epoch   10/1000 | train: 573.8590 (1.0560 bpd) | val: 565.8313 (1.0412 bpd) | z_mean: -0.000 | z_std: 0.159 | lr: 0.000100
+  New best model at epoch 10 (val: 565.8313)
+Epoch   11/1000 | train: 557.7991 (1.0264 bpd) | val: 550.0148 (1.0121 bpd) | z_mean: -0.001 | z_std: 0.156 | lr: 0.000099
+  New best model at epoch 11 (val: 550.0148)
+Epoch   12/1000 | train: 541.9766 (0.9973 bpd) | val: 534.1250 (0.9829 bpd) | z_mean: 0.001 | z_std: 0.155 | lr: 0.000099
+  New best model at epoch 12 (val: 534.1250)
+Epoch   13/1000 | train: 526.1946 (0.9683 bpd) | val: 518.3291 (0.9538 bpd) | z_mean: 0.002 | z_std: 0.162 | lr: 0.000099
+  New best model at epoch 13 (val: 518.3291)
+Epoch   14/1000 | train: 510.6593 (0.9397 bpd) | val: 503.1746 (0.9259 bpd) | z_mean: 0.001 | z_std: 0.164 | lr: 0.000099
+  New best model at epoch 14 (val: 503.1746)
+Epoch   15/1000 | train: 495.4663 (0.9117 bpd) | val: 487.5574 (0.8972 bpd) | z_mean: 0.000 | z_std: 0.160 | lr: 0.000099
+  New best model at epoch 15 (val: 487.5574)
+Epoch   16/1000 | train: 479.5224 (0.8824 bpd) | val: 471.2806 (0.8672 bpd) | z_mean: -0.002 | z_std: 0.165 | lr: 0.000099
+  New best model at epoch 16 (val: 471.2806)
+Epoch   17/1000 | train: 463.4588 (0.8528 bpd) | val: 456.2395 (0.8396 bpd) | z_mean: 0.001 | z_std: 0.166 | lr: 0.000099
+  New best model at epoch 17 (val: 456.2395)
+Epoch   18/1000 | train: 448.1732 (0.8247 bpd) | val: 440.1134 (0.8099 bpd) | z_mean: 0.002 | z_std: 0.165 | lr: 0.000099
+  New best model at epoch 18 (val: 440.1134)
+Epoch   19/1000 | train: 431.7706 (0.7945 bpd) | val: 423.5427 (0.7794 bpd) | z_mean: 0.002 | z_std: 0.165 | lr: 0.000099
+  New best model at epoch 19 (val: 423.5427)
+Epoch   20/1000 | train: 415.8179 (0.7652 bpd) | val: 408.1091 (0.7510 bpd) | z_mean: 0.000 | z_std: 0.167 | lr: 0.000099
+  New best model at epoch 20 (val: 408.1091)
+Epoch   21/1000 | train: 400.2621 (0.7366 bpd) | val: 392.9827 (0.7232 bpd) | z_mean: 0.000 | z_std: 0.170 | lr: 0.000099
+  New best model at epoch 21 (val: 392.9827)
+Epoch   22/1000 | train: 385.0179 (0.7085 bpd) | val: 377.2446 (0.6942 bpd) | z_mean: 0.001 | z_std: 0.166 | lr: 0.000099
+  New best model at epoch 22 (val: 377.2446)
+Epoch   23/1000 | train: 369.4575 (0.6799 bpd) | val: 362.1123 (0.6663 bpd) | z_mean: -0.004 | z_std: 0.176 | lr: 0.000099
+  New best model at epoch 23 (val: 362.1123)
+Epoch   24/1000 | train: 353.6704 (0.6508 bpd) | val: 345.5129 (0.6358 bpd) | z_mean: -0.003 | z_std: 0.178 | lr: 0.000099
+  New best model at epoch 24 (val: 345.5129)
+Epoch   25/1000 | train: 337.4997 (0.6211 bpd) | val: 329.9535 (0.6072 bpd) | z_mean: 0.002 | z_std: 0.177 | lr: 0.000099
+  New best model at epoch 25 (val: 329.9535)
+Epoch   26/1000 | train: 321.9720 (0.5925 bpd) | val: 314.4339 (0.5786 bpd) | z_mean: -0.002 | z_std: 0.178 | lr: 0.000099
+  New best model at epoch 26 (val: 314.4339)
+Epoch   27/1000 | train: 306.4424 (0.5639 bpd) | val: 299.0486 (0.5503 bpd) | z_mean: 0.005 | z_std: 0.181 | lr: 0.000099
+  New best model at epoch 27 (val: 299.0486)
+Epoch   28/1000 | train: 291.2001 (0.5359 bpd) | val: 283.4148 (0.5215 bpd) | z_mean: 0.004 | z_std: 0.182 | lr: 0.000099
+  New best model at epoch 28 (val: 283.4148)
+Epoch   29/1000 | train: 275.3380 (0.5067 bpd) | val: 267.6554 (0.4925 bpd) | z_mean: -0.002 | z_std: 0.180 | lr: 0.000099
+  New best model at epoch 29 (val: 267.6554)
+Epoch   30/1000 | train: 259.6596 (0.4778 bpd) | val: 251.8741 (0.4635 bpd) | z_mean: 0.002 | z_std: 0.188 | lr: 0.000099
+  New best model at epoch 30 (val: 251.8741)
+Epoch   31/1000 | train: 244.2704 (0.4495 bpd) | val: 236.9568 (0.4360 bpd) | z_mean: 0.001 | z_std: 0.192 | lr: 0.000098
+  New best model at epoch 31 (val: 236.9568)
+Epoch   32/1000 | train: 228.5497 (0.4206 bpd) | val: 220.9667 (0.4066 bpd) | z_mean: -0.000 | z_std: 0.194 | lr: 0.000098
+  New best model at epoch 32 (val: 220.9667)
+Epoch   33/1000 | train: 213.7261 (0.3933 bpd) | val: 206.1783 (0.3794 bpd) | z_mean: 0.002 | z_std: 0.194 | lr: 0.000098
+  New best model at epoch 33 (val: 206.1783)
+Epoch   34/1000 | train: 198.3292 (0.3650 bpd) | val: 190.6847 (0.3509 bpd) | z_mean: -0.001 | z_std: 0.197 | lr: 0.000098
+  New best model at epoch 34 (val: 190.6847)
+Epoch   35/1000 | train: 182.7384 (0.3363 bpd) | val: 175.5693 (0.3231 bpd) | z_mean: -0.000 | z_std: 0.193 | lr: 0.000098
+  New best model at epoch 35 (val: 175.5693)
+Epoch   36/1000 | train: 167.4895 (0.3082 bpd) | val: 159.4905 (0.2935 bpd) | z_mean: -0.001 | z_std: 0.199 | lr: 0.000098
+  New best model at epoch 36 (val: 159.4905)
+Epoch   37/1000 | train: 151.3166 (0.2784 bpd) | val: 144.2426 (0.2654 bpd) | z_mean: -0.006 | z_std: 0.200 | lr: 0.000098
+  New best model at epoch 37 (val: 144.2426)
+Epoch   38/1000 | train: 135.8823 (0.2500 bpd) | val: 128.6544 (0.2367 bpd) | z_mean: -0.001 | z_std: 0.206 | lr: 0.000098
+  New best model at epoch 38 (val: 128.6544)
+Epoch   39/1000 | train: 120.5476 (0.2218 bpd) | val: 113.0430 (0.2080 bpd) | z_mean: 0.004 | z_std: 0.212 | lr: 0.000098
+  New best model at epoch 39 (val: 113.0430)
+Epoch   40/1000 | train: 104.8063 (0.1929 bpd) | val: 97.2504 (0.1790 bpd) | z_mean: 0.000 | z_std: 0.210 | lr: 0.000098
+  New best model at epoch 40 (val: 97.2504)
+Epoch   41/1000 | train: 89.6250 (0.1649 bpd) | val: 83.4793 (0.1536 bpd) | z_mean: -0.004 | z_std: 0.218 | lr: 0.000098
+  New best model at epoch 41 (val: 83.4793)
+Epoch   42/1000 | train: 75.0473 (0.1381 bpd) | val: 67.8729 (0.1249 bpd) | z_mean: 0.000 | z_std: 0.217 | lr: 0.000098
+  New best model at epoch 42 (val: 67.8729)
+Epoch   43/1000 | train: 59.6022 (0.1097 bpd) | val: 52.3998 (0.0964 bpd) | z_mean: 0.004 | z_std: 0.217 | lr: 0.000098
+  New best model at epoch 43 (val: 52.3998)
+Epoch   44/1000 | train: 44.4042 (0.0817 bpd) | val: 37.0575 (0.0682 bpd) | z_mean: -0.006 | z_std: 0.224 | lr: 0.000098
+  New best model at epoch 44 (val: 37.0575)
+Epoch   45/1000 | train: 28.7136 (0.0528 bpd) | val: 21.6699 (0.0399 bpd) | z_mean: 0.004 | z_std: 0.225 | lr: 0.000098
+  New best model at epoch 45 (val: 21.6699)
+Epoch   46/1000 | train: 14.1237 (0.0260 bpd) | val: 7.8825 (0.0145 bpd) | z_mean: -0.004 | z_std: 0.234 | lr: 0.000098
+  New best model at epoch 46 (val: 7.8825)
+Epoch   47/1000 | train: -0.2353 (-0.0004 bpd) | val: -7.1838 (-0.0132 bpd) | z_mean: 0.003 | z_std: 0.227 | lr: 0.000098
+  New best model at epoch 47 (val: -7.1838)
+Epoch   48/1000 | train: -15.2779 (-0.0281 bpd) | val: -22.2699 (-0.0410 bpd) | z_mean: 0.003 | z_std: 0.232 | lr: 0.000098
+  New best model at epoch 48 (val: -22.2699)
+Epoch   49/1000 | train: -30.1016 (-0.0554 bpd) | val: -37.2930 (-0.0686 bpd) | z_mean: -0.002 | z_std: 0.231 | lr: 0.000098
+  New best model at epoch 49 (val: -37.2930)
+Epoch   50/1000 | train: -45.1581 (-0.0831 bpd) | val: -52.2624 (-0.0962 bpd) | z_mean: 0.001 | z_std: 0.243 | lr: 0.000098
+  New best model at epoch 50 (val: -52.2624)
+Epoch   51/1000 | train: -59.9594 (-0.1103 bpd) | val: -66.3890 (-0.1222 bpd) | z_mean: -0.004 | z_std: 0.247 | lr: 0.000097
+  New best model at epoch 51 (val: -66.3890)
+Epoch   52/1000 | train: -74.9705 (-0.1380 bpd) | val: -82.1343 (-0.1511 bpd) | z_mean: 0.001 | z_std: 0.257 | lr: 0.000097
+  New best model at epoch 52 (val: -82.1343)
+Epoch   53/1000 | train: -90.4092 (-0.1664 bpd) | val: -97.2777 (-0.1790 bpd) | z_mean: -0.003 | z_std: 0.260 | lr: 0.000097
+  New best model at epoch 53 (val: -97.2777)
+Epoch   54/1000 | train: -105.3935 (-0.1939 bpd) | val: -111.7711 (-0.2057 bpd) | z_mean: -0.006 | z_std: 0.262 | lr: 0.000097
+  New best model at epoch 54 (val: -111.7711)
+Epoch   55/1000 | train: -120.1509 (-0.2211 bpd) | val: -125.8718 (-0.2316 bpd) | z_mean: -0.006 | z_std: 0.264 | lr: 0.000097
+  New best model at epoch 55 (val: -125.8718)
+Epoch   56/1000 | train: -134.8973 (-0.2482 bpd) | val: -139.8488 (-0.2573 bpd) | z_mean: -0.006 | z_std: 0.274 | lr: 0.000097
+  New best model at epoch 56 (val: -139.8488)
+Epoch   57/1000 | train: -149.2366 (-0.2746 bpd) | val: -155.7336 (-0.2866 bpd) | z_mean: -0.003 | z_std: 0.270 | lr: 0.000097
+  New best model at epoch 57 (val: -155.7336)
+Epoch   58/1000 | train: -163.4160 (-0.3007 bpd) | val: -169.8840 (-0.3126 bpd) | z_mean: 0.005 | z_std: 0.273 | lr: 0.000097
+  New best model at epoch 58 (val: -169.8840)
+Epoch   59/1000 | train: -177.9935 (-0.3275 bpd) | val: -184.0272 (-0.3386 bpd) | z_mean: 0.001 | z_std: 0.278 | lr: 0.000097
+  New best model at epoch 59 (val: -184.0272)
+Epoch   60/1000 | train: -192.0697 (-0.3534 bpd) | val: -198.2160 (-0.3648 bpd) | z_mean: 0.002 | z_std: 0.285 | lr: 0.000097
+  New best model at epoch 60 (val: -198.2160)
+Epoch   61/1000 | train: -207.2447 (-0.3814 bpd) | val: -213.0648 (-0.3921 bpd) | z_mean: -0.003 | z_std: 0.293 | lr: 0.000097
+  New best model at epoch 61 (val: -213.0648)
+Epoch   62/1000 | train: -221.3025 (-0.4072 bpd) | val: -226.8290 (-0.4174 bpd) | z_mean: -0.003 | z_std: 0.291 | lr: 0.000097
+  New best model at epoch 62 (val: -226.8290)
+Epoch   63/1000 | train: -235.8789 (-0.4341 bpd) | val: -242.3368 (-0.4459 bpd) | z_mean: -0.000 | z_std: 0.290 | lr: 0.000097
+  New best model at epoch 63 (val: -242.3368)
+Epoch   64/1000 | train: -250.2360 (-0.4605 bpd) | val: -255.3848 (-0.4700 bpd) | z_mean: 0.000 | z_std: 0.301 | lr: 0.000097
+  New best model at epoch 64 (val: -255.3848)
+Epoch   65/1000 | train: -264.0360 (-0.4859 bpd) | val: -268.7265 (-0.4945 bpd) | z_mean: 0.006 | z_std: 0.305 | lr: 0.000097
+  New best model at epoch 65 (val: -268.7265)
+Epoch   66/1000 | train: -278.2906 (-0.5121 bpd) | val: -284.2511 (-0.5231 bpd) | z_mean: -0.004 | z_std: 0.307 | lr: 0.000097
+  New best model at epoch 66 (val: -284.2511)
+Epoch   67/1000 | train: -292.8094 (-0.5388 bpd) | val: -297.1121 (-0.5467 bpd) | z_mean: -0.002 | z_std: 0.325 | lr: 0.000097
+  New best model at epoch 67 (val: -297.1121)
+Epoch   68/1000 | train: -307.0720 (-0.5651 bpd) | val: -311.4960 (-0.5732 bpd) | z_mean: -0.001 | z_std: 0.319 | lr: 0.000097
+  New best model at epoch 68 (val: -311.4960)
+Epoch   69/1000 | train: -321.1859 (-0.5910 bpd) | val: -326.2681 (-0.6004 bpd) | z_mean: 0.001 | z_std: 0.323 | lr: 0.000097
+  New best model at epoch 69 (val: -326.2681)
+Epoch   70/1000 | train: -334.9365 (-0.6163 bpd) | val: -339.0412 (-0.6239 bpd) | z_mean: -0.001 | z_std: 0.332 | lr: 0.000097
+  New best model at epoch 70 (val: -339.0412)
+Epoch   71/1000 | train: -348.4459 (-0.6412 bpd) | val: -353.8780 (-0.6512 bpd) | z_mean: -0.000 | z_std: 0.332 | lr: 0.000097
+  New best model at epoch 71 (val: -353.8780)
+Epoch   72/1000 | train: -362.6904 (-0.6674 bpd) | val: -367.7598 (-0.6767 bpd) | z_mean: 0.003 | z_std: 0.331 | lr: 0.000096
+  New best model at epoch 72 (val: -367.7598)
+Epoch   73/1000 | train: -376.4483 (-0.6927 bpd) | val: -380.4040 (-0.7000 bpd) | z_mean: 0.012 | z_std: 0.350 | lr: 0.000096
+  New best model at epoch 73 (val: -380.4040)
+Epoch   74/1000 | train: -390.4327 (-0.7185 bpd) | val: -394.9391 (-0.7268 bpd) | z_mean: -0.004 | z_std: 0.353 | lr: 0.000096
+  New best model at epoch 74 (val: -394.9391)
+Epoch   75/1000 | train: -404.2232 (-0.7438 bpd) | val: -408.3783 (-0.7515 bpd) | z_mean: 0.002 | z_std: 0.353 | lr: 0.000096
+  New best model at epoch 75 (val: -408.3783)
+Epoch   76/1000 | train: -417.5384 (-0.7683 bpd) | val: -421.7387 (-0.7761 bpd) | z_mean: 0.002 | z_std: 0.362 | lr: 0.000096
+  New best model at epoch 76 (val: -421.7387)
+Epoch   77/1000 | train: -431.4073 (-0.7939 bpd) | val: -435.2587 (-0.8010 bpd) | z_mean: -0.002 | z_std: 0.365 | lr: 0.000096
+  New best model at epoch 77 (val: -435.2587)
+Epoch   78/1000 | train: -444.8804 (-0.8187 bpd) | val: -448.3218 (-0.8250 bpd) | z_mean: -0.006 | z_std: 0.380 | lr: 0.000096
+  New best model at epoch 78 (val: -448.3218)
+Epoch   79/1000 | train: -458.1177 (-0.8430 bpd) | val: -460.1621 (-0.8468 bpd) | z_mean: 0.008 | z_std: 0.375 | lr: 0.000096
+  New best model at epoch 79 (val: -460.1621)
+Epoch   80/1000 | train: -471.7011 (-0.8680 bpd) | val: -475.6087 (-0.8752 bpd) | z_mean: -0.005 | z_std: 0.371 | lr: 0.000096
+  New best model at epoch 80 (val: -475.6087)
+Epoch   81/1000 | train: -485.1860 (-0.8928 bpd) | val: -484.4840 (-0.8915 bpd) | z_mean: 0.004 | z_std: 0.410 | lr: 0.000096
+  New best model at epoch 81 (val: -484.4840)
+Epoch   82/1000 | train: -498.2013 (-0.9168 bpd) | val: -495.8385 (-0.9124 bpd) | z_mean: 0.003 | z_std: 0.422 | lr: 0.000096
+  New best model at epoch 82 (val: -495.8385)
+Epoch   83/1000 | train: -511.2439 (-0.9408 bpd) | val: -512.7930 (-0.9436 bpd) | z_mean: 0.010 | z_std: 0.412 | lr: 0.000096
+  New best model at epoch 83 (val: -512.7930)
+Epoch   84/1000 | train: -523.8884 (-0.9640 bpd) | val: -524.6141 (-0.9654 bpd) | z_mean: 0.002 | z_std: 0.422 | lr: 0.000096
+  New best model at epoch 84 (val: -524.6141)
+Epoch   85/1000 | train: -537.2969 (-0.9887 bpd) | val: -538.9945 (-0.9918 bpd) | z_mean: 0.004 | z_std: 0.413 | lr: 0.000096
+  New best model at epoch 85 (val: -538.9945)
+Epoch   86/1000 | train: -549.8172 (-1.0118 bpd) | val: -551.6533 (-1.0151 bpd) | z_mean: 0.011 | z_std: 0.428 | lr: 0.000096
+  New best model at epoch 86 (val: -551.6533)
+Epoch   87/1000 | train: -562.4633 (-1.0350 bpd) | val: -562.7853 (-1.0356 bpd) | z_mean: -0.004 | z_std: 0.421 | lr: 0.000096
+  New best model at epoch 87 (val: -562.7853)
+Epoch   88/1000 | train: -574.5801 (-1.0573 bpd) | val: -573.4519 (-1.0553 bpd) | z_mean: -0.000 | z_std: 0.443 | lr: 0.000096
+  New best model at epoch 88 (val: -573.4519)
+Epoch   89/1000 | train: -587.1070 (-1.0804 bpd) | val: -588.5550 (-1.0830 bpd) | z_mean: 0.003 | z_std: 0.438 | lr: 0.000096
+  New best model at epoch 89 (val: -588.5550)
+Epoch   90/1000 | train: -600.0382 (-1.1042 bpd) | val: -600.0644 (-1.1042 bpd) | z_mean: 0.004 | z_std: 0.444 | lr: 0.000096
+  New best model at epoch 90 (val: -600.0644)
+Epoch   91/1000 | train: -612.4040 (-1.1269 bpd) | val: -613.3159 (-1.1286 bpd) | z_mean: -0.007 | z_std: 0.450 | lr: 0.000096
+  New best model at epoch 91 (val: -613.3159)
+Epoch   92/1000 | train: -624.5811 (-1.1493 bpd) | val: -624.4628 (-1.1491 bpd) | z_mean: -0.011 | z_std: 0.463 | lr: 0.000096
+  New best model at epoch 92 (val: -624.4628)
+Epoch   93/1000 | train: -636.6485 (-1.1715 bpd) | val: -635.7940 (-1.1700 bpd) | z_mean: -0.003 | z_std: 0.461 | lr: 0.000095
+  New best model at epoch 93 (val: -635.7940)
+Epoch   94/1000 | train: -648.6040 (-1.1935 bpd) | val: -649.3855 (-1.1950 bpd) | z_mean: -0.002 | z_std: 0.463 | lr: 0.000095
+  New best model at epoch 94 (val: -649.3855)
+Epoch   95/1000 | train: -660.8155 (-1.2160 bpd) | val: -660.2459 (-1.2150 bpd) | z_mean: -0.001 | z_std: 0.452 | lr: 0.000095
+  New best model at epoch 95 (val: -660.2459)
+Epoch   96/1000 | train: -672.6050 (-1.2377 bpd) | val: -669.1254 (-1.2313 bpd) | z_mean: 0.002 | z_std: 0.497 | lr: 0.000095
+  New best model at epoch 96 (val: -669.1254)
+Epoch   97/1000 | train: -683.9716 (-1.2586 bpd) | val: -683.0661 (-1.2570 bpd) | z_mean: -0.005 | z_std: 0.497 | lr: 0.000095
+  New best model at epoch 97 (val: -683.0661)
+Epoch   98/1000 | train: -695.2245 (-1.2793 bpd) | val: -693.4392 (-1.2760 bpd) | z_mean: 0.013 | z_std: 0.501 | lr: 0.000095
+  New best model at epoch 98 (val: -693.4392)
+Epoch   99/1000 | train: -706.8311 (-1.3007 bpd) | val: -702.9979 (-1.2936 bpd) | z_mean: -0.014 | z_std: 0.494 | lr: 0.000095
+  New best model at epoch 99 (val: -702.9979)
+Epoch  100/1000 | train: -717.6432 (-1.3206 bpd) | val: -713.3579 (-1.3127 bpd) | z_mean: -0.004 | z_std: 0.516 | lr: 0.000095
+  New best model at epoch 100 (val: -713.3579)
+Epoch  101/1000 | train: -729.2238 (-1.3419 bpd) | val: -725.0712 (-1.3343 bpd) | z_mean: 0.007 | z_std: 0.536 | lr: 0.000095
+  New best model at epoch 101 (val: -725.0712)
+Epoch  102/1000 | train: -740.2678 (-1.3622 bpd) | val: -737.5298 (-1.3572 bpd) | z_mean: 0.007 | z_std: 0.524 | lr: 0.000095
+  New best model at epoch 102 (val: -737.5298)
+Epoch  103/1000 | train: -751.6320 (-1.3831 bpd) | val: -749.5308 (-1.3793 bpd) | z_mean: 0.001 | z_std: 0.524 | lr: 0.000095
+  New best model at epoch 103 (val: -749.5308)
+Epoch  104/1000 | train: -762.5574 (-1.4032 bpd) | val: -759.3346 (-1.3973 bpd) | z_mean: -0.002 | z_std: 0.550 | lr: 0.000095
+  New best model at epoch 104 (val: -759.3346)
+Epoch  105/1000 | train: -773.7185 (-1.4238 bpd) | val: -769.0407 (-1.4152 bpd) | z_mean: -0.015 | z_std: 0.544 | lr: 0.000095
+  New best model at epoch 105 (val: -769.0407)
+Epoch  106/1000 | train: -783.5144 (-1.4418 bpd) | val: -778.5917 (-1.4327 bpd) | z_mean: 0.008 | z_std: 0.554 | lr: 0.000095
+  New best model at epoch 106 (val: -778.5917)
+Epoch  107/1000 | train: -794.5204 (-1.4621 bpd) | val: -790.4048 (-1.4545 bpd) | z_mean: -0.002 | z_std: 0.556 | lr: 0.000095
+  New best model at epoch 107 (val: -790.4048)
+Epoch  108/1000 | train: -805.0167 (-1.4814 bpd) | val: -797.7661 (-1.4680 bpd) | z_mean: 0.008 | z_std: 0.578 | lr: 0.000095
+  New best model at epoch 108 (val: -797.7661)
+Epoch  109/1000 | train: -814.4985 (-1.4988 bpd) | val: -805.6223 (-1.4825 bpd) | z_mean: 0.016 | z_std: 0.571 | lr: 0.000095
+  New best model at epoch 109 (val: -805.6223)
+Epoch  110/1000 | train: -824.6345 (-1.5175 bpd) | val: -813.4632 (-1.4969 bpd) | z_mean: 0.002 | z_std: 0.598 | lr: 0.000095
+  New best model at epoch 110 (val: -813.4632)
+Epoch  111/1000 | train: -835.5897 (-1.5376 bpd) | val: -829.0316 (-1.5256 bpd) | z_mean: 0.018 | z_std: 0.586 | lr: 0.000095
+  New best model at epoch 111 (val: -829.0316)
+Epoch  112/1000 | train: -845.8437 (-1.5565 bpd) | val: -837.9017 (-1.5419 bpd) | z_mean: -0.004 | z_std: 0.597 | lr: 0.000095
+  New best model at epoch 112 (val: -837.9017)
+Epoch  113/1000 | train: -855.3216 (-1.5739 bpd) | val: -847.7105 (-1.5599 bpd) | z_mean: 0.000 | z_std: 0.608 | lr: 0.000095
+  New best model at epoch 113 (val: -847.7105)
+Epoch  114/1000 | train: -864.7304 (-1.5913 bpd) | val: -849.4114 (-1.5631 bpd) | z_mean: -0.009 | z_std: 0.619 | lr: 0.000094
+  New best model at epoch 114 (val: -849.4114)
+Epoch  115/1000 | train: -873.4956 (-1.6074 bpd) | val: -865.3448 (-1.5924 bpd) | z_mean: -0.005 | z_std: 0.627 | lr: 0.000094
+  New best model at epoch 115 (val: -865.3448)
+Epoch  116/1000 | train: -883.9503 (-1.6266 bpd) | val: -874.2649 (-1.6088 bpd) | z_mean: -0.004 | z_std: 0.635 | lr: 0.000094
+  New best model at epoch 116 (val: -874.2649)
+Epoch  117/1000 | train: -893.8723 (-1.6449 bpd) | val: -881.3117 (-1.6218 bpd) | z_mean: -0.001 | z_std: 0.647 | lr: 0.000094
+  New best model at epoch 117 (val: -881.3117)
+Epoch  118/1000 | train: -903.1409 (-1.6619 bpd) | val: -892.2772 (-1.6419 bpd) | z_mean: -0.004 | z_std: 0.621 | lr: 0.000094
+  New best model at epoch 118 (val: -892.2772)
+Epoch  119/1000 | train: -911.6548 (-1.6776 bpd) | val: -899.0651 (-1.6544 bpd) | z_mean: -0.009 | z_std: 0.650 | lr: 0.000094
+  New best model at epoch 119 (val: -899.0651)
+Epoch  120/1000 | train: -920.0217 (-1.6930 bpd) | val: -907.2023 (-1.6694 bpd) | z_mean: -0.016 | z_std: 0.660 | lr: 0.000094
+  New best model at epoch 120 (val: -907.2023)
+Epoch  121/1000 | train: -928.7942 (-1.7091 bpd) | val: -917.5074 (-1.6884 bpd) | z_mean: 0.001 | z_std: 0.657 | lr: 0.000094
+  New best model at epoch 121 (val: -917.5074)
+Epoch  122/1000 | train: -938.2920 (-1.7266 bpd) | val: -924.6587 (-1.7015 bpd) | z_mean: -0.008 | z_std: 0.659 | lr: 0.000094
+  New best model at epoch 122 (val: -924.6587)
+Epoch  123/1000 | train: -946.2885 (-1.7413 bpd) | val: -932.2463 (-1.7155 bpd) | z_mean: 0.000 | z_std: 0.675 | lr: 0.000094
+  New best model at epoch 123 (val: -932.2463)
+Epoch  124/1000 | train: -955.3478 (-1.7580 bpd) | val: -936.4268 (-1.7232 bpd) | z_mean: -0.010 | z_std: 0.694 | lr: 0.000094
+  New best model at epoch 124 (val: -936.4268)
+Epoch  125/1000 | train: -964.5134 (-1.7749 bpd) | val: -950.5835 (-1.7492 bpd) | z_mean: 0.002 | z_std: 0.661 | lr: 0.000094
+  New best model at epoch 125 (val: -950.5835)
+Epoch  126/1000 | train: -972.4690 (-1.7895 bpd) | val: -955.8744 (-1.7590 bpd) | z_mean: -0.004 | z_std: 0.698 | lr: 0.000094
+  New best model at epoch 126 (val: -955.8744)
+Epoch  127/1000 | train: -980.3974 (-1.8041 bpd) | val: -966.3309 (-1.7782 bpd) | z_mean: -0.000 | z_std: 0.702 | lr: 0.000094
+  New best model at epoch 127 (val: -966.3309)
+Epoch  128/1000 | train: -989.0317 (-1.8200 bpd) | val: -971.7736 (-1.7882 bpd) | z_mean: -0.001 | z_std: 0.674 | lr: 0.000094
+  New best model at epoch 128 (val: -971.7736)
+Epoch  129/1000 | train: -997.1049 (-1.8348 bpd) | val: -980.9258 (-1.8051 bpd) | z_mean: 0.005 | z_std: 0.714 | lr: 0.000094
+  New best model at epoch 129 (val: -980.9258)
+Epoch  130/1000 | train: -1005.9984 (-1.8512 bpd) | val: -989.0459 (-1.8200 bpd) | z_mean: 0.021 | z_std: 0.705 | lr: 0.000094
+  New best model at epoch 130 (val: -989.0459)
+Epoch  131/1000 | train: -1012.4739 (-1.8631 bpd) | val: -993.6237 (-1.8284 bpd) | z_mean: -0.004 | z_std: 0.691 | lr: 0.000094
+  New best model at epoch 131 (val: -993.6237)
+Epoch  132/1000 | train: -1021.2602 (-1.8793 bpd) | val: -1001.7894 (-1.8435 bpd) | z_mean: -0.010 | z_std: 0.719 | lr: 0.000094
+  New best model at epoch 132 (val: -1001.7894)
+Epoch  133/1000 | train: -1029.5179 (-1.8945 bpd) | val: -1011.7318 (-1.8618 bpd) | z_mean: 0.007 | z_std: 0.702 | lr: 0.000094
+  New best model at epoch 133 (val: -1011.7318)
+Epoch  134/1000 | train: -1036.3665 (-1.9071 bpd) | val: -1011.8804 (-1.8620 bpd) | z_mean: 0.014 | z_std: 0.733 | lr: 0.000094
+  New best model at epoch 134 (val: -1011.8804)
+Epoch  135/1000 | train: -1043.7416 (-1.9207 bpd) | val: -1020.5913 (-1.8781 bpd) | z_mean: -0.002 | z_std: 0.744 | lr: 0.000093
+  New best model at epoch 135 (val: -1020.5913)
+Epoch  136/1000 | train: -1052.0192 (-1.9359 bpd) | val: -1032.1636 (-1.8994 bpd) | z_mean: -0.013 | z_std: 0.737 | lr: 0.000093
+  New best model at epoch 136 (val: -1032.1636)
+Epoch  137/1000 | train: -1059.3266 (-1.9493 bpd) | val: -1036.4087 (-1.9072 bpd) | z_mean: 0.007 | z_std: 0.741 | lr: 0.000093
+  New best model at epoch 137 (val: -1036.4087)
+Epoch  138/1000 | train: -1067.5588 (-1.9645 bpd) | val: -1047.5204 (-1.9276 bpd) | z_mean: -0.002 | z_std: 0.752 | lr: 0.000093
+  New best model at epoch 138 (val: -1047.5204)
+Epoch  139/1000 | train: -1074.5852 (-1.9774 bpd) | val: -1050.3267 (-1.9328 bpd) | z_mean: 0.007 | z_std: 0.744 | lr: 0.000093
+  New best model at epoch 139 (val: -1050.3267)
+Epoch  140/1000 | train: -1083.0147 (-1.9929 bpd) | val: -1062.4518 (-1.9551 bpd) | z_mean: 0.001 | z_std: 0.742 | lr: 0.000093
+  New best model at epoch 140 (val: -1062.4518)
+Epoch  141/1000 | train: -1090.4621 (-2.0066 bpd) | val: -1068.2884 (-1.9658 bpd) | z_mean: 0.009 | z_std: 0.729 | lr: 0.000093
+  New best model at epoch 141 (val: -1068.2884)
+Epoch  142/1000 | train: -1096.4189 (-2.0176 bpd) | val: -1073.9792 (-1.9763 bpd) | z_mean: 0.009 | z_std: 0.748 | lr: 0.000093
+  New best model at epoch 142 (val: -1073.9792)
+Epoch  143/1000 | train: -1103.7413 (-2.0311 bpd) | val: -1073.7330 (-1.9759 bpd) | z_mean: -0.010 | z_std: 0.761 | lr: 0.000093
+Epoch  144/1000 | train: -1111.1857 (-2.0448 bpd) | val: -1086.3052 (-1.9990 bpd) | z_mean: 0.000 | z_std: 0.755 | lr: 0.000093
+  New best model at epoch 144 (val: -1086.3052)
+Epoch  145/1000 | train: -1118.7001 (-2.0586 bpd) | val: -1092.5925 (-2.0106 bpd) | z_mean: -0.007 | z_std: 0.774 | lr: 0.000093
+  New best model at epoch 145 (val: -1092.5925)
+Epoch  146/1000 | train: -1125.3422 (-2.0708 bpd) | val: -1101.2933 (-2.0266 bpd) | z_mean: 0.005 | z_std: 0.782 | lr: 0.000093
+  New best model at epoch 146 (val: -1101.2933)
+Epoch  147/1000 | train: -1131.7709 (-2.0827 bpd) | val: -1108.3250 (-2.0395 bpd) | z_mean: -0.014 | z_std: 0.788 | lr: 0.000093
+  New best model at epoch 147 (val: -1108.3250)
+Epoch  148/1000 | train: -1138.7177 (-2.0954 bpd) | val: -1109.2042 (-2.0411 bpd) | z_mean: 0.015 | z_std: 0.800 | lr: 0.000093
+  New best model at epoch 148 (val: -1109.2042)
+Epoch  149/1000 | train: -1146.9855 (-2.1107 bpd) | val: -1121.0025 (-2.0628 bpd) | z_mean: -0.007 | z_std: 0.775 | lr: 0.000093
+  New best model at epoch 149 (val: -1121.0025)
+Epoch  150/1000 | train: -1153.2196 (-2.1221 bpd) | val: -1125.4291 (-2.0710 bpd) | z_mean: -0.003 | z_std: 0.775 | lr: 0.000093
+  New best model at epoch 150 (val: -1125.4291)
+Epoch  151/1000 | train: -1159.9469 (-2.1345 bpd) | val: -1125.4925 (-2.0711 bpd) | z_mean: 0.012 | z_std: 0.791 | lr: 0.000093
+  New best model at epoch 151 (val: -1125.4925)
+Epoch  152/1000 | train: -1166.3788 (-2.1463 bpd) | val: -1140.5575 (-2.0988 bpd) | z_mean: 0.006 | z_std: 0.746 | lr: 0.000093
+  New best model at epoch 152 (val: -1140.5575)
+Epoch  153/1000 | train: -1173.5757 (-2.1596 bpd) | val: -1134.6750 (-2.0880 bpd) | z_mean: -0.020 | z_std: 0.810 | lr: 0.000093
+Epoch  154/1000 | train: -1179.4700 (-2.1704 bpd) | val: -1152.0732 (-2.1200 bpd) | z_mean: -0.005 | z_std: 0.778 | lr: 0.000093
+  New best model at epoch 154 (val: -1152.0732)
+Epoch  155/1000 | train: -1186.2147 (-2.1828 bpd) | val: -1158.6455 (-2.1321 bpd) | z_mean: 0.005 | z_std: 0.783 | lr: 0.000093
+  New best model at epoch 155 (val: -1158.6455)
+Epoch  156/1000 | train: -1192.2530 (-2.1940 bpd) | val: -1160.5326 (-2.1356 bpd) | z_mean: -0.005 | z_std: 0.791 | lr: 0.000092
+  New best model at epoch 156 (val: -1160.5326)
+Epoch  157/1000 | train: -1197.2284 (-2.2031 bpd) | val: -1168.8518 (-2.1509 bpd) | z_mean: -0.023 | z_std: 0.773 | lr: 0.000092
+  New best model at epoch 157 (val: -1168.8518)
+Epoch  158/1000 | train: -1205.2836 (-2.2179 bpd) | val: -1175.7119 (-2.1635 bpd) | z_mean: 0.004 | z_std: 0.811 | lr: 0.000092
+  New best model at epoch 158 (val: -1175.7119)
+Epoch  159/1000 | train: -1210.2406 (-2.2271 bpd) | val: -1179.1554 (-2.1698 bpd) | z_mean: 0.000 | z_std: 0.799 | lr: 0.000092
+  New best model at epoch 159 (val: -1179.1554)
+Epoch  160/1000 | train: -1215.2246 (-2.2362 bpd) | val: -1183.1527 (-2.1772 bpd) | z_mean: -0.002 | z_std: 0.824 | lr: 0.000092
+  New best model at epoch 160 (val: -1183.1527)
+Epoch  161/1000 | train: -1222.2309 (-2.2491 bpd) | val: -1190.4102 (-2.1906 bpd) | z_mean: 0.006 | z_std: 0.805 | lr: 0.000092
+  New best model at epoch 161 (val: -1190.4102)
+Epoch  162/1000 | train: -1228.2984 (-2.2603 bpd) | val: -1192.0433 (-2.1936 bpd) | z_mean: 0.003 | z_std: 0.775 | lr: 0.000092
+  New best model at epoch 162 (val: -1192.0433)
+Epoch  163/1000 | train: -1234.6480 (-2.2720 bpd) | val: -1202.8327 (-2.2134 bpd) | z_mean: 0.011 | z_std: 0.820 | lr: 0.000092
+  New best model at epoch 163 (val: -1202.8327)
+Epoch  164/1000 | train: -1242.0369 (-2.2856 bpd) | val: -1210.4702 (-2.2275 bpd) | z_mean: -0.011 | z_std: 0.819 | lr: 0.000092
+  New best model at epoch 164 (val: -1210.4702)
+Epoch  165/1000 | train: -1245.8821 (-2.2926 bpd) | val: -1208.9602 (-2.2247 bpd) | z_mean: -0.022 | z_std: 0.830 | lr: 0.000092
+Epoch  166/1000 | train: -1252.4783 (-2.3048 bpd) | val: -1222.0210 (-2.2487 bpd) | z_mean: -0.008 | z_std: 0.765 | lr: 0.000092
+  New best model at epoch 166 (val: -1222.0210)
+Epoch  167/1000 | train: -1256.3333 (-2.3119 bpd) | val: -1223.8584 (-2.2521 bpd) | z_mean: 0.021 | z_std: 0.805 | lr: 0.000092
+  New best model at epoch 167 (val: -1223.8584)
+Epoch  168/1000 | train: -1264.6835 (-2.3272 bpd) | val: -1228.9879 (-2.2615 bpd) | z_mean: 0.002 | z_std: 0.817 | lr: 0.000092
+  New best model at epoch 168 (val: -1228.9879)
+Epoch  169/1000 | train: -1268.9237 (-2.3350 bpd) | val: -1234.9908 (-2.2726 bpd) | z_mean: -0.005 | z_std: 0.820 | lr: 0.000092
+  New best model at epoch 169 (val: -1234.9908)
+Epoch  170/1000 | train: -1275.4061 (-2.3470 bpd) | val: -1235.3664 (-2.2733 bpd) | z_mean: 0.004 | z_std: 0.810 | lr: 0.000092
+  New best model at epoch 170 (val: -1235.3664)
+Epoch  171/1000 | train: -1280.9008 (-2.3571 bpd) | val: -1244.2158 (-2.2896 bpd) | z_mean: 0.004 | z_std: 0.800 | lr: 0.000092
+  New best model at epoch 171 (val: -1244.2158)
+Epoch  172/1000 | train: -1285.7149 (-2.3659 bpd) | val: -1247.2257 (-2.2951 bpd) | z_mean: -0.002 | z_std: 0.839 | lr: 0.000092
+  New best model at epoch 172 (val: -1247.2257)
+Epoch  173/1000 | train: -1291.1900 (-2.3760 bpd) | val: -1255.8064 (-2.3109 bpd) | z_mean: 0.015 | z_std: 0.811 | lr: 0.000092
+  New best model at epoch 173 (val: -1255.8064)
+Epoch  174/1000 | train: -1296.8010 (-2.3863 bpd) | val: -1259.5589 (-2.3178 bpd) | z_mean: 0.012 | z_std: 0.788 | lr: 0.000092
+  New best model at epoch 174 (val: -1259.5589)
+Epoch  175/1000 | train: -1302.6134 (-2.3970 bpd) | val: -1265.7897 (-2.3293 bpd) | z_mean: -0.011 | z_std: 0.828 | lr: 0.000092
+  New best model at epoch 175 (val: -1265.7897)
+Epoch  176/1000 | train: -1308.4565 (-2.4078 bpd) | val: -1272.1180 (-2.3409 bpd) | z_mean: 0.003 | z_std: 0.850 | lr: 0.000092
+  New best model at epoch 176 (val: -1272.1180)
+Epoch  177/1000 | train: -1313.2396 (-2.4166 bpd) | val: -1268.5211 (-2.3343 bpd) | z_mean: -0.014 | z_std: 0.863 | lr: 0.000092
+Epoch  178/1000 | train: -1317.2458 (-2.4240 bpd) | val: -1277.5704 (-2.3509 bpd) | z_mean: -0.016 | z_std: 0.828 | lr: 0.000091
+  New best model at epoch 178 (val: -1277.5704)
+Epoch  179/1000 | train: -1322.9111 (-2.4344 bpd) | val: -1279.9493 (-2.3553 bpd) | z_mean: -0.012 | z_std: 0.825 | lr: 0.000091
+  New best model at epoch 179 (val: -1279.9493)
+Epoch  180/1000 | train: -1327.0324 (-2.4420 bpd) | val: -1289.0110 (-2.3720 bpd) | z_mean: -0.003 | z_std: 0.836 | lr: 0.000091
+  New best model at epoch 180 (val: -1289.0110)
+Epoch  181/1000 | train: -1333.5297 (-2.4539 bpd) | val: -1285.4102 (-2.3654 bpd) | z_mean: -0.007 | z_std: 0.874 | lr: 0.000091
+Epoch  182/1000 | train: -1337.3768 (-2.4610 bpd) | val: -1293.9336 (-2.3811 bpd) | z_mean: -0.008 | z_std: 0.823 | lr: 0.000091
+  New best model at epoch 182 (val: -1293.9336)
+Epoch  183/1000 | train: -1344.6503 (-2.4744 bpd) | val: -1297.6810 (-2.3880 bpd) | z_mean: -0.016 | z_std: 0.821 | lr: 0.000091
+  New best model at epoch 183 (val: -1297.6810)
+Epoch  184/1000 | train: -1346.0734 (-2.4770 bpd) | val: -1302.8009 (-2.3974 bpd) | z_mean: -0.011 | z_std: 0.847 | lr: 0.000091
+  New best model at epoch 184 (val: -1302.8009)
+Epoch  185/1000 | train: -1351.6038 (-2.4872 bpd) | val: -1306.4639 (-2.4041 bpd) | z_mean: -0.000 | z_std: 0.849 | lr: 0.000091
+  New best model at epoch 185 (val: -1306.4639)
+Epoch  186/1000 | train: -1357.2022 (-2.4975 bpd) | val: -1313.4215 (-2.4169 bpd) | z_mean: -0.004 | z_std: 0.859 | lr: 0.000091
+  New best model at epoch 186 (val: -1313.4215)
+Epoch  187/1000 | train: -1362.8233 (-2.5078 bpd) | val: -1314.1409 (-2.4182 bpd) | z_mean: -0.009 | z_std: 0.847 | lr: 0.000091
+  New best model at epoch 187 (val: -1314.1409)
+Epoch  188/1000 | train: -1366.6891 (-2.5149 bpd) | val: -1320.9701 (-2.4308 bpd) | z_mean: -0.009 | z_std: 0.862 | lr: 0.000091
+  New best model at epoch 188 (val: -1320.9701)
+Epoch  189/1000 | train: -1371.7303 (-2.5242 bpd) | val: -1327.9516 (-2.4437 bpd) | z_mean: 0.002 | z_std: 0.817 | lr: 0.000091
+  New best model at epoch 189 (val: -1327.9516)
+Epoch  190/1000 | train: -1376.9607 (-2.5338 bpd) | val: -1334.4017 (-2.4555 bpd) | z_mean: -0.009 | z_std: 0.858 | lr: 0.000091
+  New best model at epoch 190 (val: -1334.4017)
+Epoch  191/1000 | train: -1379.4511 (-2.5384 bpd) | val: -1335.5648 (-2.4577 bpd) | z_mean: -0.016 | z_std: 0.822 | lr: 0.000091
+  New best model at epoch 191 (val: -1335.5648)
+Epoch  192/1000 | train: -1384.7722 (-2.5482 bpd) | val: -1335.8198 (-2.4581 bpd) | z_mean: 0.013 | z_std: 0.859 | lr: 0.000091
+  New best model at epoch 192 (val: -1335.8198)
+Epoch  193/1000 | train: -1389.2210 (-2.5564 bpd) | val: -1340.9904 (-2.4677 bpd) | z_mean: 0.009 | z_std: 0.854 | lr: 0.000091
+  New best model at epoch 193 (val: -1340.9904)
+Epoch  194/1000 | train: -1394.4581 (-2.5660 bpd) | val: -1345.7074 (-2.4763 bpd) | z_mean: -0.020 | z_std: 0.871 | lr: 0.000091
+  New best model at epoch 194 (val: -1345.7074)
+Epoch  195/1000 | train: -1399.3601 (-2.5751 bpd) | val: -1355.2041 (-2.4938 bpd) | z_mean: -0.014 | z_std: 0.847 | lr: 0.000091
+  New best model at epoch 195 (val: -1355.2041)
+Epoch  196/1000 | train: -1405.6566 (-2.5867 bpd) | val: -1346.8501 (-2.4784 bpd) | z_mean: -0.007 | z_std: 0.844 | lr: 0.000091
+Epoch  197/1000 | train: -1407.4428 (-2.5899 bpd) | val: -1356.4300 (-2.4961 bpd) | z_mean: -0.006 | z_std: 0.859 | lr: 0.000091
+  New best model at epoch 197 (val: -1356.4300)
+Epoch  198/1000 | train: -1412.2941 (-2.5989 bpd) | val: -1363.2810 (-2.5087 bpd) | z_mean: -0.027 | z_std: 0.832 | lr: 0.000091
+  New best model at epoch 198 (val: -1363.2810)
+Epoch  199/1000 | train: -1416.2879 (-2.6062 bpd) | val: -1368.9682 (-2.5191 bpd) | z_mean: -0.006 | z_std: 0.852 | lr: 0.000091
+  New best model at epoch 199 (val: -1368.9682)
+Epoch  200/1000 | train: -1420.7583 (-2.6144 bpd) | val: -1371.8799 (-2.5245 bpd) | z_mean: -0.000 | z_std: 0.820 | lr: 0.000090
+  New best model at epoch 200 (val: -1371.8799)
+Epoch  201/1000 | train: -1424.6965 (-2.6217 bpd) | val: -1367.6946 (-2.5168 bpd) | z_mean: 0.011 | z_std: 0.854 | lr: 0.000090
+Epoch  202/1000 | train: -1428.8973 (-2.6294 bpd) | val: -1377.5729 (-2.5350 bpd) | z_mean: 0.014 | z_std: 0.855 | lr: 0.000090
+  New best model at epoch 202 (val: -1377.5729)
+Epoch  203/1000 | train: -1435.3395 (-2.6413 bpd) | val: -1385.2802 (-2.5492 bpd) | z_mean: -0.003 | z_std: 0.843 | lr: 0.000090
+  New best model at epoch 203 (val: -1385.2802)
+Epoch  204/1000 | train: -1437.9608 (-2.6461 bpd) | val: -1380.1121 (-2.5396 bpd) | z_mean: 0.003 | z_std: 0.892 | lr: 0.000090
+Epoch  205/1000 | train: -1441.1677 (-2.6520 bpd) | val: -1388.2938 (-2.5547 bpd) | z_mean: -0.002 | z_std: 0.867 | lr: 0.000090
+  New best model at epoch 205 (val: -1388.2938)
+Epoch  206/1000 | train: -1444.7519 (-2.6586 bpd) | val: -1388.6538 (-2.5554 bpd) | z_mean: -0.012 | z_std: 0.869 | lr: 0.000090
+  New best model at epoch 206 (val: -1388.6538)
+Epoch  207/1000 | train: -1451.0605 (-2.6702 bpd) | val: -1380.4231 (-2.5402 bpd) | z_mean: -0.004 | z_std: 0.869 | lr: 0.000090
+Epoch  208/1000 | train: -1454.1361 (-2.6759 bpd) | val: -1397.8185 (-2.5722 bpd) | z_mean: -0.011 | z_std: 0.846 | lr: 0.000090
+  New best model at epoch 208 (val: -1397.8185)
+Epoch  209/1000 | train: -1457.5644 (-2.6822 bpd) | val: -1391.6004 (-2.5608 bpd) | z_mean: 0.003 | z_std: 0.918 | lr: 0.000090
+Epoch  210/1000 | train: -1462.2524 (-2.6908 bpd) | val: -1400.8030 (-2.5777 bpd) | z_mean: 0.002 | z_std: 0.857 | lr: 0.000090
+  New best model at epoch 210 (val: -1400.8030)
+Epoch  211/1000 | train: -1464.8947 (-2.6957 bpd) | val: -1405.3301 (-2.5860 bpd) | z_mean: 0.004 | z_std: 0.919 | lr: 0.000090
+  New best model at epoch 211 (val: -1405.3301)
+Epoch  212/1000 | train: -1470.1471 (-2.7053 bpd) | val: -1412.9690 (-2.6001 bpd) | z_mean: 0.009 | z_std: 0.845 | lr: 0.000090
+  New best model at epoch 212 (val: -1412.9690)
+Epoch  213/1000 | train: -1473.2107 (-2.7110 bpd) | val: -1419.5873 (-2.6123 bpd) | z_mean: -0.000 | z_std: 0.849 | lr: 0.000090
+  New best model at epoch 213 (val: -1419.5873)
+Epoch  214/1000 | train: -1478.1793 (-2.7201 bpd) | val: -1421.3972 (-2.6156 bpd) | z_mean: 0.005 | z_std: 0.854 | lr: 0.000090
+  New best model at epoch 214 (val: -1421.3972)
+Epoch  215/1000 | train: -1480.4890 (-2.7244 bpd) | val: -1418.7942 (-2.6108 bpd) | z_mean: -0.007 | z_std: 0.897 | lr: 0.000090
+Epoch  216/1000 | train: -1486.2190 (-2.7349 bpd) | val: -1420.8791 (-2.6147 bpd) | z_mean: 0.001 | z_std: 0.868 | lr: 0.000090
+Epoch  217/1000 | train: -1488.6143 (-2.7393 bpd) | val: -1429.4141 (-2.6304 bpd) | z_mean: 0.005 | z_std: 0.876 | lr: 0.000090
+  New best model at epoch 217 (val: -1429.4141)
+Epoch  218/1000 | train: -1492.8001 (-2.7470 bpd) | val: -1431.1477 (-2.6336 bpd) | z_mean: 0.004 | z_std: 0.864 | lr: 0.000090
+  New best model at epoch 218 (val: -1431.1477)
+Epoch  219/1000 | train: -1497.3969 (-2.7555 bpd) | val: -1434.8316 (-2.6403 bpd) | z_mean: -0.006 | z_std: 0.855 | lr: 0.000090
+  New best model at epoch 219 (val: -1434.8316)
+Epoch  220/1000 | train: -1501.4988 (-2.7630 bpd) | val: -1438.2792 (-2.6467 bpd) | z_mean: 0.005 | z_std: 0.854 | lr: 0.000090
+  New best model at epoch 220 (val: -1438.2792)
+Epoch  221/1000 | train: -1504.8952 (-2.7693 bpd) | val: -1440.6148 (-2.6510 bpd) | z_mean: 0.007 | z_std: 0.861 | lr: 0.000090
+  New best model at epoch 221 (val: -1440.6148)
+Epoch  222/1000 | train: -1507.9059 (-2.7748 bpd) | val: -1439.3385 (-2.6486 bpd) | z_mean: -0.011 | z_std: 0.897 | lr: 0.000089
+Epoch  223/1000 | train: -1510.3487 (-2.7793 bpd) | val: -1445.6471 (-2.6602 bpd) | z_mean: -0.004 | z_std: 0.857 | lr: 0.000089
+  New best model at epoch 223 (val: -1445.6471)
+Epoch  224/1000 | train: -1515.2688 (-2.7884 bpd) | val: -1456.6726 (-2.6805 bpd) | z_mean: 0.001 | z_std: 0.875 | lr: 0.000089
+  New best model at epoch 224 (val: -1456.6726)
+Epoch  225/1000 | train: -1519.5969 (-2.7963 bpd) | val: -1445.2890 (-2.6596 bpd) | z_mean: 0.018 | z_std: 0.947 | lr: 0.000089
+Epoch  226/1000 | train: -1521.9552 (-2.8007 bpd) | val: -1453.7919 (-2.6752 bpd) | z_mean: 0.003 | z_std: 0.841 | lr: 0.000089
+Epoch  227/1000 | train: -1524.4816 (-2.8053 bpd) | val: -1457.5589 (-2.6822 bpd) | z_mean: -0.006 | z_std: 0.878 | lr: 0.000089
+  New best model at epoch 227 (val: -1457.5589)
+Epoch  228/1000 | train: -1530.2096 (-2.8158 bpd) | val: -1463.6443 (-2.6934 bpd) | z_mean: 0.002 | z_std: 0.887 | lr: 0.000089
+  New best model at epoch 228 (val: -1463.6443)
+Epoch  229/1000 | train: -1532.2845 (-2.8197 bpd) | val: -1456.0594 (-2.6794 bpd) | z_mean: -0.005 | z_std: 0.848 | lr: 0.000089
+Epoch  230/1000 | train: -1536.8448 (-2.8281 bpd) | val: -1464.6725 (-2.6952 bpd) | z_mean: 0.012 | z_std: 0.883 | lr: 0.000089
+  New best model at epoch 230 (val: -1464.6725)
+Epoch  231/1000 | train: -1540.5130 (-2.8348 bpd) | val: -1469.0919 (-2.7034 bpd) | z_mean: 0.021 | z_std: 0.866 | lr: 0.000089
+  New best model at epoch 231 (val: -1469.0919)
+Epoch  232/1000 | train: -1543.0498 (-2.8395 bpd) | val: -1467.4141 (-2.7003 bpd) | z_mean: -0.005 | z_std: 0.912 | lr: 0.000089
+Epoch  233/1000 | train: -1548.2112 (-2.8490 bpd) | val: -1478.7830 (-2.7212 bpd) | z_mean: 0.005 | z_std: 0.837 | lr: 0.000089
+  New best model at epoch 233 (val: -1478.7830)
+Epoch  234/1000 | train: -1549.7122 (-2.8517 bpd) | val: -1481.2968 (-2.7258 bpd) | z_mean: -0.006 | z_std: 0.880 | lr: 0.000089
+  New best model at epoch 234 (val: -1481.2968)
+Epoch  235/1000 | train: -1553.4568 (-2.8586 bpd) | val: -1478.1293 (-2.7200 bpd) | z_mean: 0.005 | z_std: 0.851 | lr: 0.000089
+Epoch  236/1000 | train: -1556.4038 (-2.8641 bpd) | val: -1474.3975 (-2.7131 bpd) | z_mean: 0.018 | z_std: 0.881 | lr: 0.000089
+Epoch  237/1000 | train: -1559.4912 (-2.8697 bpd) | val: -1480.3602 (-2.7241 bpd) | z_mean: 0.010 | z_std: 0.866 | lr: 0.000089
+Epoch  238/1000 | train: -1563.7905 (-2.8776 bpd) | val: -1478.9311 (-2.7215 bpd) | z_mean: 0.001 | z_std: 0.924 | lr: 0.000089
+Epoch  239/1000 | train: -1567.3637 (-2.8842 bpd) | val: -1494.4612 (-2.7501 bpd) | z_mean: 0.014 | z_std: 0.880 | lr: 0.000089
+  New best model at epoch 239 (val: -1494.4612)
+Epoch  240/1000 | train: -1570.7938 (-2.8905 bpd) | val: -1496.7997 (-2.7544 bpd) | z_mean: -0.008 | z_std: 0.870 | lr: 0.000089
+  New best model at epoch 240 (val: -1496.7997)
+Epoch  241/1000 | train: -1572.8249 (-2.8943 bpd) | val: -1489.8881 (-2.7417 bpd) | z_mean: -0.004 | z_std: 0.898 | lr: 0.000089
+Epoch  242/1000 | train: -1577.1970 (-2.9023 bpd) | val: -1501.5755 (-2.7632 bpd) | z_mean: 0.000 | z_std: 0.839 | lr: 0.000089
+  New best model at epoch 242 (val: -1501.5755)
+Epoch  243/1000 | train: -1580.4839 (-2.9084 bpd) | val: -1500.5474 (-2.7613 bpd) | z_mean: -0.007 | z_std: 0.933 | lr: 0.000089
+Epoch  244/1000 | train: -1584.1959 (-2.9152 bpd) | val: -1506.7203 (-2.7726 bpd) | z_mean: -0.002 | z_std: 0.874 | lr: 0.000089
+  New best model at epoch 244 (val: -1506.7203)
+Epoch  245/1000 | train: -1586.0318 (-2.9186 bpd) | val: -1509.2190 (-2.7772 bpd) | z_mean: 0.018 | z_std: 0.917 | lr: 0.000088
+  New best model at epoch 245 (val: -1509.2190)
+Epoch  246/1000 | train: -1589.6757 (-2.9253 bpd) | val: -1505.8925 (-2.7711 bpd) | z_mean: -0.004 | z_std: 0.905 | lr: 0.000088
+Epoch  247/1000 | train: -1593.2044 (-2.9318 bpd) | val: -1508.5555 (-2.7760 bpd) | z_mean: 0.012 | z_std: 0.881 | lr: 0.000088
+Epoch  248/1000 | train: -1597.1029 (-2.9389 bpd) | val: -1515.3737 (-2.7885 bpd) | z_mean: 0.012 | z_std: 0.909 | lr: 0.000088
+  New best model at epoch 248 (val: -1515.3737)
+Epoch  249/1000 | train: -1598.6784 (-2.9418 bpd) | val: -1514.3689 (-2.7867 bpd) | z_mean: -0.020 | z_std: 0.899 | lr: 0.000088
+Epoch  250/1000 | train: -1602.8991 (-2.9496 bpd) | val: -1518.2722 (-2.7939 bpd) | z_mean: -0.001 | z_std: 0.875 | lr: 0.000088
+  New best model at epoch 250 (val: -1518.2722)
+Epoch  251/1000 | train: -1605.8760 (-2.9551 bpd) | val: -1515.8372 (-2.7894 bpd) | z_mean: 0.008 | z_std: 0.914 | lr: 0.000088
+Epoch  252/1000 | train: -1610.0862 (-2.9628 bpd) | val: -1527.0937 (-2.8101 bpd) | z_mean: -0.000 | z_std: 0.855 | lr: 0.000088
+  New best model at epoch 252 (val: -1527.0937)
+Epoch  253/1000 | train: -1612.4873 (-2.9673 bpd) | val: -1527.3064 (-2.8105 bpd) | z_mean: 0.004 | z_std: 0.896 | lr: 0.000088
+  New best model at epoch 253 (val: -1527.3064)
+Epoch  254/1000 | train: -1614.3513 (-2.9707 bpd) | val: -1524.3952 (-2.8051 bpd) | z_mean: 0.007 | z_std: 0.932 | lr: 0.000088
+Epoch  255/1000 | train: -1618.6714 (-2.9786 bpd) | val: -1527.6770 (-2.8112 bpd) | z_mean: -0.007 | z_std: 0.872 | lr: 0.000088
+  New best model at epoch 255 (val: -1527.6770)
+Epoch  256/1000 | train: -1620.5986 (-2.9822 bpd) | val: -1529.8122 (-2.8151 bpd) | z_mean: 0.011 | z_std: 0.906 | lr: 0.000088
+  New best model at epoch 256 (val: -1529.8122)
+Epoch  257/1000 | train: -1623.9974 (-2.9884 bpd) | val: -1538.2548 (-2.8307 bpd) | z_mean: 0.013 | z_std: 0.870 | lr: 0.000088
+  New best model at epoch 257 (val: -1538.2548)
+Epoch  258/1000 | train: -1625.9629 (-2.9921 bpd) | val: -1528.8994 (-2.8134 bpd) | z_mean: 0.001 | z_std: 0.875 | lr: 0.000088
+Epoch  259/1000 | train: -1629.1901 (-2.9980 bpd) | val: -1539.2183 (-2.8324 bpd) | z_mean: 0.008 | z_std: 0.845 | lr: 0.000088
+  New best model at epoch 259 (val: -1539.2183)
+Epoch  260/1000 | train: -1633.1859 (-3.0053 bpd) | val: -1539.4424 (-2.8328 bpd) | z_mean: 0.001 | z_std: 0.913 | lr: 0.000088
+  New best model at epoch 260 (val: -1539.4424)
+Epoch  261/1000 | train: -1636.4739 (-3.0114 bpd) | val: -1533.3434 (-2.8216 bpd) | z_mean: -0.006 | z_std: 0.886 | lr: 0.000088
+Epoch  262/1000 | train: -1639.6660 (-3.0173 bpd) | val: -1548.2726 (-2.8491 bpd) | z_mean: -0.008 | z_std: 0.917 | lr: 0.000088
+  New best model at epoch 262 (val: -1548.2726)
+Epoch  263/1000 | train: -1643.3552 (-3.0241 bpd) | val: -1547.0845 (-2.8469 bpd) | z_mean: -0.007 | z_std: 0.882 | lr: 0.000088
+Epoch  264/1000 | train: -1645.2786 (-3.0276 bpd) | val: -1550.1091 (-2.8525 bpd) | z_mean: -0.012 | z_std: 0.872 | lr: 0.000088
+  New best model at epoch 264 (val: -1550.1091)
+Epoch  265/1000 | train: -1647.8188 (-3.0323 bpd) | val: -1546.0462 (-2.8450 bpd) | z_mean: 0.006 | z_std: 0.899 | lr: 0.000088
+Epoch  266/1000 | train: -1652.5254 (-3.0409 bpd) | val: -1546.4875 (-2.8458 bpd) | z_mean: 0.002 | z_std: 0.871 | lr: 0.000088
+Epoch  267/1000 | train: -1654.6398 (-3.0448 bpd) | val: -1551.5293 (-2.8551 bpd) | z_mean: 0.005 | z_std: 0.893 | lr: 0.000088
+  New best model at epoch 267 (val: -1551.5293)
+Epoch  268/1000 | train: -1657.6346 (-3.0503 bpd) | val: -1549.6860 (-2.8517 bpd) | z_mean: -0.005 | z_std: 0.898 | lr: 0.000087
+Epoch  269/1000 | train: -1659.8070 (-3.0543 bpd) | val: -1556.6643 (-2.8645 bpd) | z_mean: -0.011 | z_std: 0.878 | lr: 0.000087
+  New best model at epoch 269 (val: -1556.6643)
+Epoch  270/1000 | train: -1661.8743 (-3.0581 bpd) | val: -1560.8698 (-2.8723 bpd) | z_mean: -0.018 | z_std: 0.913 | lr: 0.000087
+  New best model at epoch 270 (val: -1560.8698)
+Epoch  271/1000 | train: -1665.1408 (-3.0641 bpd) | val: -1560.5616 (-2.8717 bpd) | z_mean: 0.017 | z_std: 0.935 | lr: 0.000087
+Epoch  272/1000 | train: -1668.8956 (-3.0711 bpd) | val: -1562.4891 (-2.8752 bpd) | z_mean: -0.010 | z_std: 0.871 | lr: 0.000087
+  New best model at epoch 272 (val: -1562.4891)
+Epoch  273/1000 | train: -1671.5190 (-3.0759 bpd) | val: -1567.0446 (-2.8836 bpd) | z_mean: -0.000 | z_std: 0.866 | lr: 0.000087
+  New best model at epoch 273 (val: -1567.0446)
+Epoch  274/1000 | train: -1674.7821 (-3.0819 bpd) | val: -1571.5850 (-2.8920 bpd) | z_mean: -0.007 | z_std: 0.899 | lr: 0.000087
+  New best model at epoch 274 (val: -1571.5850)
+Epoch  275/1000 | train: -1675.6323 (-3.0835 bpd) | val: -1574.3507 (-2.8971 bpd) | z_mean: -0.006 | z_std: 0.903 | lr: 0.000087
+  New best model at epoch 275 (val: -1574.3507)
+Epoch  276/1000 | train: -1679.2993 (-3.0902 bpd) | val: -1570.3234 (-2.8897 bpd) | z_mean: -0.004 | z_std: 0.887 | lr: 0.000087
+Epoch  277/1000 | train: -1682.5802 (-3.0962 bpd) | val: -1569.0633 (-2.8873 bpd) | z_mean: -0.010 | z_std: 0.909 | lr: 0.000087
+Epoch  278/1000 | train: -1683.8227 (-3.0985 bpd) | val: -1577.4465 (-2.9028 bpd) | z_mean: 0.006 | z_std: 0.837 | lr: 0.000087
+  New best model at epoch 278 (val: -1577.4465)
+Epoch  279/1000 | train: -1688.8134 (-3.1077 bpd) | val: -1580.1161 (-2.9077 bpd) | z_mean: 0.002 | z_std: 0.897 | lr: 0.000087
+  New best model at epoch 279 (val: -1580.1161)
+Epoch  280/1000 | train: -1691.1041 (-3.1119 bpd) | val: -1571.9676 (-2.8927 bpd) | z_mean: 0.015 | z_std: 0.857 | lr: 0.000087
+Epoch  281/1000 | train: -1692.9684 (-3.1154 bpd) | val: -1579.7476 (-2.9070 bpd) | z_mean: -0.012 | z_std: 0.894 | lr: 0.000087
+Epoch  282/1000 | train: -1697.0932 (-3.1229 bpd) | val: -1572.8537 (-2.8943 bpd) | z_mean: -0.001 | z_std: 0.920 | lr: 0.000087
+Epoch  283/1000 | train: -1698.6340 (-3.1258 bpd) | val: -1587.4044 (-2.9211 bpd) | z_mean: 0.001 | z_std: 0.901 | lr: 0.000087
+  New best model at epoch 283 (val: -1587.4044)
+Epoch  284/1000 | train: -1701.8305 (-3.1317 bpd) | val: -1567.7653 (-2.8850 bpd) | z_mean: -0.002 | z_std: 0.946 | lr: 0.000087
+Epoch  285/1000 | train: -1703.6974 (-3.1351 bpd) | val: -1587.7170 (-2.9217 bpd) | z_mean: 0.007 | z_std: 0.957 | lr: 0.000087
+  New best model at epoch 285 (val: -1587.7170)
+Epoch  286/1000 | train: -1706.9945 (-3.1412 bpd) | val: -1587.2128 (-2.9207 bpd) | z_mean: -0.006 | z_std: 0.876 | lr: 0.000087
+Epoch  287/1000 | train: -1708.4189 (-3.1438 bpd) | val: -1583.4713 (-2.9139 bpd) | z_mean: 0.001 | z_std: 0.906 | lr: 0.000087
+Epoch  288/1000 | train: -1712.3393 (-3.1510 bpd) | val: -1591.1566 (-2.9280 bpd) | z_mean: 0.024 | z_std: 0.882 | lr: 0.000087
+  New best model at epoch 288 (val: -1591.1566)
+Epoch  289/1000 | train: -1712.8167 (-3.1519 bpd) | val: -1598.9551 (-2.9424 bpd) | z_mean: -0.004 | z_std: 0.920 | lr: 0.000087
+  New best model at epoch 289 (val: -1598.9551)
+Epoch  290/1000 | train: -1717.2235 (-3.1600 bpd) | val: -1599.7219 (-2.9438 bpd) | z_mean: 0.012 | z_std: 0.983 | lr: 0.000087
+  New best model at epoch 290 (val: -1599.7219)
+Epoch  291/1000 | train: -1719.2500 (-3.1637 bpd) | val: -1594.0278 (-2.9333 bpd) | z_mean: -0.001 | z_std: 0.878 | lr: 0.000086
+Epoch  292/1000 | train: -1722.1660 (-3.1691 bpd) | val: -1577.8489 (-2.9035 bpd) | z_mean: 0.023 | z_std: 0.953 | lr: 0.000086
+Epoch  293/1000 | train: -1725.6943 (-3.1756 bpd) | val: -1597.7461 (-2.9401 bpd) | z_mean: 0.001 | z_std: 0.873 | lr: 0.000086
+Epoch  294/1000 | train: -1728.9748 (-3.1816 bpd) | val: -1601.4835 (-2.9470 bpd) | z_mean: -0.013 | z_std: 0.928 | lr: 0.000086
+  New best model at epoch 294 (val: -1601.4835)
+Epoch  295/1000 | train: -1731.2496 (-3.1858 bpd) | val: -1593.8965 (-2.9330 bpd) | z_mean: 0.020 | z_std: 0.922 | lr: 0.000086
+Epoch  296/1000 | train: -1733.1649 (-3.1893 bpd) | val: -1593.6773 (-2.9326 bpd) | z_mean: -0.011 | z_std: 0.923 | lr: 0.000086
+Epoch  297/1000 | train: -1733.7755 (-3.1904 bpd) | val: -1603.8676 (-2.9514 bpd) | z_mean: -0.006 | z_std: 0.858 | lr: 0.000086
+  New best model at epoch 297 (val: -1603.8676)
+Epoch  298/1000 | train: -1737.8633 (-3.1980 bpd) | val: -1599.0031 (-2.9424 bpd) | z_mean: -0.001 | z_std: 0.917 | lr: 0.000086
+Epoch  299/1000 | train: -1741.1818 (-3.2041 bpd) | val: -1606.5536 (-2.9563 bpd) | z_mean: 0.009 | z_std: 1.019 | lr: 0.000086
+  New best model at epoch 299 (val: -1606.5536)
+Epoch  300/1000 | train: -1743.5272 (-3.2084 bpd) | val: -1613.1937 (-2.9686 bpd) | z_mean: -0.004 | z_std: 0.861 | lr: 0.000086
+  New best model at epoch 300 (val: -1613.1937)
+Epoch  301/1000 | train: -1745.5826 (-3.2122 bpd) | val: -1605.6923 (-2.9548 bpd) | z_mean: -0.001 | z_std: 0.948 | lr: 0.000086
+Epoch  302/1000 | train: -1748.3963 (-3.2174 bpd) | val: -1613.8298 (-2.9697 bpd) | z_mean: 0.010 | z_std: 0.878 | lr: 0.000086
+  New best model at epoch 302 (val: -1613.8298)
+Epoch  303/1000 | train: -1748.3212 (-3.2172 bpd) | val: -1609.5640 (-2.9619 bpd) | z_mean: 0.006 | z_std: 0.844 | lr: 0.000086
+Epoch  304/1000 | train: -1754.3993 (-3.2284 bpd) | val: -1607.0108 (-2.9572 bpd) | z_mean: 0.001 | z_std: 0.885 | lr: 0.000086
+Epoch  305/1000 | train: -1755.2768 (-3.2300 bpd) | val: -1614.7584 (-2.9714 bpd) | z_mean: -0.007 | z_std: 0.945 | lr: 0.000086
+  New best model at epoch 305 (val: -1614.7584)
+Epoch  306/1000 | train: -1757.6202 (-3.2343 bpd) | val: -1613.5246 (-2.9692 bpd) | z_mean: 0.009 | z_std: 0.880 | lr: 0.000086
+Epoch  307/1000 | train: -1760.4397 (-3.2395 bpd) | val: -1618.9575 (-2.9792 bpd) | z_mean: 0.004 | z_std: 0.859 | lr: 0.000086
+  New best model at epoch 307 (val: -1618.9575)
+Epoch  308/1000 | train: -1762.7770 (-3.2438 bpd) | val: -1618.3172 (-2.9780 bpd) | z_mean: 0.001 | z_std: 0.948 | lr: 0.000086
+Epoch  309/1000 | train: -1764.2241 (-3.2465 bpd) | val: -1623.3587 (-2.9873 bpd) | z_mean: 0.009 | z_std: 0.885 | lr: 0.000086
+  New best model at epoch 309 (val: -1623.3587)
+Epoch  310/1000 | train: -1768.4067 (-3.2542 bpd) | val: -1614.7086 (-2.9713 bpd) | z_mean: -0.000 | z_std: 0.946 | lr: 0.000086
+Epoch  311/1000 | train: -1769.0148 (-3.2553 bpd) | val: -1626.7860 (-2.9936 bpd) | z_mean: 0.003 | z_std: 0.930 | lr: 0.000086
+  New best model at epoch 311 (val: -1626.7860)
+Epoch  312/1000 | train: -1771.0319 (-3.2590 bpd) | val: -1616.1248 (-2.9739 bpd) | z_mean: -0.015 | z_std: 0.930 | lr: 0.000086
+Epoch  313/1000 | train: -1774.0562 (-3.2646 bpd) | val: -1621.0826 (-2.9831 bpd) | z_mean: -0.014 | z_std: 0.884 | lr: 0.000086
+Epoch  314/1000 | train: -1774.4167 (-3.2652 bpd) | val: -1625.1798 (-2.9906 bpd) | z_mean: -0.014 | z_std: 0.914 | lr: 0.000085
+Epoch  315/1000 | train: -1779.1239 (-3.2739 bpd) | val: -1625.5310 (-2.9913 bpd) | z_mean: -0.005 | z_std: 0.958 | lr: 0.000085
+Epoch  316/1000 | train: -1781.4906 (-3.2782 bpd) | val: -1627.0803 (-2.9941 bpd) | z_mean: -0.005 | z_std: 0.875 | lr: 0.000085
+  New best model at epoch 316 (val: -1627.0803)
+Epoch  317/1000 | train: -1782.6109 (-3.2803 bpd) | val: -1628.8523 (-2.9974 bpd) | z_mean: 0.001 | z_std: 0.941 | lr: 0.000085
+  New best model at epoch 317 (val: -1628.8523)
+Epoch  318/1000 | train: -1785.8839 (-3.2863 bpd) | val: -1627.0756 (-2.9941 bpd) | z_mean: -0.003 | z_std: 0.927 | lr: 0.000085
+Epoch  319/1000 | train: -1787.9640 (-3.2902 bpd) | val: -1626.5013 (-2.9930 bpd) | z_mean: -0.003 | z_std: 0.894 | lr: 0.000085
+Epoch  320/1000 | train: -1788.3348 (-3.2908 bpd) | val: -1623.8148 (-2.9881 bpd) | z_mean: 0.008 | z_std: 0.925 | lr: 0.000085
+Epoch  321/1000 | train: -1791.9792 (-3.2976 bpd) | val: -1627.7947 (-2.9954 bpd) | z_mean: 0.015 | z_std: 0.997 | lr: 0.000085
+Epoch  322/1000 | train: -1794.1295 (-3.3015 bpd) | val: -1622.9094 (-2.9864 bpd) | z_mean: -0.004 | z_std: 0.962 | lr: 0.000085
+Epoch  323/1000 | train: -1794.1226 (-3.3015 bpd) | val: -1626.2795 (-2.9926 bpd) | z_mean: 0.004 | z_std: 0.900 | lr: 0.000085
+Epoch  324/1000 | train: -1798.5793 (-3.3097 bpd) | val: -1636.5608 (-3.0116 bpd) | z_mean: -0.009 | z_std: 0.902 | lr: 0.000085
+  New best model at epoch 324 (val: -1636.5608)
+Epoch  325/1000 | train: -1802.0177 (-3.3160 bpd) | val: -1628.8817 (-2.9974 bpd) | z_mean: 0.004 | z_std: 0.938 | lr: 0.000085
+Epoch  326/1000 | train: -1802.5035 (-3.3169 bpd) | val: -1639.1780 (-3.0164 bpd) | z_mean: 0.002 | z_std: 0.899 | lr: 0.000085
+  New best model at epoch 326 (val: -1639.1780)
+Epoch  327/1000 | train: -1804.1784 (-3.3200 bpd) | val: -1633.2974 (-3.0055 bpd) | z_mean: 0.010 | z_std: 0.950 | lr: 0.000085
+Epoch  328/1000 | train: -1806.2015 (-3.3237 bpd) | val: -1637.6430 (-3.0135 bpd) | z_mean: 0.003 | z_std: 0.901 | lr: 0.000085
+Epoch  329/1000 | train: -1809.8475 (-3.3304 bpd) | val: -1631.0179 (-3.0014 bpd) | z_mean: 0.008 | z_std: 0.982 | lr: 0.000085
+Epoch  330/1000 | train: -1810.8664 (-3.3323 bpd) | val: -1630.7995 (-3.0010 bpd) | z_mean: -0.011 | z_std: 0.905 | lr: 0.000085
+Epoch  331/1000 | train: -1814.3357 (-3.3387 bpd) | val: -1636.9617 (-3.0123 bpd) | z_mean: -0.019 | z_std: 0.894 | lr: 0.000085
+Epoch  332/1000 | train: -1815.9052 (-3.3416 bpd) | val: -1638.6064 (-3.0153 bpd) | z_mean: -0.011 | z_std: 0.943 | lr: 0.000085
+Epoch  333/1000 | train: -1817.8705 (-3.3452 bpd) | val: -1639.4011 (-3.0168 bpd) | z_mean: 0.019 | z_std: 0.989 | lr: 0.000085
+  New best model at epoch 333 (val: -1639.4011)
+Epoch  334/1000 | train: -1817.7607 (-3.3450 bpd) | val: -1641.6452 (-3.0209 bpd) | z_mean: -0.006 | z_std: 0.924 | lr: 0.000085
+  New best model at epoch 334 (val: -1641.6452)
+Epoch  335/1000 | train: -1819.4473 (-3.3481 bpd) | val: -1641.2169 (-3.0201 bpd) | z_mean: 0.004 | z_std: 0.878 | lr: 0.000085
+Epoch  336/1000 | train: -1821.0782 (-3.3511 bpd) | val: -1642.5182 (-3.0225 bpd) | z_mean: -0.002 | z_std: 0.950 | lr: 0.000085
+  New best model at epoch 336 (val: -1642.5182)
+Epoch  337/1000 | train: -1824.5108 (-3.3574 bpd) | val: -1642.3176 (-3.0221 bpd) | z_mean: 0.001 | z_std: 0.929 | lr: 0.000084
+Epoch  338/1000 | train: -1826.3963 (-3.3609 bpd) | val: -1640.6520 (-3.0191 bpd) | z_mean: 0.000 | z_std: 0.991 | lr: 0.000084
+Epoch  339/1000 | train: -1827.6566 (-3.3632 bpd) | val: -1635.8258 (-3.0102 bpd) | z_mean: 0.000 | z_std: 0.954 | lr: 0.000084
+Epoch  340/1000 | train: -1829.3998 (-3.3664 bpd) | val: -1639.2137 (-3.0164 bpd) | z_mean: -0.008 | z_std: 0.910 | lr: 0.000084
+Epoch  341/1000 | train: -1829.6196 (-3.3668 bpd) | val: -1644.5641 (-3.0263 bpd) | z_mean: -0.005 | z_std: 0.879 | lr: 0.000084
+  New best model at epoch 341 (val: -1644.5641)
+Epoch  342/1000 | train: -1834.9529 (-3.3766 bpd) | val: -1634.9594 (-3.0086 bpd) | z_mean: -0.004 | z_std: 0.880 | lr: 0.000084
+Epoch  343/1000 | train: -1835.8184 (-3.3782 bpd) | val: -1654.8360 (-3.0452 bpd) | z_mean: 0.007 | z_std: 0.914 | lr: 0.000084
+  New best model at epoch 343 (val: -1654.8360)
+Epoch  344/1000 | train: -1837.8486 (-3.3820 bpd) | val: -1641.3363 (-3.0203 bpd) | z_mean: -0.035 | z_std: 0.919 | lr: 0.000084
+Epoch  345/1000 | train: -1839.1773 (-3.3844 bpd) | val: -1643.3879 (-3.0241 bpd) | z_mean: -0.006 | z_std: 0.908 | lr: 0.000084
+Epoch  346/1000 | train: -1842.1225 (-3.3898 bpd) | val: -1648.5562 (-3.0336 bpd) | z_mean: -0.008 | z_std: 0.934 | lr: 0.000084
+Epoch  347/1000 | train: -1843.8786 (-3.3931 bpd) | val: -1647.6032 (-3.0319 bpd) | z_mean: 0.002 | z_std: 0.922 | lr: 0.000084
+Epoch  348/1000 | train: -1842.1362 (-3.3898 bpd) | val: -1640.0945 (-3.0181 bpd) | z_mean: -0.006 | z_std: 0.966 | lr: 0.000084
+Epoch  349/1000 | train: -1845.2266 (-3.3955 bpd) | val: -1640.1845 (-3.0182 bpd) | z_mean: 0.004 | z_std: 0.952 | lr: 0.000084
+Epoch  350/1000 | train: -1849.1061 (-3.4027 bpd) | val: -1643.7597 (-3.0248 bpd) | z_mean: -0.000 | z_std: 0.936 | lr: 0.000084
+Epoch  351/1000 | train: -1847.6590 (-3.4000 bpd) | val: -1650.8334 (-3.0378 bpd) | z_mean: 0.016 | z_std: 0.923 | lr: 0.000084
+Epoch  352/1000 | train: -1852.1999 (-3.4084 bpd) | val: -1652.5837 (-3.0410 bpd) | z_mean: -0.003 | z_std: 0.921 | lr: 0.000084
+Epoch  353/1000 | train: -1855.6026 (-3.4146 bpd) | val: -1650.1165 (-3.0365 bpd) | z_mean: -0.014 | z_std: 0.920 | lr: 0.000084
+Epoch  354/1000 | train: -1855.3994 (-3.4143 bpd) | val: -1649.3505 (-3.0351 bpd) | z_mean: 0.004 | z_std: 0.948 | lr: 0.000084
+Epoch  355/1000 | train: -1857.0633 (-3.4173 bpd) | val: -1641.9974 (-3.0216 bpd) | z_mean: -0.020 | z_std: 0.966 | lr: 0.000084
+Epoch  356/1000 | train: -1859.0409 (-3.4210 bpd) | val: -1645.2649 (-3.0276 bpd) | z_mean: -0.005 | z_std: 0.942 | lr: 0.000084
+Epoch  357/1000 | train: -1859.5955 (-3.4220 bpd) | val: -1641.5606 (-3.0208 bpd) | z_mean: 0.015 | z_std: 1.015 | lr: 0.000084
+Epoch  358/1000 | train: -1860.1253 (-3.4230 bpd) | val: -1640.2616 (-3.0184 bpd) | z_mean: 0.006 | z_std: 0.930 | lr: 0.000084
+Epoch  359/1000 | train: -1862.0412 (-3.4265 bpd) | val: -1646.2687 (-3.0294 bpd) | z_mean: 0.017 | z_std: 0.934 | lr: 0.000084
+Epoch  360/1000 | train: -1863.8565 (-3.4298 bpd) | val: -1637.8008 (-3.0138 bpd) | z_mean: 0.028 | z_std: 0.946 | lr: 0.000084
+Epoch  361/1000 | train: -1864.9473 (-3.4318 bpd) | val: -1649.2464 (-3.0349 bpd) | z_mean: -0.000 | z_std: 0.915 | lr: 0.000083
+Epoch  362/1000 | train: -1868.5312 (-3.4384 bpd) | val: -1651.2006 (-3.0385 bpd) | z_mean: -0.008 | z_std: 0.923 | lr: 0.000083
+Epoch  363/1000 | train: -1867.2818 (-3.4361 bpd) | val: -1641.5644 (-3.0208 bpd) | z_mean: 0.009 | z_std: 0.908 | lr: 0.000083
+Epoch  364/1000 | train: -1873.3255 (-3.4472 bpd) | val: -1649.6625 (-3.0357 bpd) | z_mean: 0.005 | z_std: 0.959 | lr: 0.000083
+Epoch  365/1000 | train: -1872.2822 (-3.4453 bpd) | val: -1646.8185 (-3.0304 bpd) | z_mean: 0.014 | z_std: 0.974 | lr: 0.000083
+Epoch  366/1000 | train: -1873.2290 (-3.4471 bpd) | val: -1636.6271 (-3.0117 bpd) | z_mean: 0.000 | z_std: 0.949 | lr: 0.000083
+Epoch  367/1000 | train: -1874.9966 (-3.4503 bpd) | val: -1643.4243 (-3.0242 bpd) | z_mean: 0.002 | z_std: 0.919 | lr: 0.000083
+Epoch  368/1000 | train: -1879.3409 (-3.4583 bpd) | val: -1644.9284 (-3.0270 bpd) | z_mean: 0.017 | z_std: 0.954 | lr: 0.000083
+Epoch  369/1000 | train: -1877.5410 (-3.4550 bpd) | val: -1648.7322 (-3.0340 bpd) | z_mean: 0.009 | z_std: 0.908 | lr: 0.000083
+Epoch  370/1000 | train: -1878.1675 (-3.4562 bpd) | val: -1634.3996 (-3.0076 bpd) | z_mean: -0.016 | z_std: 0.979 | lr: 0.000083
+Epoch  371/1000 | train: -1878.4015 (-3.4566 bpd) | val: -1650.6341 (-3.0375 bpd) | z_mean: 0.014 | z_std: 0.981 | lr: 0.000083
+Epoch  372/1000 | train: -1882.0521 (-3.4633 bpd) | val: -1634.6920 (-3.0081 bpd) | z_mean: -0.009 | z_std: 0.923 | lr: 0.000083
+Epoch  373/1000 | train: -1885.1268 (-3.4690 bpd) | val: -1642.8444 (-3.0231 bpd) | z_mean: 0.004 | z_std: 0.969 | lr: 0.000083
+Epoch  374/1000 | train: -1883.5973 (-3.4661 bpd) | val: -1648.2129 (-3.0330 bpd) | z_mean: 0.002 | z_std: 0.912 | lr: 0.000083
+Epoch  375/1000 | train: -1888.4169 (-3.4750 bpd) | val: -1635.7698 (-3.0101 bpd) | z_mean: -0.005 | z_std: 0.938 | lr: 0.000083
+Epoch  376/1000 | train: -1887.7493 (-3.4738 bpd) | val: -1639.8623 (-3.0176 bpd) | z_mean: -0.004 | z_std: 0.964 | lr: 0.000083
+Epoch  377/1000 | train: -1892.3280 (-3.4822 bpd) | val: -1644.5023 (-3.0262 bpd) | z_mean: 0.007 | z_std: 1.031 | lr: 0.000083
+Epoch  378/1000 | train: -1891.2193 (-3.4802 bpd) | val: -1649.5066 (-3.0354 bpd) | z_mean: -0.006 | z_std: 0.959 | lr: 0.000083
+Epoch  379/1000 | train: -1890.4164 (-3.4787 bpd) | val: -1636.9826 (-3.0123 bpd) | z_mean: 0.000 | z_std: 0.927 | lr: 0.000083
+Epoch  380/1000 | train: -1894.5633 (-3.4863 bpd) | val: -1640.0638 (-3.0180 bpd) | z_mean: 0.002 | z_std: 0.922 | lr: 0.000083
+Epoch  381/1000 | train: -1893.7857 (-3.4849 bpd) | val: -1638.7463 (-3.0156 bpd) | z_mean: -0.013 | z_std: 0.950 | lr: 0.000083
+Epoch  382/1000 | train: -1896.0100 (-3.4890 bpd) | val: -1640.4928 (-3.0188 bpd) | z_mean: -0.013 | z_std: 0.949 | lr: 0.000083
+Epoch  383/1000 | train: -1896.2298 (-3.4894 bpd) | val: -1643.3544 (-3.0241 bpd) | z_mean: -0.007 | z_std: 1.004 | lr: 0.000083
+Epoch  384/1000 | train: -1897.9657 (-3.4926 bpd) | val: -1640.6755 (-3.0191 bpd) | z_mean: 0.002 | z_std: 0.881 | lr: 0.000083
+Epoch  385/1000 | train: -1900.1587 (-3.4966 bpd) | val: -1644.5823 (-3.0263 bpd) | z_mean: -0.006 | z_std: 0.899 | lr: 0.000082
+Epoch  386/1000 | train: -1901.5116 (-3.4991 bpd) | val: -1641.0111 (-3.0197 bpd) | z_mean: 0.012 | z_std: 0.999 | lr: 0.000082
+Epoch  387/1000 | train: -1901.8265 (-3.4997 bpd) | val: -1628.4940 (-2.9967 bpd) | z_mean: 0.003 | z_std: 0.982 | lr: 0.000082
+Epoch  388/1000 | train: -1901.1584 (-3.4985 bpd) | val: -1639.4442 (-3.0169 bpd) | z_mean: 0.006 | z_std: 0.920 | lr: 0.000082
+Epoch  389/1000 | train: -1904.3673 (-3.5044 bpd) | val: -1637.8335 (-3.0139 bpd) | z_mean: 0.023 | z_std: 0.953 | lr: 0.000082
+Epoch  390/1000 | train: -1904.6244 (-3.5048 bpd) | val: -1644.9329 (-3.0270 bpd) | z_mean: -0.005 | z_std: 0.940 | lr: 0.000082
+Epoch  391/1000 | train: -1903.6972 (-3.5031 bpd) | val: -1632.7674 (-3.0046 bpd) | z_mean: 0.018 | z_std: 0.954 | lr: 0.000082
+Epoch  392/1000 | train: -1911.3800 (-3.5173 bpd) | val: -1630.0664 (-2.9996 bpd) | z_mean: 0.004 | z_std: 1.009 | lr: 0.000082
+Epoch  393/1000 | train: -1910.4055 (-3.5155 bpd) | val: -1633.9850 (-3.0068 bpd) | z_mean: -0.002 | z_std: 0.902 | lr: 0.000082
+Epoch  394/1000 | train: -1907.6865 (-3.5105 bpd) | val: -1641.0411 (-3.0198 bpd) | z_mean: 0.012 | z_std: 0.977 | lr: 0.000082
+Epoch  395/1000 | train: -1908.8381 (-3.5126 bpd) | val: -1634.0285 (-3.0069 bpd) | z_mean: 0.006 | z_std: 0.891 | lr: 0.000082
+Epoch  396/1000 | train: -1914.0299 (-3.5221 bpd) | val: -1635.6027 (-3.0098 bpd) | z_mean: 0.006 | z_std: 0.949 | lr: 0.000082
+Epoch  397/1000 | train: -1910.9609 (-3.5165 bpd) | val: -1627.9865 (-2.9958 bpd) | z_mean: -0.003 | z_std: 0.914 | lr: 0.000082
+Epoch  398/1000 | train: -1911.7328 (-3.5179 bpd) | val: -1630.8816 (-3.0011 bpd) | z_mean: -0.003 | z_std: 0.898 | lr: 0.000082
+Epoch  399/1000 | train: -1914.3998 (-3.5228 bpd) | val: -1624.5979 (-2.9895 bpd) | z_mean: 0.001 | z_std: 0.967 | lr: 0.000082
+Epoch  400/1000 | train: -1914.8129 (-3.5236 bpd) | val: -1636.9078 (-3.0122 bpd) | z_mean: -0.001 | z_std: 0.921 | lr: 0.000082
+Epoch  401/1000 | train: -1918.7759 (-3.5309 bpd) | val: -1645.8739 (-3.0287 bpd) | z_mean: 0.005 | z_std: 0.914 | lr: 0.000082
+Epoch  402/1000 | train: -1920.3305 (-3.5337 bpd) | val: -1621.6960 (-2.9842 bpd) | z_mean: -0.008 | z_std: 0.957 | lr: 0.000082
+Epoch  403/1000 | train: -1920.2967 (-3.5337 bpd) | val: -1627.4183 (-2.9947 bpd) | z_mean: 0.013 | z_std: 0.959 | lr: 0.000082
+Epoch  404/1000 | train: -1923.5507 (-3.5397 bpd) | val: -1634.8412 (-3.0084 bpd) | z_mean: -0.005 | z_std: 0.970 | lr: 0.000082
+Epoch  405/1000 | train: -1926.0298 (-3.5442 bpd) | val: -1625.6193 (-2.9914 bpd) | z_mean: -0.007 | z_std: 0.946 | lr: 0.000082
+Epoch  406/1000 | train: -1926.4768 (-3.5450 bpd) | val: -1610.4376 (-2.9635 bpd) | z_mean: -0.003 | z_std: 0.976 | lr: 0.000082
+Epoch  407/1000 | train: -1923.8692 (-3.5403 bpd) | val: -1619.9583 (-2.9810 bpd) | z_mean: -0.005 | z_std: 0.967 | lr: 0.000082
+Epoch  408/1000 | train: -1926.2133 (-3.5446 bpd) | val: -1631.1250 (-3.0016 bpd) | z_mean: 0.020 | z_std: 0.948 | lr: 0.000082
+Epoch  409/1000 | train: -1926.7835 (-3.5456 bpd) | val: -1629.6173 (-2.9988 bpd) | z_mean: 0.001 | z_std: 0.931 | lr: 0.000082
+Epoch  410/1000 | train: -1928.2532 (-3.5483 bpd) | val: -1624.6097 (-2.9896 bpd) | z_mean: -0.003 | z_std: 0.936 | lr: 0.000081
+Epoch  411/1000 | train: -1928.4825 (-3.5487 bpd) | val: -1635.9996 (-3.0105 bpd) | z_mean: 0.010 | z_std: 0.927 | lr: 0.000081
+Epoch  412/1000 | train: -1928.4948 (-3.5488 bpd) | val: -1626.5149 (-2.9931 bpd) | z_mean: 0.001 | z_std: 0.951 | lr: 0.000081
+Epoch  413/1000 | train: -1935.2314 (-3.5612 bpd) | val: -1634.7507 (-3.0082 bpd) | z_mean: 0.011 | z_std: 0.963 | lr: 0.000081
+Epoch  414/1000 | train: -1933.8910 (-3.5587 bpd) | val: -1626.8979 (-2.9938 bpd) | z_mean: -0.006 | z_std: 0.900 | lr: 0.000081
+Epoch  415/1000 | train: -1931.1618 (-3.5537 bpd) | val: -1629.7960 (-2.9991 bpd) | z_mean: -0.008 | z_std: 0.954 | lr: 0.000081
+Epoch  416/1000 | train: -1935.4819 (-3.5616 bpd) | val: -1616.8272 (-2.9752 bpd) | z_mean: -0.010 | z_std: 1.013 | lr: 0.000081
+Epoch  417/1000 | train: -1939.2173 (-3.5685 bpd) | val: -1616.3356 (-2.9743 bpd) | z_mean: 0.009 | z_std: 0.986 | lr: 0.000081
+Epoch  418/1000 | train: -1937.9276 (-3.5661 bpd) | val: -1620.4310 (-2.9819 bpd) | z_mean: -0.000 | z_std: 0.965 | lr: 0.000081
+Epoch  419/1000 | train: -1938.8528 (-3.5678 bpd) | val: -1621.8841 (-2.9845 bpd) | z_mean: -0.013 | z_std: 0.925 | lr: 0.000081
+Epoch  420/1000 | train: -1937.1707 (-3.5647 bpd) | val: -1623.7992 (-2.9881 bpd) | z_mean: -0.021 | z_std: 1.013 | lr: 0.000081
+Epoch  421/1000 | train: -1937.5951 (-3.5655 bpd) | val: -1625.2763 (-2.9908 bpd) | z_mean: 0.007 | z_std: 0.926 | lr: 0.000081
+Epoch  422/1000 | train: -1942.7860 (-3.5751 bpd) | val: -1605.5513 (-2.9545 bpd) | z_mean: 0.007 | z_std: 0.939 | lr: 0.000081
+Epoch  423/1000 | train: -1946.3340 (-3.5816 bpd) | val: -1610.1176 (-2.9629 bpd) | z_mean: -0.011 | z_std: 0.973 | lr: 0.000081
+Epoch  424/1000 | train: -1946.6775 (-3.5822 bpd) | val: -1613.4022 (-2.9689 bpd) | z_mean: 0.014 | z_std: 0.897 | lr: 0.000081
+Epoch  425/1000 | train: -1944.9947 (-3.5791 bpd) | val: -1619.8903 (-2.9809 bpd) | z_mean: 0.008 | z_std: 1.006 | lr: 0.000081
+Epoch  426/1000 | train: -1947.8030 (-3.5843 bpd) | val: -1610.0341 (-2.9627 bpd) | z_mean: -0.018 | z_std: 1.002 | lr: 0.000081
+Epoch  427/1000 | train: -1947.6809 (-3.5841 bpd) | val: -1607.6605 (-2.9584 bpd) | z_mean: -0.006 | z_std: 0.902 | lr: 0.000081
+Epoch  428/1000 | train: -1948.5225 (-3.5856 bpd) | val: -1612.6962 (-2.9676 bpd) | z_mean: 0.002 | z_std: 0.957 | lr: 0.000081
+Epoch  429/1000 | train: -1946.8911 (-3.5826 bpd) | val: -1610.9920 (-2.9645 bpd) | z_mean: -0.013 | z_std: 0.990 | lr: 0.000081
+Epoch  430/1000 | train: -1951.3907 (-3.5909 bpd) | val: -1609.3897 (-2.9616 bpd) | z_mean: -0.000 | z_std: 0.959 | lr: 0.000081
+Epoch  431/1000 | train: -1953.6088 (-3.5950 bpd) | val: -1612.5979 (-2.9675 bpd) | z_mean: 0.012 | z_std: 0.956 | lr: 0.000081
+Epoch  432/1000 | train: -1949.9409 (-3.5882 bpd) | val: -1606.8247 (-2.9568 bpd) | z_mean: 0.004 | z_std: 1.032 | lr: 0.000081
+Epoch  433/1000 | train: -1947.8594 (-3.5844 bpd) | val: -1593.0728 (-2.9315 bpd) | z_mean: -0.012 | z_std: 0.955 | lr: 0.000081
+Epoch  434/1000 | train: -1952.9265 (-3.5937 bpd) | val: -1596.3199 (-2.9375 bpd) | z_mean: -0.013 | z_std: 0.959 | lr: 0.000080
+Epoch  435/1000 | train: -1956.5098 (-3.6003 bpd) | val: -1598.6808 (-2.9418 bpd) | z_mean: -0.022 | z_std: 0.928 | lr: 0.000080
+Epoch  436/1000 | train: -1958.6341 (-3.6042 bpd) | val: -1609.9352 (-2.9626 bpd) | z_mean: 0.010 | z_std: 0.950 | lr: 0.000080
+Epoch  437/1000 | train: -1959.6673 (-3.6061 bpd) | val: -1594.6616 (-2.9345 bpd) | z_mean: -0.006 | z_std: 0.898 | lr: 0.000080
+Epoch  438/1000 | train: -1958.0713 (-3.6032 bpd) | val: -1607.8005 (-2.9586 bpd) | z_mean: -0.022 | z_std: 0.968 | lr: 0.000080
+Epoch  439/1000 | train: -1959.3535 (-3.6055 bpd) | val: -1611.9269 (-2.9662 bpd) | z_mean: -0.007 | z_std: 0.955 | lr: 0.000080
+Epoch  440/1000 | train: -1960.2812 (-3.6073 bpd) | val: -1602.2741 (-2.9485 bpd) | z_mean: -0.003 | z_std: 0.957 | lr: 0.000080
+Epoch  441/1000 | train: -1963.3682 (-3.6129 bpd) | val: -1607.4258 (-2.9579 bpd) | z_mean: -0.004 | z_std: 0.920 | lr: 0.000080
+Epoch  442/1000 | train: -1961.1139 (-3.6088 bpd) | val: -1592.3680 (-2.9302 bpd) | z_mean: 0.002 | z_std: 0.979 | lr: 0.000080
+Epoch  443/1000 | train: -1966.0409 (-3.6179 bpd) | val: -1588.8730 (-2.9238 bpd) | z_mean: -0.002 | z_std: 0.956 | lr: 0.000080
+Epoch  444/1000 | train: -1966.2926 (-3.6183 bpd) | val: -1599.0872 (-2.9426 bpd) | z_mean: -0.006 | z_std: 0.962 | lr: 0.000080
+Epoch  445/1000 | train: -1967.4305 (-3.6204 bpd) | val: -1595.9277 (-2.9368 bpd) | z_mean: -0.003 | z_std: 0.997 | lr: 0.000080
+Epoch  446/1000 | train: -1966.0782 (-3.6179 bpd) | val: -1593.5231 (-2.9324 bpd) | z_mean: -0.012 | z_std: 0.969 | lr: 0.000080
+Epoch  447/1000 | train: -1969.9400 (-3.6250 bpd) | val: -1599.6192 (-2.9436 bpd) | z_mean: -0.002 | z_std: 0.910 | lr: 0.000080
+Epoch  448/1000 | train: -1969.5170 (-3.6243 bpd) | val: -1582.3172 (-2.9117 bpd) | z_mean: -0.014 | z_std: 0.982 | lr: 0.000080
+Epoch  449/1000 | train: -1972.6867 (-3.6301 bpd) | val: -1578.8996 (-2.9054 bpd) | z_mean: -0.024 | z_std: 0.971 | lr: 0.000080
+Epoch  450/1000 | train: -1972.6233 (-3.6300 bpd) | val: -1589.7538 (-2.9254 bpd) | z_mean: 0.009 | z_std: 0.929 | lr: 0.000080
+Epoch  451/1000 | train: -1969.2544 (-3.6238 bpd) | val: -1592.4585 (-2.9304 bpd) | z_mean: -0.011 | z_std: 0.932 | lr: 0.000080
+Epoch  452/1000 | train: -1974.3431 (-3.6331 bpd) | val: -1591.1312 (-2.9280 bpd) | z_mean: -0.011 | z_std: 0.943 | lr: 0.000080
+Epoch  453/1000 | train: -1975.9043 (-3.6360 bpd) | val: -1596.7397 (-2.9383 bpd) | z_mean: -0.006 | z_std: 0.940 | lr: 0.000080
+Epoch  454/1000 | train: -1973.8514 (-3.6322 bpd) | val: -1586.5630 (-2.9195 bpd) | z_mean: -0.002 | z_std: 0.930 | lr: 0.000080
+Epoch  455/1000 | train: -1977.8132 (-3.6395 bpd) | val: -1589.6207 (-2.9252 bpd) | z_mean: -0.010 | z_std: 0.918 | lr: 0.000080
+Epoch  456/1000 | train: -1973.1009 (-3.6308 bpd) | val: -1599.1385 (-2.9427 bpd) | z_mean: -0.003 | z_std: 1.008 | lr: 0.000080
+Epoch  457/1000 | train: -1976.9874 (-3.6380 bpd) | val: -1573.4536 (-2.8954 bpd) | z_mean: 0.016 | z_std: 0.914 | lr: 0.000080
+Epoch  458/1000 | train: -1979.9811 (-3.6435 bpd) | val: -1586.6147 (-2.9196 bpd) | z_mean: 0.005 | z_std: 1.048 | lr: 0.000080
+Epoch  459/1000 | train: -1981.8961 (-3.6470 bpd) | val: -1585.4981 (-2.9176 bpd) | z_mean: -0.000 | z_std: 0.952 | lr: 0.000079
+Epoch  460/1000 | train: -1978.6370 (-3.6410 bpd) | val: -1583.8496 (-2.9146 bpd) | z_mean: 0.009 | z_std: 0.923 | lr: 0.000079
+Epoch  461/1000 | train: -1979.8908 (-3.6433 bpd) | val: -1584.1421 (-2.9151 bpd) | z_mean: -0.019 | z_std: 0.977 | lr: 0.000079
+Epoch  462/1000 | train: -1981.5960 (-3.6465 bpd) | val: -1573.4003 (-2.8953 bpd) | z_mean: -0.015 | z_std: 0.978 | lr: 0.000079
+Epoch  463/1000 | train: -1983.0931 (-3.6492 bpd) | val: -1575.8505 (-2.8998 bpd) | z_mean: 0.003 | z_std: 0.984 | lr: 0.000079
+Epoch  464/1000 | train: -1985.8821 (-3.6544 bpd) | val: -1581.0961 (-2.9095 bpd) | z_mean: 0.008 | z_std: 0.994 | lr: 0.000079
+Epoch  465/1000 | train: -1988.1163 (-3.6585 bpd) | val: -1579.9186 (-2.9073 bpd) | z_mean: 0.013 | z_std: 0.965 | lr: 0.000079
+Epoch  466/1000 | train: -1987.8795 (-3.6580 bpd) | val: -1581.7963 (-2.9108 bpd) | z_mean: 0.004 | z_std: 0.947 | lr: 0.000079
+Epoch  467/1000 | train: -1982.4318 (-3.6480 bpd) | val: -1573.8629 (-2.8962 bpd) | z_mean: 0.008 | z_std: 0.939 | lr: 0.000079
+Epoch  468/1000 | train: -1988.6081 (-3.6594 bpd) | val: -1575.1565 (-2.8986 bpd) | z_mean: 0.012 | z_std: 0.972 | lr: 0.000079
+Epoch  469/1000 | train: -1987.6270 (-3.6576 bpd) | val: -1579.3254 (-2.9062 bpd) | z_mean: 0.015 | z_std: 0.961 | lr: 0.000079
+Epoch  470/1000 | train: -1995.1086 (-3.6713 bpd) | val: -1570.1333 (-2.8893 bpd) | z_mean: -0.007 | z_std: 0.975 | lr: 0.000079
+Epoch  471/1000 | train: -1992.7729 (-3.6670 bpd) | val: -1572.2106 (-2.8931 bpd) | z_mean: -0.002 | z_std: 0.934 | lr: 0.000079
+Epoch  472/1000 | train: -1992.8467 (-3.6672 bpd) | val: -1556.3485 (-2.8639 bpd) | z_mean: -0.030 | z_std: 0.988 | lr: 0.000079
+Epoch  473/1000 | train: -1990.8307 (-3.6635 bpd) | val: -1579.1730 (-2.9060 bpd) | z_mean: -0.010 | z_std: 0.918 | lr: 0.000079
+Epoch  474/1000 | train: -1992.9217 (-3.6673 bpd) | val: -1576.1919 (-2.9005 bpd) | z_mean: -0.003 | z_std: 0.961 | lr: 0.000079
+Epoch  475/1000 | train: -1991.7918 (-3.6652 bpd) | val: -1565.2684 (-2.8804 bpd) | z_mean: -0.003 | z_std: 1.010 | lr: 0.000079
+Epoch  476/1000 | train: -1993.3081 (-3.6680 bpd) | val: -1558.9795 (-2.8688 bpd) | z_mean: -0.021 | z_std: 0.929 | lr: 0.000079
+Epoch  477/1000 | train: -1995.1369 (-3.6714 bpd) | val: -1564.4450 (-2.8788 bpd) | z_mean: -0.010 | z_std: 0.903 | lr: 0.000079
+Epoch  478/1000 | train: -1997.7370 (-3.6762 bpd) | val: -1557.4926 (-2.8661 bpd) | z_mean: -0.020 | z_std: 0.944 | lr: 0.000079
+Epoch  479/1000 | train: -1998.5602 (-3.6777 bpd) | val: -1568.3581 (-2.8860 bpd) | z_mean: 0.001 | z_std: 0.968 | lr: 0.000079
+Epoch  480/1000 | train: -1999.7071 (-3.6798 bpd) | val: -1565.0868 (-2.8800 bpd) | z_mean: 0.001 | z_std: 0.951 | lr: 0.000079
+Epoch  481/1000 | train: -2000.5993 (-3.6814 bpd) | val: -1539.7786 (-2.8335 bpd) | z_mean: 0.003 | z_std: 0.961 | lr: 0.000079
+Epoch  482/1000 | train: -2001.3079 (-3.6828 bpd) | val: -1555.6460 (-2.8627 bpd) | z_mean: 0.009 | z_std: 0.960 | lr: 0.000079
+Epoch  483/1000 | train: -2002.6656 (-3.6852 bpd) | val: -1553.8936 (-2.8594 bpd) | z_mean: -0.002 | z_std: 1.006 | lr: 0.000079
+Epoch  484/1000 | train: -2000.6025 (-3.6815 bpd) | val: -1563.0741 (-2.8763 bpd) | z_mean: 0.004 | z_std: 0.987 | lr: 0.000079
+Epoch  485/1000 | train: -2004.7287 (-3.6890 bpd) | val: -1557.6895 (-2.8664 bpd) | z_mean: -0.001 | z_std: 0.927 | lr: 0.000078
+Epoch  486/1000 | train: -2004.2251 (-3.6881 bpd) | val: -1545.8631 (-2.8447 bpd) | z_mean: 0.005 | z_std: 0.978 | lr: 0.000078
+Epoch  487/1000 | train: -2005.8824 (-3.6912 bpd) | val: -1540.6583 (-2.8351 bpd) | z_mean: -0.005 | z_std: 0.954 | lr: 0.000078
+Epoch  488/1000 | train: -2005.4458 (-3.6904 bpd) | val: -1547.0200 (-2.8468 bpd) | z_mean: 0.006 | z_std: 0.930 | lr: 0.000078
+Epoch  489/1000 | train: -2005.8075 (-3.6910 bpd) | val: -1549.4511 (-2.8513 bpd) | z_mean: -0.004 | z_std: 0.952 | lr: 0.000078
+Epoch  490/1000 | train: -2004.1960 (-3.6881 bpd) | val: -1551.2578 (-2.8546 bpd) | z_mean: 0.021 | z_std: 0.959 | lr: 0.000078
+Epoch  491/1000 | train: -2007.1336 (-3.6935 bpd) | val: -1525.2731 (-2.8068 bpd) | z_mean: 0.005 | z_std: 0.930 | lr: 0.000078
+Epoch  492/1000 | train: -2007.3158 (-3.6938 bpd) | val: -1539.8750 (-2.8336 bpd) | z_mean: 0.001 | z_std: 0.969 | lr: 0.000078
+Epoch  493/1000 | train: -2010.9777 (-3.7005 bpd) | val: -1545.3903 (-2.8438 bpd) | z_mean: -0.017 | z_std: 0.964 | lr: 0.000078
+Epoch  494/1000 | train: -2012.9952 (-3.7043 bpd) | val: -1549.7340 (-2.8518 bpd) | z_mean: -0.001 | z_std: 0.921 | lr: 0.000078
+Epoch  495/1000 | train: -2012.0545 (-3.7025 bpd) | val: -1545.6998 (-2.8444 bpd) | z_mean: -0.002 | z_std: 0.935 | lr: 0.000078
+Epoch  496/1000 | train: -2014.2124 (-3.7065 bpd) | val: -1546.6113 (-2.8460 bpd) | z_mean: -0.007 | z_std: 0.965 | lr: 0.000078
+Epoch  497/1000 | train: -2017.8741 (-3.7132 bpd) | val: -1529.0964 (-2.8138 bpd) | z_mean: -0.006 | z_std: 0.958 | lr: 0.000078
+Epoch  498/1000 | train: -2012.9411 (-3.7042 bpd) | val: -1547.3929 (-2.8475 bpd) | z_mean: -0.006 | z_std: 0.908 | lr: 0.000078
+Epoch  499/1000 | train: -2018.3518 (-3.7141 bpd) | val: -1543.7075 (-2.8407 bpd) | z_mean: -0.007 | z_std: 0.896 | lr: 0.000078
+Epoch  500/1000 | train: -2019.2933 (-3.7158 bpd) | val: -1523.4499 (-2.8034 bpd) | z_mean: -0.002 | z_std: 1.007 | lr: 0.000078
+Epoch  501/1000 | train: -2017.6428 (-3.7128 bpd) | val: -1528.7496 (-2.8132 bpd) | z_mean: 0.002 | z_std: 0.979 | lr: 0.000078
+Epoch  502/1000 | train: -2020.3342 (-3.7178 bpd) | val: -1519.4491 (-2.7960 bpd) | z_mean: -0.011 | z_std: 1.024 | lr: 0.000078
+Epoch  503/1000 | train: -2016.4738 (-3.7107 bpd) | val: -1516.6874 (-2.7910 bpd) | z_mean: 0.007 | z_std: 0.954 | lr: 0.000078
+Epoch  504/1000 | train: -2019.9233 (-3.7170 bpd) | val: -1528.8283 (-2.8133 bpd) | z_mean: -0.019 | z_std: 0.977 | lr: 0.000078
+Epoch  505/1000 | train: -2020.7563 (-3.7185 bpd) | val: -1531.0463 (-2.8174 bpd) | z_mean: 0.011 | z_std: 0.947 | lr: 0.000078
+Epoch  506/1000 | train: -2022.1850 (-3.7212 bpd) | val: -1507.1955 (-2.7735 bpd) | z_mean: 0.005 | z_std: 0.991 | lr: 0.000078
+Epoch  507/1000 | train: -2022.3849 (-3.7215 bpd) | val: -1522.9727 (-2.8025 bpd) | z_mean: 0.011 | z_std: 0.958 | lr: 0.000078
+Epoch  508/1000 | train: -2019.9275 (-3.7170 bpd) | val: -1522.1297 (-2.8010 bpd) | z_mean: -0.003 | z_std: 0.932 | lr: 0.000078
+Epoch  509/1000 | train: -2026.3090 (-3.7288 bpd) | val: -1528.0050 (-2.8118 bpd) | z_mean: -0.019 | z_std: 0.920 | lr: 0.000078
+Epoch  510/1000 | train: -2027.1960 (-3.7304 bpd) | val: -1511.4094 (-2.7813 bpd) | z_mean: -0.003 | z_std: 0.977 | lr: 0.000077
+Epoch  511/1000 | train: -2026.5582 (-3.7292 bpd) | val: -1514.4861 (-2.7869 bpd) | z_mean: -0.003 | z_std: 1.050 | lr: 0.000077
+Epoch  512/1000 | train: -2025.8081 (-3.7278 bpd) | val: -1513.2725 (-2.7847 bpd) | z_mean: -0.015 | z_std: 0.932 | lr: 0.000077
+Epoch  513/1000 | train: -2030.0429 (-3.7356 bpd) | val: -1520.8851 (-2.7987 bpd) | z_mean: -0.001 | z_std: 0.976 | lr: 0.000077
+Epoch  514/1000 | train: -2034.0884 (-3.7431 bpd) | val: -1522.4669 (-2.8016 bpd) | z_mean: 0.025 | z_std: 0.949 | lr: 0.000077
+Epoch  515/1000 | train: -2032.4778 (-3.7401 bpd) | val: -1515.6433 (-2.7890 bpd) | z_mean: 0.003 | z_std: 0.950 | lr: 0.000077
+Epoch  516/1000 | train: -2035.0656 (-3.7449 bpd) | val: -1513.8396 (-2.7857 bpd) | z_mean: -0.002 | z_std: 0.960 | lr: 0.000077
+Epoch  517/1000 | train: -2028.9340 (-3.7336 bpd) | val: -1510.1140 (-2.7789 bpd) | z_mean: -0.011 | z_std: 1.049 | lr: 0.000077
+Epoch  518/1000 | train: -2027.2802 (-3.7305 bpd) | val: -1499.8827 (-2.7600 bpd) | z_mean: -0.004 | z_std: 0.947 | lr: 0.000077
+Epoch  519/1000 | train: -2031.8823 (-3.7390 bpd) | val: -1509.6722 (-2.7781 bpd) | z_mean: -0.006 | z_std: 0.937 | lr: 0.000077
+Epoch  520/1000 | train: -2034.4038 (-3.7437 bpd) | val: -1515.1129 (-2.7881 bpd) | z_mean: 0.020 | z_std: 0.940 | lr: 0.000077
+Epoch  521/1000 | train: -2036.8710 (-3.7482 bpd) | val: -1503.1444 (-2.7660 bpd) | z_mean: 0.001 | z_std: 0.975 | lr: 0.000077
+Epoch  522/1000 | train: -2037.8575 (-3.7500 bpd) | val: -1511.4227 (-2.7813 bpd) | z_mean: 0.002 | z_std: 0.946 | lr: 0.000077
+Epoch  523/1000 | train: -2041.1396 (-3.7560 bpd) | val: -1502.7002 (-2.7652 bpd) | z_mean: -0.003 | z_std: 0.918 | lr: 0.000077
+Epoch  524/1000 | train: -2037.7202 (-3.7498 bpd) | val: -1505.2333 (-2.7699 bpd) | z_mean: -0.001 | z_std: 0.929 | lr: 0.000077
+Epoch  525/1000 | train: -2037.2312 (-3.7489 bpd) | val: -1484.3048 (-2.7314 bpd) | z_mean: 0.007 | z_std: 1.022 | lr: 0.000077
+Epoch  526/1000 | train: -2037.7742 (-3.7499 bpd) | val: -1496.1918 (-2.7533 bpd) | z_mean: 0.006 | z_std: 0.921 | lr: 0.000077
+Epoch  527/1000 | train: -2041.3873 (-3.7565 bpd) | val: -1495.2478 (-2.7515 bpd) | z_mean: 0.001 | z_std: 0.907 | lr: 0.000077
+Epoch  528/1000 | train: -2041.6274 (-3.7569 bpd) | val: -1489.9252 (-2.7417 bpd) | z_mean: -0.010 | z_std: 0.966 | lr: 0.000077
+Epoch  529/1000 | train: -2041.1613 (-3.7561 bpd) | val: -1486.0550 (-2.7346 bpd) | z_mean: -0.007 | z_std: 0.932 | lr: 0.000077
+Epoch  530/1000 | train: -2040.8079 (-3.7554 bpd) | val: -1477.9833 (-2.7197 bpd) | z_mean: -0.006 | z_std: 0.964 | lr: 0.000077
+Epoch  531/1000 | train: -2041.4290 (-3.7566 bpd) | val: -1478.8710 (-2.7214 bpd) | z_mean: 0.015 | z_std: 0.991 | lr: 0.000077
+Epoch  532/1000 | train: -2047.5122 (-3.7678 bpd) | val: -1485.1620 (-2.7330 bpd) | z_mean: -0.005 | z_std: 1.008 | lr: 0.000077
+Epoch  533/1000 | train: -2044.5304 (-3.7623 bpd) | val: -1482.8483 (-2.7287 bpd) | z_mean: 0.009 | z_std: 0.944 | lr: 0.000077
+Epoch  534/1000 | train: -2047.8145 (-3.7683 bpd) | val: -1490.2158 (-2.7423 bpd) | z_mean: -0.019 | z_std: 0.910 | lr: 0.000077
+Epoch  535/1000 | train: -2049.2677 (-3.7710 bpd) | val: -1479.6926 (-2.7229 bpd) | z_mean: -0.006 | z_std: 0.932 | lr: 0.000077
+Epoch  536/1000 | train: -2048.3894 (-3.7694 bpd) | val: -1478.4790 (-2.7207 bpd) | z_mean: -0.007 | z_std: 0.966 | lr: 0.000076
+Epoch  537/1000 | train: -2045.3392 (-3.7638 bpd) | val: -1475.1860 (-2.7146 bpd) | z_mean: -0.006 | z_std: 0.961 | lr: 0.000076
+Epoch  538/1000 | train: -2048.3337 (-3.7693 bpd) | val: -1476.8479 (-2.7177 bpd) | z_mean: -0.023 | z_std: 0.934 | lr: 0.000076
+Epoch  539/1000 | train: -2043.0606 (-3.7596 bpd) | val: -1462.7479 (-2.6917 bpd) | z_mean: 0.002 | z_std: 0.973 | lr: 0.000076
+Epoch  540/1000 | train: -2045.3836 (-3.7639 bpd) | val: -1482.7080 (-2.7284 bpd) | z_mean: -0.003 | z_std: 0.982 | lr: 0.000076
+Epoch  541/1000 | train: -2050.4438 (-3.7732 bpd) | val: -1472.2516 (-2.7092 bpd) | z_mean: 0.023 | z_std: 0.982 | lr: 0.000076
+Epoch  542/1000 | train: -2053.4896 (-3.7788 bpd) | val: -1476.6982 (-2.7174 bpd) | z_mean: 0.006 | z_std: 0.918 | lr: 0.000076
+Epoch  543/1000 | train: -2053.9096 (-3.7795 bpd) | val: -1470.3997 (-2.7058 bpd) | z_mean: -0.000 | z_std: 0.934 | lr: 0.000076
+Epoch  544/1000 | train: -2053.4307 (-3.7787 bpd) | val: -1460.4617 (-2.6875 bpd) | z_mean: -0.008 | z_std: 1.102 | lr: 0.000076
+Epoch  545/1000 | train: -2053.3673 (-3.7785 bpd) | val: -1468.4973 (-2.7023 bpd) | z_mean: 0.001 | z_std: 0.928 | lr: 0.000076
+Epoch  546/1000 | train: -2053.4303 (-3.7787 bpd) | val: -1454.7196 (-2.6769 bpd) | z_mean: 0.002 | z_std: 1.007 | lr: 0.000076
+Epoch  547/1000 | train: -2048.2735 (-3.7692 bpd) | val: -1465.7855 (-2.6973 bpd) | z_mean: -0.007 | z_std: 1.004 | lr: 0.000076
+Epoch  548/1000 | train: -2056.2209 (-3.7838 bpd) | val: -1474.9007 (-2.7141 bpd) | z_mean: 0.000 | z_std: 0.927 | lr: 0.000076
+Epoch  549/1000 | train: -2055.7374 (-3.7829 bpd) | val: -1462.8492 (-2.6919 bpd) | z_mean: -0.006 | z_std: 1.029 | lr: 0.000076
+Epoch  550/1000 | train: -2054.5953 (-3.7808 bpd) | val: -1455.8933 (-2.6791 bpd) | z_mean: 0.000 | z_std: 0.958 | lr: 0.000076
+Epoch  551/1000 | train: -2057.4864 (-3.7861 bpd) | val: -1451.3972 (-2.6708 bpd) | z_mean: 0.004 | z_std: 0.981 | lr: 0.000076
+Epoch  552/1000 | train: -2062.4136 (-3.7952 bpd) | val: -1440.1958 (-2.6502 bpd) | z_mean: -0.016 | z_std: 1.018 | lr: 0.000076
+Epoch  553/1000 | train: -2064.2984 (-3.7987 bpd) | val: -1445.9375 (-2.6608 bpd) | z_mean: 0.007 | z_std: 0.936 | lr: 0.000076
+Epoch  554/1000 | train: -2063.4993 (-3.7972 bpd) | val: -1449.5082 (-2.6673 bpd) | z_mean: -0.007 | z_std: 0.950 | lr: 0.000076
+Epoch  555/1000 | train: -2061.5082 (-3.7935 bpd) | val: -1459.4807 (-2.6857 bpd) | z_mean: -0.003 | z_std: 0.914 | lr: 0.000076
+Epoch  556/1000 | train: -2063.8291 (-3.7978 bpd) | val: -1456.4925 (-2.6802 bpd) | z_mean: -0.015 | z_std: 0.912 | lr: 0.000076
+Epoch  557/1000 | train: -2060.1074 (-3.7910 bpd) | val: -1446.0313 (-2.6609 bpd) | z_mean: 0.010 | z_std: 0.938 | lr: 0.000076
+Epoch  558/1000 | train: -2065.9665 (-3.8017 bpd) | val: -1452.2638 (-2.6724 bpd) | z_mean: -0.015 | z_std: 0.926 | lr: 0.000076
+Epoch  559/1000 | train: -2068.1591 (-3.8058 bpd) | val: -1427.4909 (-2.6268 bpd) | z_mean: -0.014 | z_std: 0.954 | lr: 0.000076
